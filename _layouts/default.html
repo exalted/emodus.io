@@ -25,12 +25,23 @@
   </head>
 
   <body>
-    <div class="flex flex-col min-h-screen bg-white">
-      <main class="flex-grow">{{ content }}</main>
-      <!-- prettier-ignore -->
-      {% comment %}
-      {% include _debug.html %}
-      {% endcomment %}
-    </div>
+    <!-- Load React. -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <!-- This will allow us to use JSX in React components. -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    {{ content }}
+
+    <!-- prettier-ignore -->
+    {% comment %}
+    {% include _debug.html %}
+    {% endcomment %}
   </body>
 </html>

@@ -1,17 +1,14 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: 'jit',
-  purge: [
-    './**/*.html',
-  ],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./**/*.html"],
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {},
+  corePlugins: {
+    aspectRatio: false, // disabling the aspectRatio core plugin to avoid
+    //                     conflicts with the native aspect-ratio utilities
+    //                     included in Tailwind CSS v3.0 in order to use
+    //                     @tailwindcss/aspect-ratio plugin.
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
-}
+  plugins: [require("@tailwindcss/aspect-ratio")],
+};
