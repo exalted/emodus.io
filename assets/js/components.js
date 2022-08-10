@@ -3,12 +3,27 @@
 const e = React.createElement;
 const Fragment = React.Fragment;
 
+const HEADER_HEIGHT = 96;
+
+const contentHeight = window.innerHeight - HEADER_HEIGHT;
+
 class HomePage extends React.Component {
   render() {
     return (
       <div className="bg-red-600 flex flex-col">
-        <div className="bg-green-600 h-24 fixed w-full">header</div>
-        <div className="bg-blue-600 mt-24 snap-mandatory snap-y overflow-scroll h-screen">
+        <div
+          className="bg-green-600 fixed w-full"
+          style={{ height: `${HEADER_HEIGHT}px` }}
+        >
+          header
+        </div>
+        <div
+          className="bg-blue-600 snap-mandatory snap-y overflow-scroll"
+          style={{
+            marginTop: `${HEADER_HEIGHT}px`,
+            height: `${contentHeight}px`,
+          }}
+        >
           <Item bgColor="bg-amber-600">1</Item>
           <Item bgColor="bg-cyan-600">2</Item>
           <AnotherItem bgColor="bg-lime-600">
@@ -243,7 +258,8 @@ class Item extends React.Component {
   render() {
     return (
       <div
-        className={`snap-start ${this.props.bgColor} h-screen flex items-center justify-center text-8xl`}
+        className={`snap-start ${this.props.bgColor} flex items-center justify-center text-8xl`}
+        style={{ minHeight: `${contentHeight}px` }}
       >
         {this.props.children}
       </div>
@@ -254,7 +270,10 @@ class Item extends React.Component {
 class AnotherItem extends React.Component {
   render() {
     return (
-      <div className={`snap-start ${this.props.bgColor} h-screen`}>
+      <div
+        className={`snap-start ${this.props.bgColor}`}
+        style={{ minHeight: `${contentHeight}px` }}
+      >
         {this.props.children}
       </div>
     );
