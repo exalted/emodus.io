@@ -8,5 +8,5 @@ cd "$(dirname "$0")/.."
 npx concurrently --names "jekyll,tailwind,prettier" --kill-others \
   'bundle exec jekyll serve --open-url --livereload' \
   'npx tailwindcss --input styles.css --output docs/styles.css --watch' \
-  'npx onchange "**/*.html" "**/*.md" --exclude-path .gitignore -- npx prettier --write {{changed}}' \
+  'npx onchange "**/*.html" "**/*.md" "**/*.js" "**/*.css" --exclude-path .gitignore -- npx prettier --write {{changed}}' \
 || true
