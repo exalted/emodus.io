@@ -8,7 +8,7 @@ search: exclude
 
     {% for page in site.html_pages %}
     <url>
-        <loc>https://venividinft.io{{page.url}}</loc>
+        <loc>https://emodusnft.com{{page.url}}</loc>
     </url>
     {% endfor %}
 
