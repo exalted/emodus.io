@@ -16,6 +16,7 @@ assets=$(find . \( \
 contents=$(find . \( \
      -iname '*.htm' \
   -o -iname '*.html' \
+  -o -iname '*.js' \
   -o -iname '*.md' \
   -o -iname '*.xml' \
   -o -iname '*.webmanifest' \
