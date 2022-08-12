@@ -107,7 +107,7 @@ class ImageSection extends React.Component {
   render() {
     return (
       <div
-        className={`flex-grow flex flex-col justify-end border-b-4 border-emodus-black ${this.props.className}`}
+        className={`flex-grow flex flex-col justify-end items-center border-b-4 border-emodus-black ${this.props.className}`}
       >
         <img className={this.props.className} src={this.props.src} />
       </div>
