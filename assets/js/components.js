@@ -38,6 +38,7 @@ class HomePage extends React.Component {
             height: `${contentHeight}px`,
           }}
         >
+          {/* ============================================================== */}
           <Page
             topSection={
               <ImageSection
@@ -64,6 +65,7 @@ class HomePage extends React.Component {
               </SimpleSection>
             }
           />
+          {/* ============================================================== */}
           <Page
             topSection={
               <ImageSection
@@ -79,6 +81,7 @@ class HomePage extends React.Component {
               </SimpleSection>
             }
           />
+          {/* ============================================================== */}
           <Page
             topSection={
               <ImageSection
@@ -94,6 +97,7 @@ class HomePage extends React.Component {
               </SimpleSection>
             }
           />
+          {/* ============================================================== */}
           <Page
             topSection={
               <ImageSection
@@ -111,6 +115,47 @@ class HomePage extends React.Component {
               </SimpleSection>
             }
           />
+          {/* ============================================================== */}
+          <Page
+            topSection={
+              <SimpleSection className="bg-[url('/assets/img/discover-background.png')] bg-cover text-xl flex flex-col justify-end">
+                <div>
+                  <p className="mb-6">
+                    We believe that some NFT art collections should pass "we're
+                    building a community so strong we will overthrow the
+                    government" or "we'll be in the metaverse, matrix, and also
+                    on mars" or "this is the best return of investment
+                    ponzi-nomics" cliché.
+                  </p>
+                  <a
+                    className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black text-2xl font-fredoka font-semibold"
+                    href="#"
+                  >
+                    discover the roadmap
+                  </a>
+                </div>
+              </SimpleSection>
+            }
+            bottomSection={
+              <SimpleSection className="bg-emodus-white text-center py-12">
+                <div className="flex">
+                  <img
+                    className="h-[5rem]"
+                    src="/assets/img/team-logo.svg"
+                    alt="Team logo"
+                  />
+                  <div className="flex-grow text-right flex flex-col justify-end">
+                    <a className="text-[0.7rem]" href="https://venividinft.io">
+                      venividinft.io
+                    </a>
+                    <p className="text-[0.5rem]">
+                      Copyright © 2022 VENI VIDI NFT | All Rights Reserved.
+                    </p>
+                  </div>
+                </div>
+              </SimpleSection>
+            }
+          />
         </div>
       </div>
     );
@@ -120,7 +165,11 @@ class HomePage extends React.Component {
 // Responsible for laying out its components (i.e. topSection and bottomSection) and scroll snapping
 class Page extends React.Component {
   render() {
-    this.props.topSection.props.containerClassName = `flex-grow ${this.props.topSection.props.containerClassName}`;
+    if (this.props.topSection.props.containerClassName) {
+      this.props.topSection.props.containerClassName = `flex-grow ${this.props.topSection.props.containerClassName}`;
+    } else {
+      this.props.topSection.props.className = `flex-grow ${this.props.topSection.props.className}`;
+    }
 
     return (
       <div
