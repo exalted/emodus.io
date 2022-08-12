@@ -118,7 +118,7 @@ class HomePage extends React.Component {
           {/* ============================================================== */}
           <Page
             topSection={
-              <SimpleSection className="bg-[url('/assets/img/discover-background.png')] bg-cover text-xl flex flex-col justify-end">
+              <SimpleSection className="bg-discover-background bg-cover text-xl flex flex-col justify-end">
                 <div>
                   <p className="mb-6">
                     We believe that some NFT art collections should pass "we're

@@ -18,6 +18,9 @@ module.exports = {
         fredoka: ['Fredoka', 'sans-serif'],
         fredokaOne: ['Fredoka One', 'cursive'],
       },
+      backgroundImage: {
+        'discover-background': "url('/assets/img/discover-background.png')",
+      },
     },
   },
   corePlugins: {
