@@ -16,6 +16,7 @@ assets=$(find . \( \
 contents=$(find . \( \
      -iname '*.htm' \
   -o -iname '*.html' \
+  -o -iname '*.css' \
   -o -iname '*.js' \
   -o -iname '*.md' \
   -o -iname '*.xml' \
@@ -34,7 +35,7 @@ do
 
     # NOTE: `sed -i''` VS `sed -i ''`.
     # Former is for Linux (ie github actions), whilst latter is for macOS… 😞
-    sed -i'' "s/$asset_filename/$asset_filename?checksum=$asset_checksum/g" $content_path 2> /dev/null \
-    || sed -i '' "s/$asset_filename/$asset_filename?checksum=$asset_checksum/g" $content_path
+    sed -i'' "s/\/$asset_filename/\/$asset_filename?checksum=$asset_checksum/g" $content_path 2> /dev/null \
+    || sed -i '' "s/\/$asset_filename/\/$asset_filename?checksum=$asset_checksum/g" $content_path
   done
 done
