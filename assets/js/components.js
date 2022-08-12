@@ -39,47 +39,76 @@ class HomePage extends React.Component {
           }}
         >
           <Page
-            content={
+            topSection={
               <ImageSection
-                className="bg-emodus-red"
+                containerClassName="bg-emodus-white !border-emodus-white pb-12"
+                imageClassName="bg-emodus-white w-4/5 shadow-2xl"
                 src="/assets/img/page-1.png"
               />
             }
-            footer={
-              <TextSection className="bg-emodus-white">
-                Forget laser eyes and mushroom hats, express yourself with
-                emotions which are the accessories of the soul!
-              </TextSection>
+            bottomSection={
+              <SimpleSection className="bg-emodus-white text-center pt-0">
+                <div>
+                  <p className="mb-6">
+                    "The collection emerged through different interdisciplinary
+                    research such as sociology, psychology, neuroscience, and
+                    chromatics or simply color science."
+                  </p>
+                  <a
+                    className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black text-2xl font-fredoka font-semibold"
+                    href="#"
+                  >
+                    discover the story
+                  </a>
+                </div>
+              </SimpleSection>
             }
           />
           <Page
-            content={
+            topSection={
               <ImageSection
-                className="bg-emodus-blue"
+                containerClassName="bg-emodus-red"
+                imageClassName="bg-emodus-red"
                 src="/assets/img/page-2.png"
               />
             }
-            footer={
-              <TextSection className="bg-emodus-white">
-                emodus is the first PFP NFT to use only facial expressions of
-                emotion as it's distinguishing feature.
-              </TextSection>
+            bottomSection={
+              <SimpleSection className="bg-emodus-white text-2xl">
+                Forget laser eyes and mushroom hats, express yourself with
+                emotions which are the accessories of the soul!
+              </SimpleSection>
             }
           />
           <Page
-            content={
+            topSection={
               <ImageSection
-                className="bg-emodus-orange"
+                containerClassName="bg-emodus-blue"
+                imageClassName="bg-emodus-blue"
+                src="/assets/img/page-2.png"
+              />
+            }
+            bottomSection={
+              <SimpleSection className="bg-emodus-white text-2xl">
+                emodus is the first PFP NFT to use only facial expressions of
+                emotion as it's distinguishing feature.
+              </SimpleSection>
+            }
+          />
+          <Page
+            topSection={
+              <ImageSection
+                containerClassName="bg-emodus-orange"
+                imageClassName="bg-emodus-orange"
                 src="/assets/img/page-3.png"
               />
             }
-            footer={
-              <TextSection className="bg-emodus-white">
+            bottomSection={
+              <SimpleSection className="bg-emodus-white text-2xl">
                 A total of 3763 emodus on Ethereum blockchain, each one is
                 unique due to the combinations of different environments, body
                 statuses, core emotions, and facial expressions which gives them
                 their "modus".
-              </TextSection>
+              </SimpleSection>
             }
           />
         </div>
@@ -88,16 +117,28 @@ class HomePage extends React.Component {
   }
 }
 
-// Responsible for laying out its components (i.e. content and footer)
+// Responsible for laying out its components (i.e. topSection and bottomSection) and scroll snapping
 class Page extends React.Component {
   render() {
+    this.props.topSection.props.containerClassName = `flex-grow ${this.props.topSection.props.containerClassName}`;
+
     return (
       <div
         className="snap-start flex flex-col"
         style={{ minHeight: `${contentHeight}px` }}
       >
-        {this.props.content}
-        {this.props.footer}
+        {this.props.topSection}
+        {this.props.bottomSection}
+      </div>
+    );
+  }
+}
+
+class SimpleSection extends React.Component {
+  render() {
+    return (
+      <div className={`px-8 py-8 font-fredokaOne ${this.props.className}`}>
+        {this.props.children}
       </div>
     );
   }
@@ -107,21 +148,9 @@ class ImageSection extends React.Component {
   render() {
     return (
       <div
-        className={`flex-grow flex flex-col justify-end items-center border-b-4 border-emodus-black ${this.props.className}`}
+        className={`flex flex-col justify-end items-center border-b-4 border-emodus-black ${this.props.containerClassName}`}
       >
-        <img className={this.props.className} src={this.props.src} />
-      </div>
-    );
-  }
-}
-
-class TextSection extends React.Component {
-  render() {
-    return (
-      <div
-        className={`px-8 py-5 font-fredokaOne text-2xl ${this.props.className}`}
-      >
-        {this.props.children}
+        <img className={this.props.imageClassName} src={this.props.src} />
       </div>
     );
   }
