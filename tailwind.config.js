@@ -22,6 +22,7 @@ module.exports = {
       },
       backgroundImage: {
         'discover-background': "url('/assets/img/discover-background.png')",
+        'emodus-background': "url('/assets/img/emodus-background.svg')",
       },
     },
   },

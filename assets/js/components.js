@@ -38,8 +38,8 @@ class HomePage extends React.Component {
           <Page
             topSection={
               <ImageSection
-                containerClassName="bg-emodus-yellow"
-                imageClassName="bg-emodus-yellow"
+                containerClassName="bg-emodus-yellow bg-emodus-background bg-no-repeat bg-bottom"
+                imageClassName="bg-emodus-yellow bg-transparent"
                 src="/assets/img/yellow-emodus.svg"
               />
             }
@@ -53,8 +53,8 @@ class HomePage extends React.Component {
           <Page
             topSection={
               <ImageSection
-                containerClassName="bg-emodus-blue"
-                imageClassName="bg-emodus-blue"
+                containerClassName="bg-emodus-blue bg-emodus-background bg-no-repeat bg-bottom"
+                imageClassName="bg-emodus-blue bg-transparent"
                 src="/assets/img/orange-emodus.svg"
               />
             }
@@ -69,8 +69,8 @@ class HomePage extends React.Component {
           <Page
             topSection={
               <ImageSection
-                containerClassName="bg-emodus-red"
-                imageClassName="bg-emodus-red"
+                containerClassName="bg-emodus-red bg-emodus-background bg-no-repeat bg-bottom"
+                imageClassName="bg-emodus-red bg-transparent"
                 src="/assets/img/green-emodus.svg"
               />
             }
@@ -85,13 +85,13 @@ class HomePage extends React.Component {
           <Page
             topSection={
               <ImageSection
-                containerClassName="bg-emodus-orange"
-                imageClassName="bg-emodus-orange"
+                containerClassName="bg-emodus-orange bg-emodus-background bg-no-repeat bg-bottom"
+                imageClassName="bg-emodus-orange bg-transparent"
                 src="/assets/img/blue-emodus.svg"
               />
             }
             bottomSection={
-              <SimpleSection className="bg-emodus-orange text-lg">
+              <SimpleSection className="bg-emodus-orange !text-base">
                 A total of 3763 modus on Ethereum Blockchain, each one is unique
                 due to the combinations of different environments, body status',
                 core emotions and facial expressions which gives them their
@@ -103,13 +103,13 @@ class HomePage extends React.Component {
           <Page
             topSection={
               <ImageSection
-                containerClassName="bg-emodus-purple"
-                imageClassName="bg-emodus-purple"
+                containerClassName="bg-emodus-purple bg-emodus-background bg-no-repeat bg-bottom"
+                imageClassName="bg-emodus-purple bg-transparent"
                 src="/assets/img/red-emodus.svg"
               />
             }
             bottomSection={
-              <SimpleSection className="bg-emodus-purple text-base">
+              <SimpleSection className="bg-emodus-purple !text-base">
                 <p className="mb-2">
                   One emodus may appear in a fearful environment with an angry
                   body status, but could have a disgusted expression. meanwhile,
@@ -125,7 +125,7 @@ class HomePage extends React.Component {
             topSection={
               <ImageSection
                 containerClassName="bg-emodus-white pt-8"
-                imageClassName="bg-emodus-white w-4/5"
+                imageClassName="bg-emodus-white"
                 src="/assets/img/modus-lisa.svg"
               />
             }
