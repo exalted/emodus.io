@@ -20,7 +20,10 @@ description: 'Emodus is the first PFP NFT to use only facial expressions of emot
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
-      document.getElementById('here').scrollIntoView();
+      const hereEl = document.getElementById('here');
+      if (hereEl) {
+        hereEl.scrollIntoView();
+      }
     }, 500);
   });
 </script>

@@ -9,9 +9,11 @@ module.exports = {
         emodus: {
           white: colors.slate[50],
           black: colors.slate[900],
-          red: '#ea1317',
+          yellow: '#ffe10f',
           blue: '#0584dc',
+          red: '#ea1317',
           orange: '#ff7b02',
+          purple: '#9e30ba',
         },
       },
       fontFamily: {
