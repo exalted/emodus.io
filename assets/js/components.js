@@ -3,18 +3,11 @@
 const e = React.createElement;
 const Fragment = React.Fragment;
 
-const HEADER_HEIGHT = 76;
-
-const contentHeight = window.innerHeight - HEADER_HEIGHT;
-
 class HomePage extends React.Component {
   render() {
     return (
-      <div className="flex flex-col">
-        <div
-          className="bg-emodus-white fixed w-full flex items-center px-6 place-content-between shadow-lg shadow-emodus-black/20"
-          style={{ height: `${HEADER_HEIGHT}px` }}
-        >
+      <div className="flex flex-col h-screen">
+        <div className="bg-emodus-white sticky top-0 flex items-center px-6 place-content-between shadow-lg shadow-emodus-black/20 h-20 flex-shrink-0">
           <img className="h-8" src="/assets/img/logo.svg" alt="Emodus logo" />
           <button>
             <svg
@@ -31,13 +24,7 @@ class HomePage extends React.Component {
             </svg>
           </button>
         </div>
-        <div
-          className="snap-mandatory snap-y overflow-scroll"
-          style={{
-            marginTop: `${HEADER_HEIGHT}px`,
-            height: `${contentHeight}px`,
-          }}
-        >
+        <div className="snap-mandatory snap-y overflow-scroll">
           {/* ============================================================== */}
           <Page
             topSection={
@@ -172,10 +159,7 @@ class Page extends React.Component {
     }
 
     return (
-      <div
-        className="snap-start flex flex-col"
-        style={{ minHeight: `${contentHeight}px` }}
-      >
+      <div className="snap-start h-full flex flex-col">
         {this.props.topSection}
         {this.props.bottomSection}
       </div>
