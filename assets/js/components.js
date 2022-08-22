@@ -45,7 +45,17 @@ class HomePage extends React.Component {
             }
             bottomSection={
               <SimpleSection className="bg-emodus-yellow">
+                <Fragment>
+                  <p className="mb-6">
                 Renaissance of meme art and a new "culture" phenomenon.
+                  </p>
+                  <button
+                    className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                    href="#"
+                  >
+                    connect wallet
+                  </button>
+                </Fragment>
               </SimpleSection>
             }
           />
@@ -131,7 +141,7 @@ class HomePage extends React.Component {
             }
             bottomSection={
               <SimpleSection className="bg-emodus-white !text-base text-center">
-                <div>
+                <Fragment>
                   <p className="mb-6">
                     "The collection emerged through different interdisciplinary
                     research such as sociology, psychology, neuroscience, and
@@ -143,7 +153,7 @@ class HomePage extends React.Component {
                   >
                     discover the story
                   </a>
-                </div>
+                </Fragment>
               </SimpleSection>
             }
           />
@@ -151,7 +161,7 @@ class HomePage extends React.Component {
           <Page
             topSection={
               <SimpleSection className="bg-discover-background !text-base bg-cover flex flex-col justify-end">
-                <div>
+                <Fragment>
                   <p className="mb-6">
                     We believe that some NFT art collections should pass "we're
                     building a community so strong we will overthrow the
@@ -165,7 +175,7 @@ class HomePage extends React.Component {
                   >
                     discover the roadmap
                   </a>
-                </div>
+                </Fragment>
               </SimpleSection>
             }
             bottomSection={
