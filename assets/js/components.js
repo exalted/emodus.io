@@ -39,7 +39,6 @@ class HomePage extends React.Component {
             topSection={
               <ImageSection
                 containerClassName="bg-emodus-yellow bg-emodus-background bg-no-repeat bg-bottom"
-                imageClassName="bg-emodus-yellow bg-transparent"
                 src="/assets/img/yellow-emodus.svg"
               />
             }
@@ -47,7 +46,7 @@ class HomePage extends React.Component {
               <SimpleSection className="bg-emodus-yellow">
                 <Fragment>
                   <p className="mb-6">
-                Renaissance of meme art and a new "culture" phenomenon.
+                    Renaissance of meme art and a new "culture" phenomenon.
                   </p>
                   <button
                     className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
@@ -64,7 +63,6 @@ class HomePage extends React.Component {
             topSection={
               <ImageSection
                 containerClassName="bg-emodus-blue bg-emodus-background bg-no-repeat bg-bottom"
-                imageClassName="bg-emodus-blue bg-transparent"
                 src="/assets/img/orange-emodus.svg"
               />
             }
@@ -80,7 +78,6 @@ class HomePage extends React.Component {
             topSection={
               <ImageSection
                 containerClassName="bg-emodus-red bg-emodus-background bg-no-repeat bg-bottom"
-                imageClassName="bg-emodus-red bg-transparent"
                 src="/assets/img/green-emodus.svg"
               />
             }
@@ -96,7 +93,6 @@ class HomePage extends React.Component {
             topSection={
               <ImageSection
                 containerClassName="bg-emodus-orange bg-emodus-background bg-no-repeat bg-bottom"
-                imageClassName="bg-emodus-orange bg-transparent"
                 src="/assets/img/blue-emodus.svg"
               />
             }
@@ -114,7 +110,6 @@ class HomePage extends React.Component {
             topSection={
               <ImageSection
                 containerClassName="bg-emodus-purple bg-emodus-background bg-no-repeat bg-bottom"
-                imageClassName="bg-emodus-purple bg-transparent"
                 src="/assets/img/red-emodus.svg"
               />
             }
@@ -135,7 +130,6 @@ class HomePage extends React.Component {
             topSection={
               <ImageSection
                 containerClassName="bg-emodus-white pt-8"
-                imageClassName="bg-emodus-white"
                 src="/assets/img/modus-lisa.svg"
               />
             }
@@ -230,10 +224,7 @@ class ImageSection extends React.Component {
       <div
         className={`flex flex-col justify-end items-center min-h-0 ${this.props.containerClassName}`}
       >
-        <img
-          className={`min-h-full ${this.props.imageClassName}`}
-          src={this.props.src}
-        />
+        <img className="min-h-full" src={this.props.src} />
       </div>
     );
   }
