@@ -4,6 +4,18 @@ const e = React.createElement;
 const Fragment = React.Fragment;
 
 class HomePage extends React.Component {
+  state = {
+    showRoadmap: false,
+  };
+
+  componentDidUpdate() {
+    if (this.state.showRoadmap) {
+      [
+        ...document.querySelectorAll('[data-section="roadmap"]'),
+      ][0].scrollIntoView({ block: 'start', behavior: 'smooth' });
+    }
+  }
+
   render() {
     return (
       <div
@@ -212,12 +224,65 @@ class HomePage extends React.Component {
                 <a
                   className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
                   href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.setState({ showRoadmap: true });
+                  }}
                 >
                   discover the roadmap
                 </a>
               </Fragment>
             </SimpleSection>
-            <SimpleSection className="bg-emodus-white text-center py-12">
+            <SimpleSection
+              id="here"
+              className="snap-start"
+              data-section="roadmap"
+              style={{ display: this.state.showRoadmap ? 'block' : 'none' }}
+            >
+              <p className="text-center text-3xl mb-5">the roadmap</p>
+              <p className="text-base mb-5">
+                We believe that some NFT art collections should pass "we're
+                building a community so strong we will overthrow the government"
+                or "we'll be in the metaverse, matrix and also on mars" or "this
+                is the best return of investment ponzi-nomics" cliché.
+              </p>
+              <p className="text-base mb-5">
+                Emodus collection consists of wiselv created tiny pieces of
+                artwork with a little bit of science, philosophy and humor sauce
+                on it. Obviously not a project that copying blue chip strategies
+                with clip art. It's unfortunate that the crowd that has
+                gravitated to it, is not interested in digital art, and has
+                treated it like a casino.
+              </p>
+              <p className="text-base mb-5">
+                Why we don't prefer to start this with whitelist because
+                whitelist grinding is an absolutely horrifying experience that
+                creates an artificial community and promotes in-genuine
+                conversations and connections. These artificial communities are
+                fragile and easily destructible.
+              </p>
+              <p className="text-base mb-5">
+                We hope to create a culture that inherently reflects the core
+                values of a true community. A community where people truly feel
+                connected with each other through these memes.
+              </p>
+              <p className="text-base mb-5">
+                As VENI VIDI NFT, we are not going to over promise or
+                underdeliver with our first project because we are intended to
+                be in WEB3 in the long run with our holders' trust.
+              </p>
+              <p className="text-base mb-5">
+                Therefore 6% of all sales will be kept in the wallet and after
+                the collection has been sold, we will be quided by the holders
+                of Emodus who saw the potential and liked the concept.
+              </p>
+              <p className="text-base mb-5">
+                Holders will vote and decide whether the fund should be used for
+                charity work or giving back to holders or to be used for other
+                ideas that will be designated with the community.
+              </p>
+            </SimpleSection>
+            <SimpleSection className="snap-start bg-emodus-white text-center py-12">
               <div className="flex">
                 <a href="https://venividinft.io">
                   <img
@@ -246,12 +311,14 @@ class HomePage extends React.Component {
 // Responsible for laying out its components and scroll snapping
 class Page extends React.Component {
   render() {
-    if (this.props.children[1]) {
-      if (this.props.children[1].props.containerClassName) {
-        this.props.children[1].props.containerClassName = `flex-grow ${this.props.children[1].props.containerClassName}`;
-      } else {
-        this.props.children[1].props.className = `flex-grow ${this.props.children[1].props.className}`;
-      }
+    if (this.props.children.at(-1).props.containerClassName) {
+      this.props.children.at(-1).props.containerClassName = `flex-grow ${
+        this.props.children.at(-1).props.containerClassName
+      }`;
+    } else {
+      this.props.children.at(-1).props.className = `flex-grow ${
+        this.props.children.at(-1).props.className
+      }`;
     }
 
     return (
@@ -260,8 +327,7 @@ class Page extends React.Component {
         className="snap-start h-full flex flex-col"
         data-type="page"
       >
-        {this.props.children[0]}
-        {this.props.children[1]}
+        {this.props.children}
       </div>
     );
   }
@@ -300,11 +366,15 @@ class PassportPhotoSection extends React.Component {
 
 class SimpleSection extends React.Component {
   render() {
+    const { className, style, children, ...restProps } = this.props;
+
     return (
       <div
-        className={`px-6 py-6 font-fredokaOne text-2xl ${this.props.className}`}
+        className={`px-6 py-6 font-fredokaOne text-2xl ${className || ''}`}
+        style={style}
+        {...restProps}
       >
-        {this.props.children}
+        {children}
       </div>
     );
   }
