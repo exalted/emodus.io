@@ -49,7 +49,7 @@ class HomePage extends React.Component {
           {/* ============================================================== */}
           <Page>
             <PassportPhotoSection
-              containerClassName="bg-emodus-yellow bg-emodus-background bg-no-repeat bg-bottom"
+              containerClassName="bg-emodus-yellow"
               src="/assets/img/yellow-emodus.svg"
             />
             <SimpleSection className="bg-emodus-yellow">
@@ -70,7 +70,7 @@ class HomePage extends React.Component {
           {/* ============================================================== */}
           <Page>
             <PassportPhotoSection
-              containerClassName="bg-emodus-blue bg-emodus-background bg-no-repeat bg-bottom"
+              containerClassName="bg-emodus-blue"
               src="/assets/img/orange-emodus.svg"
             />
             <SimpleSection className="bg-emodus-blue">
@@ -82,7 +82,7 @@ class HomePage extends React.Component {
           {/* ============================================================== */}
           <Page>
             <PassportPhotoSection
-              containerClassName="bg-emodus-red bg-emodus-background bg-no-repeat bg-bottom"
+              containerClassName="bg-emodus-red"
               src="/assets/img/green-emodus.svg"
             />
             <SimpleSection className="bg-emodus-red">
@@ -94,7 +94,7 @@ class HomePage extends React.Component {
           {/* ============================================================== */}
           <Page>
             <PassportPhotoSection
-              containerClassName="bg-emodus-orange bg-emodus-background bg-no-repeat bg-bottom"
+              containerClassName="bg-emodus-orange"
               src="/assets/img/blue-emodus.svg"
             />
             <SimpleSection className="bg-emodus-orange !text-base">
@@ -291,6 +291,7 @@ class PassportPhotoSection extends React.Component {
             className="absolute max-w-none -top-[9999px] -bottom-[9999px] -right-[9999px] -left-[9999px] m-auto pl-14 h-[72vh]"
             src={this.props.src}
           />
+          <div className="absolute -top-[9999px] -bottom-[9999px] -right-[9999px] -left-[9999px] m-auto bg-emodus-background bg-no-repeat bg-bottom h-full"></div>
         </div>
       </Fragment>
     );
