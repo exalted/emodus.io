@@ -17,7 +17,18 @@ class HomePage extends React.Component {
         }}
       >
         <div className="bg-emodus-white sticky top-0 flex items-center px-6 place-content-between shadow-lg shadow-emodus-black/20 h-20 flex-shrink-0">
-          <img className="h-8" src="/assets/img/logo.svg" alt="Emodus logo" />
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              [
+                ...document.querySelectorAll('[data-type="page"]'),
+              ][0].scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            <img className="h-8" src="/assets/img/logo.svg" alt="Emodus logo" />
+          </a>
+
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,10 +44,11 @@ class HomePage extends React.Component {
             </svg>
           </button>
         </div>
+
         <div className="snap-mandatory snap-y overflow-y-auto">
           {/* ============================================================== */}
           <Page>
-            <ImageSection
+            <PassportPhotoSection
               containerClassName="bg-emodus-yellow bg-emodus-background bg-no-repeat bg-bottom"
               src="/assets/img/yellow-emodus.svg"
             />
@@ -54,9 +66,10 @@ class HomePage extends React.Component {
               </Fragment>
             </SimpleSection>
           </Page>
+
           {/* ============================================================== */}
           <Page>
-            <ImageSection
+            <PassportPhotoSection
               containerClassName="bg-emodus-blue bg-emodus-background bg-no-repeat bg-bottom"
               src="/assets/img/orange-emodus.svg"
             />
@@ -65,9 +78,10 @@ class HomePage extends React.Component {
               emotion as it's distinguishing feature.
             </SimpleSection>
           </Page>
+
           {/* ============================================================== */}
           <Page>
-            <ImageSection
+            <PassportPhotoSection
               containerClassName="bg-emodus-red bg-emodus-background bg-no-repeat bg-bottom"
               src="/assets/img/green-emodus.svg"
             />
@@ -76,9 +90,10 @@ class HomePage extends React.Component {
               emotions which are the accessories of the soul!
             </SimpleSection>
           </Page>
+
           {/* ============================================================== */}
           <Page>
-            <ImageSection
+            <PassportPhotoSection
               containerClassName="bg-emodus-orange bg-emodus-background bg-no-repeat bg-bottom"
               src="/assets/img/blue-emodus.svg"
             />
@@ -89,9 +104,10 @@ class HomePage extends React.Component {
               "modus".
             </SimpleSection>
           </Page>
+
           {/* ============================================================== */}
           <Page>
-            <ImageSection
+            <PassportPhotoSection
               containerClassName="bg-emodus-purple bg-emodus-background bg-no-repeat bg-bottom"
               src="/assets/img/red-emodus.svg"
             />
@@ -105,6 +121,7 @@ class HomePage extends React.Component {
               <p>Sounds like a regular Monday isn't it ?</p>
             </SimpleSection>
           </Page>
+
           {/* ============================================================== */}
           <Page>
             <ImageSection
@@ -127,6 +144,7 @@ class HomePage extends React.Component {
               </Fragment>
             </SimpleSection>
           </Page>
+
           {/* ============================================================== */}
           <Page>
             <p className="font-fredokaOne text-4xl pt-6 text-center mb-6">
@@ -179,6 +197,7 @@ class HomePage extends React.Component {
               ]}
             />
           </Page>
+
           {/* ============================================================== */}
           <Page>
             <SimpleSection className="bg-discover-background !text-base bg-cover flex flex-col justify-end">
@@ -200,11 +219,13 @@ class HomePage extends React.Component {
             </SimpleSection>
             <SimpleSection className="bg-emodus-white text-center py-12">
               <div className="flex">
-                <img
-                  className="h-[5rem]"
-                  src="/assets/img/team-logo.svg"
-                  alt="Team logo"
-                />
+                <a href="https://venividinft.io">
+                  <img
+                    className="h-[5rem]"
+                    src="/assets/img/team-logo.svg"
+                    alt="Team logo"
+                  />
+                </a>
                 <div className="flex-grow text-right flex flex-col justify-end">
                   <a className="text-[0.7rem]" href="https://venividinft.io">
                     venividinft.io
@@ -234,7 +255,11 @@ class Page extends React.Component {
     }
 
     return (
-      <div id={this.props.id} className="snap-start h-full flex flex-col">
+      <div
+        id={this.props.id}
+        className="snap-start h-full flex flex-col"
+        data-type="page"
+      >
         {this.props.children[0]}
         {this.props.children[1]}
       </div>
@@ -250,6 +275,24 @@ class ImageSection extends React.Component {
       >
         <img className="min-h-full" src={this.props.src} />
       </div>
+    );
+  }
+}
+
+class PassportPhotoSection extends React.Component {
+  render() {
+    return (
+      <Fragment>
+        {/* Center Oversized Image in Div: https://stackoverflow.com/a/19414020/11895 */}
+        <div
+          className={`relative h-screen overflow-hidden ${this.props.containerClassName}`}
+        >
+          <img
+            className="absolute max-w-none -top-[9999px] -bottom-[9999px] -right-[9999px] -left-[9999px] m-auto pl-14 h-[72vh]"
+            src={this.props.src}
+          />
+        </div>
+      </Fragment>
     );
   }
 }
