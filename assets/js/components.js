@@ -5,18 +5,13 @@ const Fragment = React.Fragment;
 
 class HomePage extends React.Component {
   state = {
+    showStory: false,
     showRoadmap: false,
   };
 
-  componentDidUpdate() {
-    if (this.state.showRoadmap) {
-      [
-        ...document.querySelectorAll('[data-section="roadmap"]'),
-      ][0].scrollIntoView({ block: 'start', behavior: 'smooth' });
-    }
-  }
-
   render() {
+    const hideAllPages = this.state.showStory || this.state.showRoadmap;
+
     return (
       <div
         className="flex flex-col h-screen"
@@ -59,7 +54,7 @@ class HomePage extends React.Component {
 
         <div className="snap-mandatory snap-y overflow-y-auto">
           {/* ============================================================== */}
-          <Page>
+          <Page hideAllPages={hideAllPages} data-section="mint">
             <PassportPhotoSection
               containerClassName="bg-emodus-yellow"
               src="/assets/img/yellow-emodus.svg"
@@ -80,7 +75,7 @@ class HomePage extends React.Component {
           </Page>
 
           {/* ============================================================== */}
-          <Page>
+          <Page hideAllPages={hideAllPages}>
             <PassportPhotoSection
               containerClassName="bg-emodus-blue"
               src="/assets/img/orange-emodus.svg"
@@ -92,7 +87,7 @@ class HomePage extends React.Component {
           </Page>
 
           {/* ============================================================== */}
-          <Page>
+          <Page hideAllPages={hideAllPages}>
             <PassportPhotoSection
               containerClassName="bg-emodus-red"
               src="/assets/img/green-emodus.svg"
@@ -104,7 +99,7 @@ class HomePage extends React.Component {
           </Page>
 
           {/* ============================================================== */}
-          <Page>
+          <Page hideAllPages={hideAllPages}>
             <PassportPhotoSection
               containerClassName="bg-emodus-orange"
               src="/assets/img/blue-emodus.svg"
@@ -118,7 +113,7 @@ class HomePage extends React.Component {
           </Page>
 
           {/* ============================================================== */}
-          <Page>
+          <Page hideAllPages={hideAllPages}>
             <PassportPhotoSection
               containerClassName="bg-emodus-purple bg-emodus-background bg-no-repeat bg-bottom"
               src="/assets/img/red-emodus.svg"
@@ -135,12 +130,21 @@ class HomePage extends React.Component {
           </Page>
 
           {/* ============================================================== */}
-          <Page>
+          <Page
+            hideAllPages={!this.state.showStory && hideAllPages}
+            data-section="story"
+          >
             <ImageSection
-              containerClassName="bg-emodus-white pt-8"
+              containerClassName={`bg-emodus-white pt-8 ${
+                this.state.showStory ? '!hidden' : ''
+              }`}
               src="/assets/img/modus-lisa.svg"
             />
-            <SimpleSection className="bg-emodus-white !text-base text-center">
+            <SimpleSection
+              className={`bg-emodus-white !text-base text-center ${
+                this.state.showStory ? 'hidden' : 'block'
+              }`}
+            >
               <Fragment>
                 <p className="mb-6">
                   "The collection emerged through different interdisciplinary
@@ -150,15 +154,95 @@ class HomePage extends React.Component {
                 <a
                   className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
                   href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.setState({ showStory: true }, () => {
+                      setTimeout(() => {
+                        [
+                          ...document.querySelectorAll(
+                            '[data-section="story"]',
+                          ),
+                        ][0].scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    });
+                  }}
                 >
                   discover the story
                 </a>
               </Fragment>
             </SimpleSection>
+            <SimpleSection
+              id="here"
+              className={`snap-start ${
+                this.state.showStory ? 'block' : 'hidden'
+              }`}
+            >
+              <p className="text-center text-3xl mb-5">the story</p>
+              <p className="text-base mb-5">
+                "The collection emerged through different interdisciplinary
+                research such as sociology, psychology, neuroscience and
+                chromatics or simply color science.
+              </p>
+              <p className="text-base mb-5">
+                Early stages of the Emodus got a spark from the work of Dr. Paul
+                Ekman and Dr. Eve Ekman's "The Atlas of Emotions" which was
+                commissioned by the Dalai Lama?? and from the work of Plutchik's
+                "Wheel of Emotions"
+              </p>
+              <p className="text-base mb-5">
+                Most psychological research has classified six facial
+                expressions which correspond to distinct universal emotions:
+                joy, surprise, anger, disgust, sadness and fear. It is
+                interesting to note that four out of the six are negative
+                emotions.
+              </p>
+              <img className="h-[5rem]" src="/assets/img/story-colors.svg" />
+              <p className="text-base mb-5">
+                After analyzing hundreds of facial expressions randomly from
+                commercials, Hollywood productions and news from mainstream
+                media we have generalized the cues for facial expressions to 90
+                types and each is defined as a "modus" trait which becomes
+                sub-state of six core emotions.
+              </p>
+              <p className="text-base mb-5">
+                Picking up the right colors was another side of the research.
+                Colors can make us feel happy or sad, and they can make us feel
+                hungry or relaxed. These reactions are rooted in psychological
+                effects, biological conditioning and cultural imprinting. Did
+                you know that a painting hanging in your bedroom with bad color
+                combinations can make you sick? Since we don't want to be sued
+                for our color taste, color tones and colors to be used were
+                selected by the opinion of a colorist.
+              </p>
+              <p className="text-base mb-5">
+                In order to narrate optimum facial expressions, we utilized only
+                the most expressive organs: eyes with a supporting mouth; this
+                proves that to express one's modus it doesn't need a nose, ear,
+                facial hair or even accessories! Even though not all expressions
+                are inter-culturally comprehensible, we believe everyone will
+                find one part of self in the modus collection, since facial
+                expressions of emotions are part of our evolutionary history and
+                are a biologically innate ability."
+              </p>
+              <a
+                className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  this.setState({ showStory: false }, () => {
+                    [
+                      ...document.querySelectorAll('[data-section="types"]'),
+                    ][0].scrollIntoView({ behavior: 'smooth' });
+                  });
+                }}
+              >
+                end of the story
+              </a>
+            </SimpleSection>
           </Page>
 
           {/* ============================================================== */}
-          <Page>
+          <Page hideAllPages={hideAllPages} data-section="types">
             <p className="font-fredokaOne text-4xl pt-6 text-center mb-6">
               the types
             </p>
@@ -211,8 +295,15 @@ class HomePage extends React.Component {
           </Page>
 
           {/* ============================================================== */}
-          <Page>
-            <SimpleSection className="bg-discover-background !text-base bg-cover flex flex-col justify-end">
+          <Page
+            hideAllPages={!this.state.showRoadmap && hideAllPages}
+            data-section="roadmap"
+          >
+            <SimpleSection
+              className={`bg-discover-background !text-base bg-cover ${
+                this.state.showRoadmap ? 'hidden' : 'flex'
+              } flex-col justify-end`}
+            >
               <Fragment>
                 <p className="mb-6">
                   We believe that some NFT art collections should pass "we're
@@ -226,7 +317,15 @@ class HomePage extends React.Component {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    this.setState({ showRoadmap: true });
+                    this.setState({ showRoadmap: true }, () => {
+                      setTimeout(() => {
+                        [
+                          ...document.querySelectorAll(
+                            '[data-section="roadmap"]',
+                          ),
+                        ][0].scrollIntoView({ behavior: 'smooth' });
+                      }, 200);
+                    });
                   }}
                 >
                   discover the roadmap
@@ -234,10 +333,9 @@ class HomePage extends React.Component {
               </Fragment>
             </SimpleSection>
             <SimpleSection
-              id="here"
-              className="snap-start"
-              data-section="roadmap"
-              style={{ display: this.state.showRoadmap ? 'block' : 'none' }}
+              className={`snap-start ${
+                this.state.showRoadmap ? 'block' : 'hidden'
+              }`}
             >
               <p className="text-center text-3xl mb-5">the roadmap</p>
               <p className="text-base mb-5">
@@ -281,8 +379,26 @@ class HomePage extends React.Component {
                 charity work or giving back to holders or to be used for other
                 ideas that will be designated with the community.
               </p>
+              <a
+                className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  this.setState({ showRoadmap: false }, () => {
+                    [
+                      ...document.querySelectorAll('[data-section="mint"]'),
+                    ][0].scrollIntoView({ behavior: 'smooth' });
+                  });
+                }}
+              >
+                let's mint!
+              </a>
             </SimpleSection>
-            <SimpleSection className="snap-start bg-emodus-white text-center py-12">
+            <SimpleSection
+              className={`snap-start bg-emodus-white text-center py-12 ${
+                this.state.showRoadmap ? 'hidden' : 'block'
+              }`}
+            >
               <div className="flex">
                 <a href="https://venividinft.io">
                   <img
@@ -324,8 +440,11 @@ class Page extends React.Component {
     return (
       <div
         id={this.props.id}
-        className="snap-start h-full flex flex-col"
+        className={`snap-start h-full ${
+          this.props.hideAllPages ? 'hidden' : 'flex'
+        } flex-col`}
         data-type="page"
+        data-section={this.props['data-section']}
       >
         {this.props.children}
       </div>
@@ -366,12 +485,11 @@ class PassportPhotoSection extends React.Component {
 
 class SimpleSection extends React.Component {
   render() {
-    const { className, style, children, ...restProps } = this.props;
+    const { className, children, ...restProps } = this.props;
 
     return (
       <div
         className={`px-6 py-6 font-fredokaOne text-2xl ${className || ''}`}
-        style={style}
         {...restProps}
       >
         {children}
