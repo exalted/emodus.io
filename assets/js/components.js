@@ -427,13 +427,21 @@ class HomePage extends React.Component {
 // Responsible for laying out its components and scroll snapping
 class Page extends React.Component {
   render() {
-    if (this.props.children.at(-1).props.containerClassName) {
-      this.props.children.at(-1).props.containerClassName = `flex-grow ${
-        this.props.children.at(-1).props.containerClassName
+    if (
+      this.props.children[this.props.children.length - 1].props
+        .containerClassName
+    ) {
+      this.props.children[
+        this.props.children.length - 1
+      ].props.containerClassName = `flex-grow ${
+        this.props.children[this.props.children.length - 1].props
+          .containerClassName
       }`;
     } else {
-      this.props.children.at(-1).props.className = `flex-grow ${
-        this.props.children.at(-1).props.className
+      this.props.children[
+        this.props.children.length - 1
+      ].props.className = `flex-grow ${
+        this.props.children[this.props.children.length - 1].props.className
       }`;
     }
 
