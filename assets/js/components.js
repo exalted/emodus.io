@@ -172,7 +172,6 @@ class HomePage extends React.Component {
               </Fragment>
             </SimpleSection>
             <SimpleSection
-              id="here"
               className={`snap-start ${
                 this.state.showStory ? 'block' : 'hidden'
               }`}
@@ -300,9 +299,9 @@ class HomePage extends React.Component {
             data-section="roadmap"
           >
             <SimpleSection
-              className={`bg-discover-background !text-base bg-cover ${
+              className={`flex-grow bg-discover-background !text-base bg-cover ${
                 this.state.showRoadmap ? 'hidden' : 'flex'
-              } flex-col justify-end`}
+              } flex-col justify-center`}
             >
               <Fragment>
                 <p className="mb-6">
@@ -313,7 +312,7 @@ class HomePage extends React.Component {
                   cliché.
                 </p>
                 <a
-                  className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                  className="block w-fit mx-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
@@ -395,7 +394,7 @@ class HomePage extends React.Component {
               </a>
             </SimpleSection>
             <SimpleSection
-              className={`snap-start bg-emodus-white text-center py-12 ${
+              className={`!flex-grow-0 snap-start bg-emodus-white text-center py-12 ${
                 this.state.showRoadmap ? 'hidden' : 'block'
               }`}
             >
