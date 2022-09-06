@@ -188,6 +188,7 @@ class HomePage extends React.Component {
                 commissioned by the Dalai Lama?? and from the work of Plutchik's
                 "Wheel of Emotions"
               </p>
+              <img src="/assets/img/story-emotions.jpg" />
               <p className="text-base mb-5">
                 Most psychological research has classified six facial
                 expressions which correspond to distinct universal emotions:
@@ -195,7 +196,7 @@ class HomePage extends React.Component {
                 interesting to note that four out of the six are negative
                 emotions.
               </p>
-              <img className="h-[5rem]" src="/assets/img/story-colors.svg" />
+              <img className="my-6" src="/assets/img/story-colors.svg" />
               <p className="text-base mb-5">
                 After analyzing hundreds of facial expressions randomly from
                 commercials, Hollywood productions and news from mainstream
@@ -223,6 +224,7 @@ class HomePage extends React.Component {
                 expressions of emotions are part of our evolutionary history and
                 are a biologically innate ability."
               </p>
+              <img className="my-8" src="/assets/img/story-scheme.svg" />
               <a
                 className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
                 href="#"
