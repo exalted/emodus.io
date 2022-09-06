@@ -250,42 +250,84 @@ class HomePage extends React.Component {
             <HorizontalSection
               types={[
                 {
-                  image: '/assets/img/type-1.png',
+                  images: [
+                    '/assets/img/type-1.png',
+                    '/assets/img/type-2.png',
+                    '/assets/img/type-3.png',
+                    '/assets/img/type-4.png',
+                    '/assets/img/type-5.png',
+                    '/assets/img/type-6.png',
+                  ],
                   title: 'modus one',
                   subtitle: '6 XXXX TBD',
                   description:
                     'Nunc mattis enim ut tellus elementum sagittis vitae et. Libero volutpat sed cras ornare arcu dui vivamus.',
                 },
                 {
-                  image: '/assets/img/type-2.png',
+                  images: [
+                    '/assets/img/type-1.png',
+                    '/assets/img/type-2.png',
+                    '/assets/img/type-3.png',
+                    '/assets/img/type-4.png',
+                    '/assets/img/type-5.png',
+                    '/assets/img/type-6.png',
+                  ],
                   title: 'modus two',
                   subtitle: '6 XXXX TBD',
                   description:
                     'In hac habitasse platea dictumst quisque sagittis purus. Hendrerit dolor magna eget est lorem ipsum dolor sit amet.',
                 },
                 {
-                  image: '/assets/img/type-3.png',
+                  images: [
+                    '/assets/img/type-1.png',
+                    '/assets/img/type-2.png',
+                    '/assets/img/type-3.png',
+                    '/assets/img/type-4.png',
+                    '/assets/img/type-5.png',
+                    '/assets/img/type-6.png',
+                  ],
                   title: 'modus three',
                   subtitle: '6 XXXX TBD',
                   description:
                     'Aliquet lectus proin nibh nisl condimentum id venenatis. Gravida cum sociis natoque penatibus et magnis dis parturient montes.',
                 },
                 {
-                  image: '/assets/img/type-4.png',
+                  images: [
+                    '/assets/img/type-1.png',
+                    '/assets/img/type-2.png',
+                    '/assets/img/type-3.png',
+                    '/assets/img/type-4.png',
+                    '/assets/img/type-5.png',
+                    '/assets/img/type-6.png',
+                  ],
                   title: 'modus four',
                   subtitle: '6 XXXX TBD',
                   description:
                     'Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Id nibh tortor id aliquet lectus proin nibh nisl.',
                 },
                 {
-                  image: '/assets/img/type-5.png',
+                  images: [
+                    '/assets/img/type-1.png',
+                    '/assets/img/type-2.png',
+                    '/assets/img/type-3.png',
+                    '/assets/img/type-4.png',
+                    '/assets/img/type-5.png',
+                    '/assets/img/type-6.png',
+                  ],
                   title: 'modus five',
                   subtitle: '6 XXXX TBD',
                   description:
                     'Nisl nunc mi ipsum faucibus vitae aliquet. Orci sagittis eu volutpat odio.',
                 },
                 {
-                  image: '/assets/img/type-6.png',
+                  images: [
+                    '/assets/img/type-1.png',
+                    '/assets/img/type-2.png',
+                    '/assets/img/type-3.png',
+                    '/assets/img/type-4.png',
+                    '/assets/img/type-5.png',
+                    '/assets/img/type-6.png',
+                  ],
                   title: 'modus X',
                   subtitle: '6 XXXX TBD',
                   description:
@@ -507,14 +549,56 @@ class SimpleSection extends React.Component {
   }
 }
 
+// Returns a random number between min (inclusive) and max (exclusive)
+function _randomIntInRange(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function _pickRandomFrom(items) {
+  return items[_randomIntInRange(0, items.length)];
+}
+
 class HorizontalSection extends React.Component {
+  _intervals = [];
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      images: this.props.types.map(({ images }) => _pickRandomFrom(images)),
+    };
+  }
+
+  componentDidMount() {
+    for (let index = 0; index < this.props.types.length; index++) {
+      this._intervals.push(
+        setInterval(() => {
+          const images = [...this.state.images];
+          images[index] = _pickRandomFrom(this.props.types[index].images);
+
+          this.setState({
+            images,
+          });
+        }, _randomIntInRange(2000, 3000)),
+      );
+    }
+  }
+
+  componentWillUnmount() {
+    for (const id of _intervals) {
+      clearInterval(id);
+    }
+  }
+
   render() {
     return (
       <div className="snap-mandatory snap-x flex overflow-x-auto h-full">
-        {this.props.types.map(({ image, title, subtitle, description }) => (
+        {this.props.types.map(({ title, subtitle, description }, index) => (
           <div className="snap-center shrink-0 w-2/3 first:ml-16 ml-10">
             <img
-              src={image}
+              src={this.state.images[index]}
               className="shadow-xl shadow-emodus-black/30 mb-6"
             />
             <p className="font-fredokaOne text-center text-3xl mb-1">{title}</p>
