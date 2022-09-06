@@ -5,6 +5,7 @@ const Fragment = React.Fragment;
 
 class HomePage extends React.Component {
   state = {
+    showMenu: false,
     showStory: false,
     showRoadmap: false,
   };
@@ -36,7 +37,11 @@ class HomePage extends React.Component {
             <img className="h-8" src="/assets/img/logo.svg" alt="Emodus logo" />
           </a>
 
-          <button>
+          <button
+            onClick={() => {
+              this.setState({ showMenu: !this.state.showMenu });
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-10 w-10"
@@ -50,9 +55,80 @@ class HomePage extends React.Component {
               />
             </svg>
           </button>
+
+          <ol
+            className={`${
+              this.state.showMenu ? 'fixed' : 'hidden'
+            } right-0 bg-emodus-white top-20 p-6 pt-0 text-center`}
+          >
+            <li className="mb-2">
+              <a
+                className="font-fredokaOne text-xl"
+                href="#"
+                onClick={() => {
+                  [
+                    ...document.querySelectorAll('[data-section="story"]'),
+                  ][0].scrollIntoView({ behavior: 'smooth' });
+                  this.setState({ showMenu: false });
+                }}
+              >
+                story
+              </a>
+            </li>
+            <li className="mb-2">
+              <a
+                className="font-fredokaOne text-xl"
+                href="#"
+                onClick={() => {
+                  [
+                    ...document.querySelectorAll('[data-section="types"]'),
+                  ][0].scrollIntoView({ behavior: 'smooth' });
+                  this.setState({ showMenu: false });
+                }}
+              >
+                types
+              </a>
+            </li>
+            <li className="mb-2">
+              <a
+                className="font-fredokaOne text-xl"
+                href="#"
+                onClick={() => {
+                  [
+                    ...document.querySelectorAll('[data-section="roadmap"]'),
+                  ][0].scrollIntoView({ behavior: 'smooth' });
+                  this.setState({ showMenu: false });
+                }}
+              >
+                roadmap
+              </a>
+            </li>
+            <li className="mb-2">
+              <a
+                className="font-fredokaOne text-xl"
+                href="#"
+                onClick={() => {
+                  alert('TODO');
+                }}
+              >
+                merch
+              </a>
+            </li>
+            <li>
+              <a
+                className="font-fredokaOne text-xl"
+                href="#"
+                onClick={() => {
+                  alert('TODO');
+                }}
+              >
+                team
+              </a>
+            </li>
+          </ol>
         </div>
 
-        <div className="snap-mandatory snap-y overflow-y-auto">
+        <div className="snap-mandatory snap-y overflow-y-auto -z-10">
           {/* ============================================================== */}
           <Page hideAllPages={hideAllPages} data-section="mint">
             <PassportPhotoSection
@@ -367,7 +443,7 @@ class HomePage extends React.Component {
                             '[data-section="roadmap"]',
                           ),
                         ][0].scrollIntoView({ behavior: 'smooth' });
-                      }, 200);
+                      }, 100);
                     });
                   }}
                 >
