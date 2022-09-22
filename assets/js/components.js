@@ -14,541 +14,632 @@ class HomePage extends React.Component {
     const hideAllPages = this.state.showStory || this.state.showRoadmap;
 
     return (
-      <div
-        className="flex flex-col h-screen"
-        style={{
-          // About `window.innerHeight`:
-          // 1. Makes `h-screen` uneffective
-          // 2. `h-screen` is the better approach, however it doesn't calculate the correct height on mobile browsers where, for example in iOS Safari, address bar will "cover" the page's contents
-          // 3. You should listen to `resize` events on `window` and reset this element's height
-          height: window.innerHeight,
-        }}
-      >
-        <div className="bg-emodus-white sticky top-0 flex items-center px-6 place-content-between shadow-lg shadow-emodus-black/20 h-20 flex-shrink-0">
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              [
-                ...document.querySelectorAll('[data-type="page"]'),
-              ][0].scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            <img className="h-8" src="/assets/img/logo.svg" alt="Emodus logo" />
-          </a>
-
-          <button
-            onClick={() => {
-              this.setState({ showMenu: !this.state.showMenu });
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-10 w-10"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+      <Fragment>
+        <div className="hidden sm:block">
+          {' '}
+          <div className="bg-emodus-white sticky top-0 flex items-center px-16 place-content-between h-32 flex-shrink-0">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                [
+                  ...document.querySelectorAll('[data-type="page"]'),
+                ][0].scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="-mt-3"
             >
-              <path
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
+              <img
+                className="h-14"
+                src="/assets/img/logo.svg"
+                alt="Emodus logo"
               />
-            </svg>
-          </button>
-
-          <ol
-            className={`${
-              this.state.showMenu ? 'fixed' : 'hidden'
-            } right-0 bg-emodus-white top-20 p-6 pt-0 text-center`}
-          >
-            <li className="mb-2">
-              <a
-                className="font-fredokaOne text-xl"
-                href="#"
-                onClick={() => {
-                  setTimeout(() => {
-                    [
-                      ...document.querySelectorAll('[data-section="story"]'),
-                    ][0].scrollIntoView({ behavior: 'smooth' });
-                  }, 100);
-                  this.setState({ showMenu: false });
-                }}
-              >
-                story
-              </a>
-            </li>
-            <li className="mb-2">
-              <a
-                className="font-fredokaOne text-xl"
-                href="#"
-                onClick={() => {
-                  setTimeout(() => {
-                    [
-                      ...document.querySelectorAll('[data-section="types"]'),
-                    ][0].scrollIntoView({ behavior: 'smooth' });
-                  }, 100);
-                  this.setState({ showMenu: false });
-                }}
-              >
-                types
-              </a>
-            </li>
-            <li className="mb-2">
-              <a
-                className="font-fredokaOne text-xl"
-                href="#"
-                onClick={() => {
-                  setTimeout(() => {
-                    [
-                      ...document.querySelectorAll('[data-section="roadmap"]'),
-                    ][0].scrollIntoView({ behavior: 'smooth' });
-                  }, 100);
-                  this.setState({ showMenu: false });
-                }}
-              >
-                roadmap
-              </a>
-            </li>
-            <li className="mb-2">
-              <a
-                className="font-fredokaOne text-xl"
-                href="#"
-                onClick={() => {
-                  alert('TODO');
-                }}
-              >
-                merch
-              </a>
-            </li>
-            <li>
-              <a
-                className="font-fredokaOne text-xl"
-                href="#"
-                onClick={() => {
-                  alert('TODO');
-                }}
-              >
-                team
-              </a>
-            </li>
-          </ol>
+            </a>
+            <ol className="flex font-fredoka font-semibold text-3xl">
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a
+                  href="#"
+                  onClick={() => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll('[data-section="story"]'),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                    this.setState({ showMenu: false });
+                  }}
+                >
+                  story
+                </a>
+              </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a
+                  href="#"
+                  onClick={() => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll('[data-section="types"]'),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                    this.setState({ showMenu: false });
+                  }}
+                >
+                  types
+                </a>
+              </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a
+                  href="#"
+                  onClick={() => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll(
+                          '[data-section="roadmap"]',
+                        ),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                    this.setState({ showMenu: false });
+                  }}
+                >
+                  roadmap
+                </a>
+              </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a
+                  href="#"
+                  onClick={() => {
+                    alert('TODO');
+                  }}
+                >
+                  merch
+                </a>
+              </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a
+                  href="#"
+                  onClick={() => {
+                    alert('TODO');
+                  }}
+                >
+                  team
+                </a>
+              </li>
+            </ol>
+          </div>
         </div>
 
         <div
-          className={`snap-mandatory snap-y overflow-y-auto ${
-            this.state.showMenu ? '-z-10' : ''
-          }`}
+          className="sm:hidden flex flex-col h-screen"
+          style={{
+            // About `window.innerHeight`:
+            // 1. Makes `h-screen` uneffective
+            // 2. `h-screen` is the better approach, however it doesn't calculate the correct height on mobile browsers where, for example in iOS Safari, address bar will "cover" the page's contents
+            // 3. You should listen to `resize` events on `window` and reset this element's height
+            height: window.innerHeight,
+          }}
         >
-          {/* ============================================================== */}
-          <Page hideAllPages={hideAllPages} data-section="mint">
-            <PassportPhotoSection
-              containerClassName="bg-emodus-yellow"
-              src="/assets/img/yellow-emodus.svg"
-            />
-            <SimpleSection className="bg-emodus-yellow">
-              <Fragment>
-                <p className="mb-6">
-                  Renaissance of meme art and a new "culture" phenomenon.
-                </p>
-                <button
-                  className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
-                  href="#"
-                >
-                  connect wallet
-                </button>
-              </Fragment>
-            </SimpleSection>
-          </Page>
-
-          {/* ============================================================== */}
-          <Page hideAllPages={hideAllPages}>
-            <PassportPhotoSection
-              containerClassName="bg-emodus-blue"
-              src="/assets/img/orange-emodus.svg"
-            />
-            <SimpleSection className="bg-emodus-blue">
-              emodus is the first PFP NFT to use only facial expressions of
-              emotion as it's distinguishing feature.
-            </SimpleSection>
-          </Page>
-
-          {/* ============================================================== */}
-          <Page hideAllPages={hideAllPages}>
-            <PassportPhotoSection
-              containerClassName="bg-emodus-red"
-              src="/assets/img/green-emodus.svg"
-            />
-            <SimpleSection className="bg-emodus-red">
-              Forget laser eyes and mushroom hats, express yourself with
-              emotions which are the accessories of the soul!
-            </SimpleSection>
-          </Page>
-
-          {/* ============================================================== */}
-          <Page hideAllPages={hideAllPages}>
-            <PassportPhotoSection
-              containerClassName="bg-emodus-orange"
-              src="/assets/img/blue-emodus.svg"
-            />
-            <SimpleSection className="bg-emodus-orange !text-base">
-              A total of 3763 modus on Ethereum Blockchain, each one is unique
-              due to the combinations of different environments, body status',
-              core emotions and facial expressions which gives them their
-              "modus".
-            </SimpleSection>
-          </Page>
-
-          {/* ============================================================== */}
-          <Page hideAllPages={hideAllPages}>
-            <PassportPhotoSection
-              containerClassName="bg-emodus-purple bg-emodus-background bg-no-repeat bg-bottom"
-              src="/assets/img/red-emodus.svg"
-            />
-            <SimpleSection className="bg-emodus-purple !text-base">
-              <p className="mb-2">
-                One emodus may appear in a fearful environment with an angry
-                body status, but could have a disgusted expression. meanwhile, a
-                very rare type which we call the "modus extremus" may burst with
-                joy entirely.
-              </p>
-              <p>Sounds like a regular Monday isn't it ?</p>
-            </SimpleSection>
-          </Page>
-
-          {/* ============================================================== */}
-          <Page
-            hideAllPages={!this.state.showStory && hideAllPages}
-            data-section="story"
-          >
-            <ImageSection
-              containerClassName={`bg-emodus-white pt-8 ${
-                this.state.showStory ? '!hidden' : ''
-              }`}
-              src="/assets/img/modus-lisa.svg"
-            />
-            <SimpleSection
-              className={`bg-emodus-white !text-base text-center ${
-                this.state.showStory ? 'hidden' : 'block'
-              }`}
+          <div className="bg-emodus-white sticky top-0 flex items-center px-6 place-content-between shadow-lg shadow-emodus-black/20 h-20 flex-shrink-0">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                [
+                  ...document.querySelectorAll('[data-type="page"]'),
+                ][0].scrollIntoView({ behavior: 'smooth' });
+              }}
             >
-              <Fragment>
-                <p className="mb-6">
-                  "The collection emerged through different interdisciplinary
-                  research such as sociology, psychology, neuroscience, and
-                  chromatics or simply color science."
+              <img
+                className="h-8"
+                src="/assets/img/logo.svg"
+                alt="Emodus logo"
+              />
+            </a>
+            <button
+              onClick={() => {
+                this.setState({ showMenu: !this.state.showMenu });
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <ol
+              className={`${
+                this.state.showMenu ? 'fixed' : 'hidden'
+              } right-0 bg-emodus-white top-20 p-6 pt-0 text-center`}
+            >
+              <li className="mb-2">
+                <a
+                  className="font-fredokaOne text-xl"
+                  href="#"
+                  onClick={() => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll('[data-section="story"]'),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                    this.setState({ showMenu: false });
+                  }}
+                >
+                  story
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  className="font-fredokaOne text-xl"
+                  href="#"
+                  onClick={() => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll('[data-section="types"]'),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                    this.setState({ showMenu: false });
+                  }}
+                >
+                  types
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  className="font-fredokaOne text-xl"
+                  href="#"
+                  onClick={() => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll(
+                          '[data-section="roadmap"]',
+                        ),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                    this.setState({ showMenu: false });
+                  }}
+                >
+                  roadmap
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  className="font-fredokaOne text-xl"
+                  href="#"
+                  onClick={() => {
+                    alert('TODO');
+                  }}
+                >
+                  merch
+                </a>
+              </li>
+              <li>
+                <a
+                  className="font-fredokaOne text-xl"
+                  href="#"
+                  onClick={() => {
+                    alert('TODO');
+                  }}
+                >
+                  team
+                </a>
+              </li>
+            </ol>
+          </div>
+          <div
+            className={`snap-mandatory snap-y overflow-y-auto ${
+              this.state.showMenu ? '-z-10' : ''
+            }`}
+          >
+            {/* ============================================================== */}
+            <Page hideAllPages={hideAllPages} data-section="mint">
+              <PassportPhotoSection
+                containerClassName="bg-emodus-yellow"
+                src="/assets/img/yellow-emodus.svg"
+              />
+              <SimpleSection className="bg-emodus-yellow">
+                <Fragment>
+                  <p className="mb-6">
+                    Renaissance of meme art and a new "culture" phenomenon.
+                  </p>
+                  <button
+                    className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                    href="#"
+                  >
+                    connect wallet
+                  </button>
+                </Fragment>
+              </SimpleSection>
+            </Page>
+            {/* ============================================================== */}
+            <Page hideAllPages={hideAllPages}>
+              <PassportPhotoSection
+                containerClassName="bg-emodus-blue"
+                src="/assets/img/orange-emodus.svg"
+              />
+              <SimpleSection className="bg-emodus-blue">
+                emodus is the first PFP NFT to use only facial expressions of
+                emotion as it's distinguishing feature.
+              </SimpleSection>
+            </Page>
+            {/* ============================================================== */}
+            <Page hideAllPages={hideAllPages}>
+              <PassportPhotoSection
+                containerClassName="bg-emodus-red"
+                src="/assets/img/green-emodus.svg"
+              />
+              <SimpleSection className="bg-emodus-red">
+                Forget laser eyes and mushroom hats, express yourself with
+                emotions which are the accessories of the soul!
+              </SimpleSection>
+            </Page>
+            {/* ============================================================== */}
+            <Page hideAllPages={hideAllPages}>
+              <PassportPhotoSection
+                containerClassName="bg-emodus-orange"
+                src="/assets/img/blue-emodus.svg"
+              />
+              <SimpleSection className="bg-emodus-orange !text-base">
+                A total of 3763 modus on Ethereum Blockchain, each one is unique
+                due to the combinations of different environments, body status',
+                core emotions and facial expressions which gives them their
+                "modus".
+              </SimpleSection>
+            </Page>
+            {/* ============================================================== */}
+            <Page hideAllPages={hideAllPages}>
+              <PassportPhotoSection
+                containerClassName="bg-emodus-purple bg-emodus-background bg-no-repeat bg-bottom"
+                src="/assets/img/red-emodus.svg"
+              />
+              <SimpleSection className="bg-emodus-purple !text-base">
+                <p className="mb-2">
+                  One emodus may appear in a fearful environment with an angry
+                  body status, but could have a disgusted expression. meanwhile,
+                  a very rare type which we call the "modus extremus" may burst
+                  with joy entirely.
                 </p>
+                <p>Sounds like a regular Monday isn't it ?</p>
+              </SimpleSection>
+            </Page>
+            {/* ============================================================== */}
+            <Page
+              hideAllPages={!this.state.showStory && hideAllPages}
+              data-section="story"
+            >
+              <ImageSection
+                containerClassName={`bg-emodus-white pt-8 ${
+                  this.state.showStory ? '!hidden' : ''
+                }`}
+                src="/assets/img/modus-lisa.svg"
+              />
+              <SimpleSection
+                className={`bg-emodus-white !text-base text-center ${
+                  this.state.showStory ? 'hidden' : 'block'
+                }`}
+              >
+                <Fragment>
+                  <p className="mb-6">
+                    "The collection emerged through different interdisciplinary
+                    research such as sociology, psychology, neuroscience, and
+                    chromatics or simply color science."
+                  </p>
+                  <a
+                    className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      this.setState({ showStory: true }, () => {
+                        setTimeout(() => {
+                          [
+                            ...document.querySelectorAll(
+                              '[data-section="story"]',
+                            ),
+                          ][0].scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                      });
+                    }}
+                  >
+                    discover the story
+                  </a>
+                </Fragment>
+              </SimpleSection>
+              <SimpleSection
+                className={`snap-start ${
+                  this.state.showStory ? 'block' : 'hidden'
+                }`}
+              >
+                <p className="text-center text-3xl mb-5">the story</p>
+                <p className="text-base mb-5">
+                  "The collection emerged through different interdisciplinary
+                  research such as sociology, psychology, neuroscience and
+                  chromatics or simply color science.
+                </p>
+                <p className="text-base mb-5">
+                  Early stages of the Emodus got a spark from the work of Dr.
+                  Paul Ekman and Dr. Eve Ekman's "The Atlas of Emotions" which
+                  was commissioned by the Dalai Lama?? and from the work of
+                  Plutchik's "Wheel of Emotions"
+                </p>
+                <img src="/assets/img/story-emotions.jpg" />
+                <p className="text-base mb-5">
+                  Most psychological research has classified six facial
+                  expressions which correspond to distinct universal emotions:
+                  joy, surprise, anger, disgust, sadness and fear. It is
+                  interesting to note that four out of the six are negative
+                  emotions.
+                </p>
+                <img className="my-6" src="/assets/img/story-colors.svg" />
+                <p className="text-base mb-5">
+                  After analyzing hundreds of facial expressions randomly from
+                  commercials, Hollywood productions and news from mainstream
+                  media we have generalized the cues for facial expressions to
+                  90 types and each is defined as a "modus" trait which becomes
+                  sub-state of six core emotions.
+                </p>
+                <p className="text-base mb-5">
+                  Picking up the right colors was another side of the research.
+                  Colors can make us feel happy or sad, and they can make us
+                  feel hungry or relaxed. These reactions are rooted in
+                  psychological effects, biological conditioning and cultural
+                  imprinting. Did you know that a painting hanging in your
+                  bedroom with bad color combinations can make you sick? Since
+                  we don't want to be sued for our color taste, color tones and
+                  colors to be used were selected by the opinion of a colorist.
+                </p>
+                <p className="text-base mb-5">
+                  In order to narrate optimum facial expressions, we utilized
+                  only the most expressive organs: eyes with a supporting mouth;
+                  this proves that to express one's modus it doesn't need a
+                  nose, ear, facial hair or even accessories! Even though not
+                  all expressions are inter-culturally comprehensible, we
+                  believe everyone will find one part of self in the modus
+                  collection, since facial expressions of emotions are part of
+                  our evolutionary history and are a biologically innate
+                  ability."
+                </p>
+                <img className="my-8" src="/assets/img/story-scheme.svg" />
                 <a
                   className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    this.setState({ showStory: true }, () => {
-                      setTimeout(() => {
-                        [
-                          ...document.querySelectorAll(
-                            '[data-section="story"]',
-                          ),
-                        ][0].scrollIntoView({ behavior: 'smooth' });
-                      }, 100);
+                    this.setState({ showStory: false }, () => {
+                      [
+                        ...document.querySelectorAll('[data-section="types"]'),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
                     });
                   }}
                 >
-                  discover the story
+                  end of the story
                 </a>
-              </Fragment>
-            </SimpleSection>
-            <SimpleSection
-              className={`snap-start ${
-                this.state.showStory ? 'block' : 'hidden'
-              }`}
+              </SimpleSection>
+            </Page>
+            {/* ============================================================== */}
+            <Page hideAllPages={hideAllPages} data-section="types">
+              <p className="font-fredokaOne text-4xl pt-6 text-center mb-6">
+                the types
+              </p>
+              <HorizontalSection
+                types={[
+                  {
+                    images: [
+                      '/assets/img/type-1.png',
+                      '/assets/img/type-2.png',
+                      '/assets/img/type-3.png',
+                      '/assets/img/type-4.png',
+                      '/assets/img/type-5.png',
+                      '/assets/img/type-6.png',
+                    ],
+                    title: 'modus one',
+                    subtitle: '6 XXXX TBD',
+                    description:
+                      'Nunc mattis enim ut tellus elementum sagittis vitae et. Libero volutpat sed cras ornare arcu dui vivamus.',
+                  },
+                  {
+                    images: [
+                      '/assets/img/type-1.png',
+                      '/assets/img/type-2.png',
+                      '/assets/img/type-3.png',
+                      '/assets/img/type-4.png',
+                      '/assets/img/type-5.png',
+                      '/assets/img/type-6.png',
+                    ],
+                    title: 'modus two',
+                    subtitle: '6 XXXX TBD',
+                    description:
+                      'In hac habitasse platea dictumst quisque sagittis purus. Hendrerit dolor magna eget est lorem ipsum dolor sit amet.',
+                  },
+                  {
+                    images: [
+                      '/assets/img/type-1.png',
+                      '/assets/img/type-2.png',
+                      '/assets/img/type-3.png',
+                      '/assets/img/type-4.png',
+                      '/assets/img/type-5.png',
+                      '/assets/img/type-6.png',
+                    ],
+                    title: 'modus three',
+                    subtitle: '6 XXXX TBD',
+                    description:
+                      'Aliquet lectus proin nibh nisl condimentum id venenatis. Gravida cum sociis natoque penatibus et magnis dis parturient montes.',
+                  },
+                  {
+                    images: [
+                      '/assets/img/type-1.png',
+                      '/assets/img/type-2.png',
+                      '/assets/img/type-3.png',
+                      '/assets/img/type-4.png',
+                      '/assets/img/type-5.png',
+                      '/assets/img/type-6.png',
+                    ],
+                    title: 'modus four',
+                    subtitle: '6 XXXX TBD',
+                    description:
+                      'Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Id nibh tortor id aliquet lectus proin nibh nisl.',
+                  },
+                  {
+                    images: [
+                      '/assets/img/type-1.png',
+                      '/assets/img/type-2.png',
+                      '/assets/img/type-3.png',
+                      '/assets/img/type-4.png',
+                      '/assets/img/type-5.png',
+                      '/assets/img/type-6.png',
+                    ],
+                    title: 'modus five',
+                    subtitle: '6 XXXX TBD',
+                    description:
+                      'Nisl nunc mi ipsum faucibus vitae aliquet. Orci sagittis eu volutpat odio.',
+                  },
+                  {
+                    images: [
+                      '/assets/img/type-1.png',
+                      '/assets/img/type-2.png',
+                      '/assets/img/type-3.png',
+                      '/assets/img/type-4.png',
+                      '/assets/img/type-5.png',
+                      '/assets/img/type-6.png',
+                    ],
+                    title: 'modus X',
+                    subtitle: '6 XXXX TBD',
+                    description:
+                      'Risus viverra adipiscing at in tellus integer feugiat scelerisque varius. Duis ut diam quam nulla porttitor massa id neque aliquam.',
+                  },
+                ]}
+              />
+            </Page>
+            {/* ============================================================== */}
+            <Page
+              hideAllPages={!this.state.showRoadmap && hideAllPages}
+              data-section="roadmap"
             >
-              <p className="text-center text-3xl mb-5">the story</p>
-              <p className="text-base mb-5">
-                "The collection emerged through different interdisciplinary
-                research such as sociology, psychology, neuroscience and
-                chromatics or simply color science.
-              </p>
-              <p className="text-base mb-5">
-                Early stages of the Emodus got a spark from the work of Dr. Paul
-                Ekman and Dr. Eve Ekman's "The Atlas of Emotions" which was
-                commissioned by the Dalai Lama?? and from the work of Plutchik's
-                "Wheel of Emotions"
-              </p>
-              <img src="/assets/img/story-emotions.jpg" />
-              <p className="text-base mb-5">
-                Most psychological research has classified six facial
-                expressions which correspond to distinct universal emotions:
-                joy, surprise, anger, disgust, sadness and fear. It is
-                interesting to note that four out of the six are negative
-                emotions.
-              </p>
-              <img className="my-6" src="/assets/img/story-colors.svg" />
-              <p className="text-base mb-5">
-                After analyzing hundreds of facial expressions randomly from
-                commercials, Hollywood productions and news from mainstream
-                media we have generalized the cues for facial expressions to 90
-                types and each is defined as a "modus" trait which becomes
-                sub-state of six core emotions.
-              </p>
-              <p className="text-base mb-5">
-                Picking up the right colors was another side of the research.
-                Colors can make us feel happy or sad, and they can make us feel
-                hungry or relaxed. These reactions are rooted in psychological
-                effects, biological conditioning and cultural imprinting. Did
-                you know that a painting hanging in your bedroom with bad color
-                combinations can make you sick? Since we don't want to be sued
-                for our color taste, color tones and colors to be used were
-                selected by the opinion of a colorist.
-              </p>
-              <p className="text-base mb-5">
-                In order to narrate optimum facial expressions, we utilized only
-                the most expressive organs: eyes with a supporting mouth; this
-                proves that to express one's modus it doesn't need a nose, ear,
-                facial hair or even accessories! Even though not all expressions
-                are inter-culturally comprehensible, we believe everyone will
-                find one part of self in the modus collection, since facial
-                expressions of emotions are part of our evolutionary history and
-                are a biologically innate ability."
-              </p>
-              <img className="my-8" src="/assets/img/story-scheme.svg" />
-              <a
-                className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({ showStory: false }, () => {
-                    [
-                      ...document.querySelectorAll('[data-section="types"]'),
-                    ][0].scrollIntoView({ behavior: 'smooth' });
-                  });
-                }}
+              <SimpleSection
+                className={`flex-grow bg-discover-background !text-base bg-cover ${
+                  this.state.showRoadmap ? 'hidden' : 'flex'
+                } flex-col justify-center`}
               >
-                end of the story
-              </a>
-            </SimpleSection>
-          </Page>
-
-          {/* ============================================================== */}
-          <Page hideAllPages={hideAllPages} data-section="types">
-            <p className="font-fredokaOne text-4xl pt-6 text-center mb-6">
-              the types
-            </p>
-            <HorizontalSection
-              types={[
-                {
-                  images: [
-                    '/assets/img/type-1.png',
-                    '/assets/img/type-2.png',
-                    '/assets/img/type-3.png',
-                    '/assets/img/type-4.png',
-                    '/assets/img/type-5.png',
-                    '/assets/img/type-6.png',
-                  ],
-                  title: 'modus one',
-                  subtitle: '6 XXXX TBD',
-                  description:
-                    'Nunc mattis enim ut tellus elementum sagittis vitae et. Libero volutpat sed cras ornare arcu dui vivamus.',
-                },
-                {
-                  images: [
-                    '/assets/img/type-1.png',
-                    '/assets/img/type-2.png',
-                    '/assets/img/type-3.png',
-                    '/assets/img/type-4.png',
-                    '/assets/img/type-5.png',
-                    '/assets/img/type-6.png',
-                  ],
-                  title: 'modus two',
-                  subtitle: '6 XXXX TBD',
-                  description:
-                    'In hac habitasse platea dictumst quisque sagittis purus. Hendrerit dolor magna eget est lorem ipsum dolor sit amet.',
-                },
-                {
-                  images: [
-                    '/assets/img/type-1.png',
-                    '/assets/img/type-2.png',
-                    '/assets/img/type-3.png',
-                    '/assets/img/type-4.png',
-                    '/assets/img/type-5.png',
-                    '/assets/img/type-6.png',
-                  ],
-                  title: 'modus three',
-                  subtitle: '6 XXXX TBD',
-                  description:
-                    'Aliquet lectus proin nibh nisl condimentum id venenatis. Gravida cum sociis natoque penatibus et magnis dis parturient montes.',
-                },
-                {
-                  images: [
-                    '/assets/img/type-1.png',
-                    '/assets/img/type-2.png',
-                    '/assets/img/type-3.png',
-                    '/assets/img/type-4.png',
-                    '/assets/img/type-5.png',
-                    '/assets/img/type-6.png',
-                  ],
-                  title: 'modus four',
-                  subtitle: '6 XXXX TBD',
-                  description:
-                    'Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Id nibh tortor id aliquet lectus proin nibh nisl.',
-                },
-                {
-                  images: [
-                    '/assets/img/type-1.png',
-                    '/assets/img/type-2.png',
-                    '/assets/img/type-3.png',
-                    '/assets/img/type-4.png',
-                    '/assets/img/type-5.png',
-                    '/assets/img/type-6.png',
-                  ],
-                  title: 'modus five',
-                  subtitle: '6 XXXX TBD',
-                  description:
-                    'Nisl nunc mi ipsum faucibus vitae aliquet. Orci sagittis eu volutpat odio.',
-                },
-                {
-                  images: [
-                    '/assets/img/type-1.png',
-                    '/assets/img/type-2.png',
-                    '/assets/img/type-3.png',
-                    '/assets/img/type-4.png',
-                    '/assets/img/type-5.png',
-                    '/assets/img/type-6.png',
-                  ],
-                  title: 'modus X',
-                  subtitle: '6 XXXX TBD',
-                  description:
-                    'Risus viverra adipiscing at in tellus integer feugiat scelerisque varius. Duis ut diam quam nulla porttitor massa id neque aliquam.',
-                },
-              ]}
-            />
-          </Page>
-
-          {/* ============================================================== */}
-          <Page
-            hideAllPages={!this.state.showRoadmap && hideAllPages}
-            data-section="roadmap"
-          >
-            <SimpleSection
-              className={`flex-grow bg-discover-background !text-base bg-cover ${
-                this.state.showRoadmap ? 'hidden' : 'flex'
-              } flex-col justify-center`}
-            >
-              <Fragment>
-                <p className="mb-6">
+                <Fragment>
+                  <p className="mb-6">
+                    We believe that some NFT art collections should pass "we're
+                    building a community so strong we will overthrow the
+                    government" or "we'll be in the metaverse, matrix, and also
+                    on mars" or "this is the best return of investment
+                    ponzi-nomics" cliché.
+                  </p>
+                  <a
+                    className="block w-fit mx-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      this.setState({ showRoadmap: true }, () => {
+                        setTimeout(() => {
+                          [
+                            ...document.querySelectorAll(
+                              '[data-section="roadmap"]',
+                            ),
+                          ][0].scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                      });
+                    }}
+                  >
+                    discover the roadmap
+                  </a>
+                </Fragment>
+              </SimpleSection>
+              <SimpleSection
+                className={`snap-start ${
+                  this.state.showRoadmap ? 'block' : 'hidden'
+                }`}
+              >
+                <p className="text-center text-3xl mb-5">the roadmap</p>
+                <p className="text-base mb-5">
                   We believe that some NFT art collections should pass "we're
                   building a community so strong we will overthrow the
-                  government" or "we'll be in the metaverse, matrix, and also on
+                  government" or "we'll be in the metaverse, matrix and also on
                   mars" or "this is the best return of investment ponzi-nomics"
                   cliché.
                 </p>
+                <p className="text-base mb-5">
+                  Emodus collection consists of wiselv created tiny pieces of
+                  artwork with a little bit of science, philosophy and humor
+                  sauce on it. Obviously not a project that copying blue chip
+                  strategies with clip art. It's unfortunate that the crowd that
+                  has gravitated to it, is not interested in digital art, and
+                  has treated it like a casino.
+                </p>
+                <p className="text-base mb-5">
+                  Why we don't prefer to start this with whitelist because
+                  whitelist grinding is an absolutely horrifying experience that
+                  creates an artificial community and promotes in-genuine
+                  conversations and connections. These artificial communities
+                  are fragile and easily destructible.
+                </p>
+                <p className="text-base mb-5">
+                  We hope to create a culture that inherently reflects the core
+                  values of a true community. A community where people truly
+                  feel connected with each other through these memes.
+                </p>
+                <p className="text-base mb-5">
+                  As VENI VIDI NFT, we are not going to over promise or
+                  underdeliver with our first project because we are intended to
+                  be in WEB3 in the long run with our holders' trust.
+                </p>
+                <p className="text-base mb-5">
+                  Therefore 6% of all sales will be kept in the wallet and after
+                  the collection has been sold, we will be quided by the holders
+                  of Emodus who saw the potential and liked the concept.
+                </p>
+                <p className="text-base mb-5">
+                  Holders will vote and decide whether the fund should be used
+                  for charity work or giving back to holders or to be used for
+                  other ideas that will be designated with the community.
+                </p>
                 <a
-                  className="block w-fit mx-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                  className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    this.setState({ showRoadmap: true }, () => {
-                      setTimeout(() => {
-                        [
-                          ...document.querySelectorAll(
-                            '[data-section="roadmap"]',
-                          ),
-                        ][0].scrollIntoView({ behavior: 'smooth' });
-                      }, 100);
+                    this.setState({ showRoadmap: false }, () => {
+                      [
+                        ...document.querySelectorAll('[data-section="mint"]'),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
                     });
                   }}
                 >
-                  discover the roadmap
+                  let's mint!
                 </a>
-              </Fragment>
-            </SimpleSection>
-            <SimpleSection
-              className={`snap-start ${
-                this.state.showRoadmap ? 'block' : 'hidden'
-              }`}
-            >
-              <p className="text-center text-3xl mb-5">the roadmap</p>
-              <p className="text-base mb-5">
-                We believe that some NFT art collections should pass "we're
-                building a community so strong we will overthrow the government"
-                or "we'll be in the metaverse, matrix and also on mars" or "this
-                is the best return of investment ponzi-nomics" cliché.
-              </p>
-              <p className="text-base mb-5">
-                Emodus collection consists of wiselv created tiny pieces of
-                artwork with a little bit of science, philosophy and humor sauce
-                on it. Obviously not a project that copying blue chip strategies
-                with clip art. It's unfortunate that the crowd that has
-                gravitated to it, is not interested in digital art, and has
-                treated it like a casino.
-              </p>
-              <p className="text-base mb-5">
-                Why we don't prefer to start this with whitelist because
-                whitelist grinding is an absolutely horrifying experience that
-                creates an artificial community and promotes in-genuine
-                conversations and connections. These artificial communities are
-                fragile and easily destructible.
-              </p>
-              <p className="text-base mb-5">
-                We hope to create a culture that inherently reflects the core
-                values of a true community. A community where people truly feel
-                connected with each other through these memes.
-              </p>
-              <p className="text-base mb-5">
-                As VENI VIDI NFT, we are not going to over promise or
-                underdeliver with our first project because we are intended to
-                be in WEB3 in the long run with our holders' trust.
-              </p>
-              <p className="text-base mb-5">
-                Therefore 6% of all sales will be kept in the wallet and after
-                the collection has been sold, we will be quided by the holders
-                of Emodus who saw the potential and liked the concept.
-              </p>
-              <p className="text-base mb-5">
-                Holders will vote and decide whether the fund should be used for
-                charity work or giving back to holders or to be used for other
-                ideas that will be designated with the community.
-              </p>
-              <a
-                className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({ showRoadmap: false }, () => {
-                    [
-                      ...document.querySelectorAll('[data-section="mint"]'),
-                    ][0].scrollIntoView({ behavior: 'smooth' });
-                  });
-                }}
+              </SimpleSection>
+              <SimpleSection
+                className={`!flex-grow-0 snap-start bg-emodus-white text-center py-12 ${
+                  this.state.showRoadmap ? 'hidden' : 'block'
+                }`}
               >
-                let's mint!
-              </a>
-            </SimpleSection>
-            <SimpleSection
-              className={`!flex-grow-0 snap-start bg-emodus-white text-center py-12 ${
-                this.state.showRoadmap ? 'hidden' : 'block'
-              }`}
-            >
-              <div className="flex">
-                <a href="https://venividinft.io">
-                  <img
-                    className="h-[5rem]"
-                    src="/assets/img/team-logo.svg"
-                    alt="Team logo"
-                  />
-                </a>
-                <div className="flex-grow text-right flex flex-col justify-end">
-                  <a className="text-[0.7rem]" href="https://venividinft.io">
-                    venividinft.io
+                <div className="flex">
+                  <a href="https://venividinft.io">
+                    <img
+                      className="h-[5rem]"
+                      src="/assets/img/team-logo.svg"
+                      alt="Team logo"
+                    />
                   </a>
-                  <p className="text-[0.5rem]">
-                    Copyright © 2022 VENI VIDI NFT | All Rights Reserved.
-                  </p>
+                  <div className="flex-grow text-right flex flex-col justify-end">
+                    <a className="text-[0.7rem]" href="https://venividinft.io">
+                      venividinft.io
+                    </a>
+                    <p className="text-[0.5rem]">
+                      Copyright © 2022 VENI VIDI NFT | All Rights Reserved.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </SimpleSection>
-          </Page>
+              </SimpleSection>
+            </Page>
+          </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }
