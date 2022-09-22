@@ -66,9 +66,11 @@ class HomePage extends React.Component {
                 className="font-fredokaOne text-xl"
                 href="#"
                 onClick={() => {
-                  [
-                    ...document.querySelectorAll('[data-section="story"]'),
-                  ][0].scrollIntoView({ behavior: 'smooth' });
+                  setTimeout(() => {
+                    [
+                      ...document.querySelectorAll('[data-section="story"]'),
+                    ][0].scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
                   this.setState({ showMenu: false });
                 }}
               >
@@ -80,9 +82,11 @@ class HomePage extends React.Component {
                 className="font-fredokaOne text-xl"
                 href="#"
                 onClick={() => {
-                  [
-                    ...document.querySelectorAll('[data-section="types"]'),
-                  ][0].scrollIntoView({ behavior: 'smooth' });
+                  setTimeout(() => {
+                    [
+                      ...document.querySelectorAll('[data-section="types"]'),
+                    ][0].scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
                   this.setState({ showMenu: false });
                 }}
               >
@@ -94,9 +98,11 @@ class HomePage extends React.Component {
                 className="font-fredokaOne text-xl"
                 href="#"
                 onClick={() => {
-                  [
-                    ...document.querySelectorAll('[data-section="roadmap"]'),
-                  ][0].scrollIntoView({ behavior: 'smooth' });
+                  setTimeout(() => {
+                    [
+                      ...document.querySelectorAll('[data-section="roadmap"]'),
+                    ][0].scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
                   this.setState({ showMenu: false });
                 }}
               >
@@ -128,7 +134,11 @@ class HomePage extends React.Component {
           </ol>
         </div>
 
-        <div className="snap-mandatory snap-y overflow-y-auto -z-10">
+        <div
+          className={`snap-mandatory snap-y overflow-y-auto ${
+            this.state.showMenu ? '-z-10' : ''
+          }`}
+        >
           {/* ============================================================== */}
           <Page hideAllPages={hideAllPages} data-section="mint">
             <PassportPhotoSection
