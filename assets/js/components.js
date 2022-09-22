@@ -15,8 +15,13 @@ class HomePage extends React.Component {
 
     return (
       <Fragment>
+        {/* ======================================================================== */}
+        {/* DESKTOP LAYOUT */}
+        {/* ======================================================================== */}
         <div className="hidden sm:block">
-          {' '}
+          {/* //////////////////////////////////////////////////////////////////////// */}
+          {/* /// DESKTOP MENU /////////////////////////////////////////////////////// */}
+          {/* //////////////////////////////////////////////////////////////////////// */}
           <div className="bg-emodus-white sticky top-0 flex items-center px-16 place-content-between h-32 flex-shrink-0">
             <a
               href="#"
@@ -104,8 +109,19 @@ class HomePage extends React.Component {
               </li>
             </ol>
           </div>
-        </div>
+          {/* END OF DESKTOP MENU */}
 
+          {/* ///////////////////////////////////////////////////////////////////////// */}
+          {/* /// DESKTOP PAGES /////////////////////////////////////////////////////// */}
+          {/* ///////////////////////////////////////////////////////////////////////// */}
+          <div>{/* TODO */}</div>
+          {/* END OF DESKTOP PAGES */}
+        </div>
+        {/* END OF DESKTOP LAYOUT */}
+
+        {/* ======================================================================== */}
+        {/* MOBILE LAYOUT */}
+        {/* ======================================================================== */}
         <div
           className="sm:hidden flex flex-col h-screen"
           style={{
@@ -116,6 +132,9 @@ class HomePage extends React.Component {
             height: window.innerHeight,
           }}
         >
+          {/* //////////////////////////////////////////////////////////////////////// */}
+          {/* /// MOBILE MENU //////////////////////////////////////////////////////// */}
+          {/* //////////////////////////////////////////////////////////////////////// */}
           <div className="bg-emodus-white sticky top-0 flex items-center px-6 place-content-between shadow-lg shadow-emodus-black/20 h-20 flex-shrink-0">
             <a
               href="#"
@@ -229,13 +248,18 @@ class HomePage extends React.Component {
               </li>
             </ol>
           </div>
+          {/* END OF MOBILE MENU */}
+
+          {/* //////////////////////////////////////////////////////////////////////// */}
+          {/* /// MOBILE PAGES /////////////////////////////////////////////////////// */}
+          {/* //////////////////////////////////////////////////////////////////////// */}
           <div
             className={`snap-mandatory snap-y overflow-y-auto ${
               this.state.showMenu ? '-z-10' : ''
             }`}
           >
-            {/* ============================================================== */}
-            <Page hideAllPages={hideAllPages} data-section="mint">
+            {/* ======================================================================== */}
+            <MobilePage hideAllPages={hideAllPages} data-section="mint">
               <PassportPhotoSection
                 containerClassName="bg-emodus-yellow"
                 src="/assets/img/yellow-emodus.svg"
@@ -253,9 +277,10 @@ class HomePage extends React.Component {
                   </button>
                 </Fragment>
               </SimpleSection>
-            </Page>
-            {/* ============================================================== */}
-            <Page hideAllPages={hideAllPages}>
+            </MobilePage>
+
+            {/* ======================================================================== */}
+            <MobilePage hideAllPages={hideAllPages}>
               <PassportPhotoSection
                 containerClassName="bg-emodus-blue"
                 src="/assets/img/orange-emodus.svg"
@@ -264,9 +289,10 @@ class HomePage extends React.Component {
                 emodus is the first PFP NFT to use only facial expressions of
                 emotion as it's distinguishing feature.
               </SimpleSection>
-            </Page>
-            {/* ============================================================== */}
-            <Page hideAllPages={hideAllPages}>
+            </MobilePage>
+
+            {/* ======================================================================== */}
+            <MobilePage hideAllPages={hideAllPages}>
               <PassportPhotoSection
                 containerClassName="bg-emodus-red"
                 src="/assets/img/green-emodus.svg"
@@ -275,9 +301,10 @@ class HomePage extends React.Component {
                 Forget laser eyes and mushroom hats, express yourself with
                 emotions which are the accessories of the soul!
               </SimpleSection>
-            </Page>
-            {/* ============================================================== */}
-            <Page hideAllPages={hideAllPages}>
+            </MobilePage>
+
+            {/* ======================================================================== */}
+            <MobilePage hideAllPages={hideAllPages}>
               <PassportPhotoSection
                 containerClassName="bg-emodus-orange"
                 src="/assets/img/blue-emodus.svg"
@@ -288,9 +315,10 @@ class HomePage extends React.Component {
                 core emotions and facial expressions which gives them their
                 "modus".
               </SimpleSection>
-            </Page>
-            {/* ============================================================== */}
-            <Page hideAllPages={hideAllPages}>
+            </MobilePage>
+
+            {/* ======================================================================== */}
+            <MobilePage hideAllPages={hideAllPages}>
               <PassportPhotoSection
                 containerClassName="bg-emodus-purple bg-emodus-background bg-no-repeat bg-bottom"
                 src="/assets/img/red-emodus.svg"
@@ -304,9 +332,10 @@ class HomePage extends React.Component {
                 </p>
                 <p>Sounds like a regular Monday isn't it ?</p>
               </SimpleSection>
-            </Page>
-            {/* ============================================================== */}
-            <Page
+            </MobilePage>
+
+            {/* ======================================================================== */}
+            <MobilePage
               hideAllPages={!this.state.showStory && hideAllPages}
               data-section="story"
             >
@@ -417,9 +446,10 @@ class HomePage extends React.Component {
                   end of the story
                 </a>
               </SimpleSection>
-            </Page>
-            {/* ============================================================== */}
-            <Page hideAllPages={hideAllPages} data-section="types">
+            </MobilePage>
+
+            {/* ======================================================================== */}
+            <MobilePage hideAllPages={hideAllPages} data-section="types">
               <p className="font-fredokaOne text-4xl pt-6 text-center mb-6">
                 the types
               </p>
@@ -511,9 +541,10 @@ class HomePage extends React.Component {
                   },
                 ]}
               />
-            </Page>
-            {/* ============================================================== */}
-            <Page
+            </MobilePage>
+
+            {/* ======================================================================== */}
+            <MobilePage
               hideAllPages={!this.state.showRoadmap && hideAllPages}
               data-section="roadmap"
             >
@@ -636,16 +667,18 @@ class HomePage extends React.Component {
                   </div>
                 </div>
               </SimpleSection>
-            </Page>
+            </MobilePage>
           </div>
+          {/* END OF MOBILE PAGES */}
         </div>
+        {/* END OF MOBILE LAYOUT */}
       </Fragment>
     );
   }
 }
 
 // Responsible for laying out its components and scroll snapping
-class Page extends React.Component {
+class MobilePage extends React.Component {
   render() {
     if (
       this.props.children[this.props.children.length - 1].props
