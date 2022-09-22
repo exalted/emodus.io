@@ -16,110 +16,6 @@ class HomePage extends React.Component {
     return (
       <Fragment>
         {/* ======================================================================== */}
-        {/* DESKTOP LAYOUT */}
-        {/* ======================================================================== */}
-        <div className="hidden sm:block">
-          {/* //////////////////////////////////////////////////////////////////////// */}
-          {/* /// DESKTOP MENU /////////////////////////////////////////////////////// */}
-          {/* //////////////////////////////////////////////////////////////////////// */}
-          <div className="bg-emodus-white sticky top-0 flex items-center px-16 place-content-between h-32 flex-shrink-0">
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                [
-                  ...document.querySelectorAll('[data-type="page"]'),
-                ][0].scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="-mt-3"
-            >
-              <img
-                className="h-14"
-                src="/assets/img/logo.svg"
-                alt="Emodus logo"
-              />
-            </a>
-            <ol className="flex font-fredoka font-semibold text-3xl">
-              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll('[data-section="story"]'),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                    this.setState({ showMenu: false });
-                  }}
-                >
-                  story
-                </a>
-              </li>
-              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll('[data-section="types"]'),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                    this.setState({ showMenu: false });
-                  }}
-                >
-                  types
-                </a>
-              </li>
-              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
-                <a
-                  href="#"
-                  onClick={() => {
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll(
-                          '[data-section="roadmap"]',
-                        ),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                    this.setState({ showMenu: false });
-                  }}
-                >
-                  roadmap
-                </a>
-              </li>
-              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
-                <a
-                  href="#"
-                  onClick={() => {
-                    alert('TODO');
-                  }}
-                >
-                  merch
-                </a>
-              </li>
-              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
-                <a
-                  href="#"
-                  onClick={() => {
-                    alert('TODO');
-                  }}
-                >
-                  team
-                </a>
-              </li>
-            </ol>
-          </div>
-          {/* END OF DESKTOP MENU */}
-
-          {/* ///////////////////////////////////////////////////////////////////////// */}
-          {/* /// DESKTOP PAGES /////////////////////////////////////////////////////// */}
-          {/* ///////////////////////////////////////////////////////////////////////// */}
-          <div>{/* TODO */}</div>
-          {/* END OF DESKTOP PAGES */}
-        </div>
-        {/* END OF DESKTOP LAYOUT */}
-
-        {/* ======================================================================== */}
         {/* MOBILE LAYOUT */}
         {/* ======================================================================== */}
         <div
@@ -259,12 +155,14 @@ class HomePage extends React.Component {
             }`}
           >
             {/* ======================================================================== */}
+            {/* Yellow */}
+            {/* ======================================================================== */}
             <MobilePage hideAllPages={hideAllPages} data-section="mint">
-              <PassportPhotoSection
+              <MobilePassportPhotoSection
                 containerClassName="bg-emodus-yellow"
                 src="/assets/img/yellow-emodus.svg"
               />
-              <SimpleSection className="bg-emodus-yellow">
+              <SimpleMobileSection className="bg-emodus-yellow">
                 <Fragment>
                   <p className="mb-6">
                     Renaissance of meme art and a new "culture" phenomenon.
@@ -276,54 +174,62 @@ class HomePage extends React.Component {
                     connect wallet
                   </button>
                 </Fragment>
-              </SimpleSection>
+              </SimpleMobileSection>
             </MobilePage>
 
             {/* ======================================================================== */}
+            {/* Blue */}
+            {/* ======================================================================== */}
             <MobilePage hideAllPages={hideAllPages}>
-              <PassportPhotoSection
+              <MobilePassportPhotoSection
                 containerClassName="bg-emodus-blue"
                 src="/assets/img/orange-emodus.svg"
               />
-              <SimpleSection className="bg-emodus-blue">
+              <SimpleMobileSection className="bg-emodus-blue">
                 emodus is the first PFP NFT to use only facial expressions of
                 emotion as it's distinguishing feature.
-              </SimpleSection>
+              </SimpleMobileSection>
             </MobilePage>
 
             {/* ======================================================================== */}
+            {/* Red */}
+            {/* ======================================================================== */}
             <MobilePage hideAllPages={hideAllPages}>
-              <PassportPhotoSection
+              <MobilePassportPhotoSection
                 containerClassName="bg-emodus-red"
                 src="/assets/img/green-emodus.svg"
               />
-              <SimpleSection className="bg-emodus-red">
+              <SimpleMobileSection className="bg-emodus-red">
                 Forget laser eyes and mushroom hats, express yourself with
                 emotions which are the accessories of the soul!
-              </SimpleSection>
+              </SimpleMobileSection>
             </MobilePage>
 
             {/* ======================================================================== */}
+            {/* Orange */}
+            {/* ======================================================================== */}
             <MobilePage hideAllPages={hideAllPages}>
-              <PassportPhotoSection
+              <MobilePassportPhotoSection
                 containerClassName="bg-emodus-orange"
                 src="/assets/img/blue-emodus.svg"
               />
-              <SimpleSection className="bg-emodus-orange !text-base">
+              <SimpleMobileSection className="bg-emodus-orange !text-base">
                 A total of 3763 modus on Ethereum Blockchain, each one is unique
                 due to the combinations of different environments, body status',
                 core emotions and facial expressions which gives them their
                 "modus".
-              </SimpleSection>
+              </SimpleMobileSection>
             </MobilePage>
 
             {/* ======================================================================== */}
+            {/* Purple */}
+            {/* ======================================================================== */}
             <MobilePage hideAllPages={hideAllPages}>
-              <PassportPhotoSection
+              <MobilePassportPhotoSection
                 containerClassName="bg-emodus-purple bg-emodus-background bg-no-repeat bg-bottom"
                 src="/assets/img/red-emodus.svg"
               />
-              <SimpleSection className="bg-emodus-purple !text-base">
+              <SimpleMobileSection className="bg-emodus-purple !text-base">
                 <p className="mb-2">
                   One emodus may appear in a fearful environment with an angry
                   body status, but could have a disgusted expression. meanwhile,
@@ -331,9 +237,11 @@ class HomePage extends React.Component {
                   with joy entirely.
                 </p>
                 <p>Sounds like a regular Monday isn't it ?</p>
-              </SimpleSection>
+              </SimpleMobileSection>
             </MobilePage>
 
+            {/* ======================================================================== */}
+            {/* Lisa & the story */}
             {/* ======================================================================== */}
             <MobilePage
               hideAllPages={!this.state.showStory && hideAllPages}
@@ -345,7 +253,7 @@ class HomePage extends React.Component {
                 }`}
                 src="/assets/img/modus-lisa.svg"
               />
-              <SimpleSection
+              <SimpleMobileSection
                 className={`bg-emodus-white !text-base text-center ${
                   this.state.showStory ? 'hidden' : 'block'
                 }`}
@@ -375,8 +283,8 @@ class HomePage extends React.Component {
                     discover the story
                   </a>
                 </Fragment>
-              </SimpleSection>
-              <SimpleSection
+              </SimpleMobileSection>
+              <SimpleMobileSection
                 className={`snap-start ${
                   this.state.showStory ? 'block' : 'hidden'
                 }`}
@@ -445,9 +353,11 @@ class HomePage extends React.Component {
                 >
                   end of the story
                 </a>
-              </SimpleSection>
+              </SimpleMobileSection>
             </MobilePage>
 
+            {/* ======================================================================== */}
+            {/* Types */}
             {/* ======================================================================== */}
             <MobilePage hideAllPages={hideAllPages} data-section="types">
               <p className="font-fredokaOne text-4xl pt-6 text-center mb-6">
@@ -544,11 +454,13 @@ class HomePage extends React.Component {
             </MobilePage>
 
             {/* ======================================================================== */}
+            {/* The roadmap */}
+            {/* ======================================================================== */}
             <MobilePage
               hideAllPages={!this.state.showRoadmap && hideAllPages}
               data-section="roadmap"
             >
-              <SimpleSection
+              <SimpleMobileSection
                 className={`flex-grow bg-discover-background !text-base bg-cover ${
                   this.state.showRoadmap ? 'hidden' : 'flex'
                 } flex-col justify-center`}
@@ -580,8 +492,8 @@ class HomePage extends React.Component {
                     discover the roadmap
                   </a>
                 </Fragment>
-              </SimpleSection>
-              <SimpleSection
+              </SimpleMobileSection>
+              <SimpleMobileSection
                 className={`snap-start ${
                   this.state.showRoadmap ? 'block' : 'hidden'
                 }`}
@@ -643,8 +555,8 @@ class HomePage extends React.Component {
                 >
                   let's mint!
                 </a>
-              </SimpleSection>
-              <SimpleSection
+              </SimpleMobileSection>
+              <SimpleMobileSection
                 className={`!flex-grow-0 snap-start bg-emodus-white text-center py-12 ${
                   this.state.showRoadmap ? 'hidden' : 'block'
                 }`}
@@ -666,13 +578,213 @@ class HomePage extends React.Component {
                     </p>
                   </div>
                 </div>
-              </SimpleSection>
+              </SimpleMobileSection>
             </MobilePage>
           </div>
           {/* END OF MOBILE PAGES */}
         </div>
         {/* END OF MOBILE LAYOUT */}
+
+        {/* ======================================================================== */}
+        {/* DESKTOP LAYOUT */}
+        {/* ======================================================================== */}
+        <div className="hidden sm:block">
+          {/* //////////////////////////////////////////////////////////////////////// */}
+          {/* /// DESKTOP MENU /////////////////////////////////////////////////////// */}
+          {/* //////////////////////////////////////////////////////////////////////// */}
+          <div className="bg-emodus-white sticky top-0 flex items-center px-16 place-content-between h-32 flex-shrink-0">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                [
+                  ...document.querySelectorAll('[data-type="page"]'),
+                ][0].scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="-mt-3"
+            >
+              <img
+                className="h-14"
+                src="/assets/img/logo.svg"
+                alt="Emodus logo"
+              />
+            </a>
+            <ol className="flex font-fredoka font-semibold text-3xl">
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a
+                  href="#"
+                  onClick={() => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll('[data-section="story"]'),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                    this.setState({ showMenu: false });
+                  }}
+                >
+                  story
+                </a>
+              </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a
+                  href="#"
+                  onClick={() => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll('[data-section="types"]'),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                    this.setState({ showMenu: false });
+                  }}
+                >
+                  types
+                </a>
+              </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a
+                  href="#"
+                  onClick={() => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll(
+                          '[data-section="roadmap"]',
+                        ),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                    this.setState({ showMenu: false });
+                  }}
+                >
+                  roadmap
+                </a>
+              </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a
+                  href="#"
+                  onClick={() => {
+                    alert('TODO');
+                  }}
+                >
+                  merch
+                </a>
+              </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a
+                  href="#"
+                  onClick={() => {
+                    alert('TODO');
+                  }}
+                >
+                  team
+                </a>
+              </li>
+            </ol>
+          </div>
+          {/* END OF DESKTOP MENU */}
+
+          {/* //////////////////////////////////////////////////////////////////////// */}
+          {/* /// DESKTOP PAGES ////////////////////////////////////////////////////// */}
+          {/* //////////////////////////////////////////////////////////////////////// */}
+
+          {/* ======================================================================== */}
+          {/* Yellow */}
+          {/* ======================================================================== */}
+          <DesktopPage className="bg-emodus-yellow" data-section="mint">
+            <DesktopPassportPhotoSection src="/assets/img/yellow-emodus.svg" />
+            <SimpleDesktopSection>
+              <Fragment>
+                <p className="mb-6">
+                  Renaissance of meme art and a new "culture" phenomenon.
+                </p>
+                <button
+                  className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                  href="#"
+                >
+                  connect wallet
+                </button>
+              </Fragment>
+            </SimpleDesktopSection>
+          </DesktopPage>
+
+          {/* ======================================================================== */}
+          {/* Blue */}
+          {/* ======================================================================== */}
+          <DesktopPage className="bg-emodus-blue flex-row-reverse">
+            <DesktopPassportPhotoSection src="/assets/img/orange-emodus.svg" />
+            <SimpleDesktopSection>
+              emodus is the first PFP NFT to use only facial expressions of
+              emotion as it's distinguishing feature.
+            </SimpleDesktopSection>
+          </DesktopPage>
+
+          {/* ======================================================================== */}
+          {/* Red */}
+          {/* ======================================================================== */}
+          <DesktopPage className="bg-emodus-red">
+            <DesktopPassportPhotoSection src="/assets/img/green-emodus.svg" />
+            <SimpleDesktopSection>
+              Forget laser eyes and mushroom hats, express yourself with
+              emotions which are the accessories of the soul!
+            </SimpleDesktopSection>
+          </DesktopPage>
+
+          {/* ======================================================================== */}
+          {/* Orange */}
+          {/* ======================================================================== */}
+          <DesktopPage className="bg-emodus-orange flex-row-reverse">
+            <DesktopPassportPhotoSection src="/assets/img/blue-emodus.svg" />
+            <SimpleDesktopSection>
+              A total of 3763 modus on Ethereum Blockchain, each one is unique
+              due to the combinations of different environments, body status',
+              core emotions and facial expressions which gives them their
+              "modus".
+            </SimpleDesktopSection>
+          </DesktopPage>
+
+          {/* ======================================================================== */}
+          {/* Purple */}
+          {/* ======================================================================== */}
+          <DesktopPage className="bg-emodus-purple">
+            <DesktopPassportPhotoSection src="/assets/img/red-emodus.svg" />
+            <SimpleDesktopSection>
+              <p className="mb-2">
+                One emodus may appear in a fearful environment with an angry
+                body status, but could have a disgusted expression. meanwhile, a
+                very rare type which we call the "modus extremus" may burst with
+                joy entirely.
+              </p>
+              <p>Sounds like a regular Monday isn't it ?</p>
+            </SimpleDesktopSection>
+          </DesktopPage>
+          {/* END OF DESKTOP PAGES */}
+        </div>
+        {/* END OF DESKTOP LAYOUT */}
       </Fragment>
+    );
+  }
+}
+
+class DesktopPage extends React.Component {
+  render() {
+    return (
+      <div className={`${this.props.className} flex`}>
+        {this.props.children}
+      </div>
+    );
+  }
+}
+
+class DesktopPassportPhotoSection extends React.Component {
+  render() {
+    return <img src={this.props.src} />;
+  }
+}
+
+class SimpleDesktopSection extends React.Component {
+  render() {
+    return (
+      <div className="flex flex-col justify-center font-fredokaOne text-5xl px-16">
+        {this.props.children}
+      </div>
     );
   }
 }
@@ -725,7 +837,7 @@ class ImageSection extends React.Component {
   }
 }
 
-class PassportPhotoSection extends React.Component {
+class MobilePassportPhotoSection extends React.Component {
   render() {
     return (
       <Fragment>
@@ -744,7 +856,7 @@ class PassportPhotoSection extends React.Component {
   }
 }
 
-class SimpleSection extends React.Component {
+class SimpleMobileSection extends React.Component {
   render() {
     const { className, children, ...restProps } = this.props;
 
