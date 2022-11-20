@@ -102,7 +102,7 @@ class HomePage extends React.Component {
                   types
                 </a>
               </li>
-              <li className="mb-2">
+              <li>
                 <a
                   className="font-fredokaOne text-xl"
                   href="#"
@@ -118,28 +118,6 @@ class HomePage extends React.Component {
                   }}
                 >
                   roadmap
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  className="font-fredokaOne text-xl"
-                  href="#"
-                  onClick={() => {
-                    alert('TODO');
-                  }}
-                >
-                  merch
-                </a>
-              </li>
-              <li>
-                <a
-                  className="font-fredokaOne text-xl"
-                  href="#"
-                  onClick={() => {
-                    alert('TODO');
-                  }}
-                >
-                  team
                 </a>
               </li>
             </ol>
@@ -879,26 +857,6 @@ class HomePage extends React.Component {
                   }}
                 >
                   roadmap
-                </a>
-              </li>
-              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
-                <a
-                  href="#"
-                  onClick={() => {
-                    alert('TODO');
-                  }}
-                >
-                  merch
-                </a>
-              </li>
-              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
-                <a
-                  href="#"
-                  onClick={() => {
-                    alert('TODO');
-                  }}
-                >
-                  team
                 </a>
               </li>
             </ol>
