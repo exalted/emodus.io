@@ -1065,7 +1065,7 @@ class HomePage extends React.Component {
           {/* ======================================================================== */}
           {/* Purple */}
           {/* ======================================================================== */}
-          <DesktopPage id="here" className="bg-emodus-purple">
+          <DesktopPage className="bg-emodus-purple">
             <DesktopPassportPhotoSection
               className="pl-24"
               src="/assets/img/red-emodus_desktop.png"
