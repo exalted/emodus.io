@@ -164,14 +164,16 @@ class HomePage extends React.Component {
                 src="/assets/img/yellow-emodus.svg"
               />
               <SimpleMobileSection className="bg-emodus-yellow">
-                <Fragment>
-                  <p className="mb-6">
+                <div
+                  className={
+                    this.state.connectWalletButtonVisible ? '' : 'hidden'
+                  }
+                >
+                  <p className="mb-4">
                     Renaissance of meme art and a new "culture" phenomenon.
                   </p>
                   <button
-                    className={`${
-                      this.state.connectWalletButtonVisible ? '' : 'hidden'
-                    } block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold`}
+                    className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold mb-2"
                     onClick={() => {
                       const component = this;
 
@@ -216,20 +218,14 @@ class HomePage extends React.Component {
                   >
                     connect wallet
                   </button>
-                  <p
-                    className={
-                      this.state.connectWalletButtonVisible ? '' : 'hidden'
-                    }
-                  >
+                  <p className="text-center text-lg -mb-2">
                     {this.state.totalSupply || '_'} minted so far. Grab yours!
                   </p>
-                  <div
-                    className={`${
-                      this.state.mintFormVisible ? '' : 'hidden'
-                    } flex`}
-                  >
+                </div>
+                <div className={this.state.mintFormVisible ? '' : 'hidden'}>
+                  <div className="flex justify-center mb-4">
                     <button
-                      className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                      className="mr-4 border-[5px] px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
                       disabled={this.state.mintButtonDisabled}
                       onClick={() => {
                         const component = this;
@@ -253,10 +249,14 @@ class HomePage extends React.Component {
                               ),
                             })
                             .then((_receipt) => {
-                              component.setState({ mintButtonDisabled: false });
+                              component.setState({
+                                mintButtonDisabled: false,
+                              });
                             })
                             .catch((error) => {
-                              component.setState({ mintButtonDisabled: false });
+                              component.setState({
+                                mintButtonDisabled: false,
+                              });
 
                               if (
                                 !error.code &&
@@ -294,45 +294,48 @@ class HomePage extends React.Component {
                     >
                       mint
                     </button>
-                    <button
-                      disabled={this.state.numberOfTokens === 1}
-                      onClick={() => {
-                        if (this.state.numberOfTokens === 1) {
-                          return;
-                        }
+                    <div className="flex">
+                      <button
+                        className="border-[5px] px-5 pb-1 rounded-full border-solid border-emodus-black mr-1"
+                        disabled={this.state.numberOfTokens === 1}
+                        onClick={() => {
+                          if (this.state.numberOfTokens === 1) {
+                            return;
+                          }
 
-                        this.setState({
-                          numberOfTokens: this.state.numberOfTokens - 1,
-                        });
-                      }}
-                    >
-                      -
-                    </button>
-                    <input
-                      type="number"
-                      min="1"
-                      max="10"
-                      value={this.state.numberOfTokens}
-                    ></input>
-                    <button
-                      disabled={this.state.numberOfTokens === 10}
-                      onClick={() => {
-                        if (this.state.numberOfTokens === 10) {
-                          return;
-                        }
+                          this.setState({
+                            numberOfTokens: this.state.numberOfTokens - 1,
+                          });
+                        }}
+                      >
+                        -
+                      </button>
+                      <input
+                        className="border-[5px] text-center py-2 w-16 border-solid rounded-none border-emodus-black mr-1"
+                        type="number"
+                        min="1"
+                        max="10"
+                        value={this.state.numberOfTokens}
+                      ></input>
+                      <button
+                        className="border-[5px] px-5 pb-1 rounded-full border-solid border-emodus-black"
+                        disabled={this.state.numberOfTokens === 10}
+                        onClick={() => {
+                          if (this.state.numberOfTokens === 10) {
+                            return;
+                          }
 
-                        this.setState({
-                          numberOfTokens: this.state.numberOfTokens + 1,
-                        });
-                      }}
-                    >
-                      +
-                    </button>
+                          this.setState({
+                            numberOfTokens: this.state.numberOfTokens + 1,
+                          });
+                        }}
+                      >
+                        +
+                      </button>
+                    </div>
                   </div>
-                  <p className={this.state.mintFormVisible ? '' : 'hidden'}>
-                    10 mints per wallet.
-                  </p>
-                </Fragment>
+                  <p className="text-center text-lg">10 mints per wallet.</p>
+                </div>
               </SimpleMobileSection>
             </MobilePage>
 
@@ -1159,7 +1162,7 @@ class MobilePassportPhotoSection extends React.Component {
           className={`relative h-screen overflow-hidden ${this.props.containerClassName}`}
         >
           <img
-            className="absolute max-w-none -top-[9999px] -bottom-[9999px] -right-[9999px] -left-[9999px] m-auto pl-14 h-[72vh]"
+            className="absolute max-w-none -top-[9999px] -bottom-[9999px] -right-[9999px] -left-[9999px] m-auto pl-14 h-[70vh]"
             src={this.props.src}
           />
           <div className="absolute -top-[9999px] -bottom-[9999px] -right-[9999px] -left-[9999px] m-auto bg-emodus-background bg-no-repeat bg-bottom h-full"></div>
@@ -1175,7 +1178,7 @@ class SimpleMobileSection extends React.Component {
 
     return (
       <div
-        className={`px-6 py-6 font-fredokaOne text-2xl ${className || ''}`}
+        className={`px-6 py-4 font-fredokaOne text-2xl ${className || ''}`}
         {...restProps}
       >
         {children}
