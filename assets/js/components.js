@@ -523,268 +523,7 @@ class HomePage extends React.Component {
               <p className="font-fredokaOne text-4xl pt-6 text-center mb-6">
                 the types
               </p>
-              <HorizontalSection
-                types={[
-                  {
-                    images: [
-                      '/assets/img/types/1-extremus/100.png',
-                      '/assets/img/types/1-extremus/200.png',
-                      '/assets/img/types/1-extremus/300.png',
-                      '/assets/img/types/1-extremus/400.png',
-                      '/assets/img/types/1-extremus/500.png',
-                      '/assets/img/types/1-extremus/600.png',
-                    ],
-                    title: 'Modus Extremus',
-                    subtitle: '6 pieces',
-                    description: 'Hyper-expressionists of six core emotions.',
-                  },
-                  {
-                    images: [
-                      '/assets/img/types/2-snap/0020.png',
-                      '/assets/img/types/2-snap/0022.png',
-                      '/assets/img/types/2-snap/0023.png',
-                      '/assets/img/types/2-snap/0024.png',
-                      '/assets/img/types/2-snap/0028.png',
-                      '/assets/img/types/2-snap/0030.png',
-                      '/assets/img/types/2-snap/0031.png',
-                      '/assets/img/types/2-snap/0033.png',
-                      '/assets/img/types/2-snap/0036.png',
-                      '/assets/img/types/2-snap/0040.png',
-                      '/assets/img/types/2-snap/0041.png',
-                      '/assets/img/types/2-snap/0042.png',
-                      '/assets/img/types/2-snap/0043.png',
-                      '/assets/img/types/2-snap/0044.png',
-                      '/assets/img/types/2-snap/0046.png',
-                      '/assets/img/types/2-snap/0050.png',
-                      '/assets/img/types/2-snap/0051.png',
-                      '/assets/img/types/2-snap/0052.png',
-                      '/assets/img/types/2-snap/0061.png',
-                      '/assets/img/types/2-snap/0062.png',
-                      '/assets/img/types/2-snap/0063.png',
-                      '/assets/img/types/2-snap/0064.png',
-                      '/assets/img/types/2-snap/0065.png',
-                      '/assets/img/types/2-snap/0066.png',
-                      '/assets/img/types/2-snap/0067.png',
-                      '/assets/img/types/2-snap/0068.png',
-                      '/assets/img/types/2-snap/0071.png',
-                      '/assets/img/types/2-snap/0072.png',
-                      '/assets/img/types/2-snap/0073.png',
-                      '/assets/img/types/2-snap/0074.png',
-                      '/assets/img/types/2-snap/0077.png',
-                      '/assets/img/types/2-snap/0078.png',
-                      '/assets/img/types/2-snap/0081.png',
-                      '/assets/img/types/2-snap/0084.png',
-                      '/assets/img/types/2-snap/0085.png',
-                      '/assets/img/types/2-snap/0086.png',
-                      '/assets/img/types/2-snap/0087.png',
-                      '/assets/img/types/2-snap/0088.png',
-                      '/assets/img/types/2-snap/0089.png',
-                      '/assets/img/types/2-snap/0090.png',
-                      '/assets/img/types/2-snap/0092.png',
-                      '/assets/img/types/2-snap/0094.png',
-                      '/assets/img/types/2-snap/0096.png',
-                      '/assets/img/types/2-snap/0098.png',
-                      '/assets/img/types/2-snap/0099.png',
-                      '/assets/img/types/2-snap/0101.png',
-                      '/assets/img/types/2-snap/0102.png',
-                      '/assets/img/types/2-snap/0105.png',
-                      '/assets/img/types/2-snap/0108.png',
-                      '/assets/img/types/2-snap/0109.png',
-                    ],
-                    title: 'Modus Snap',
-                    subtitle: '90 pieces',
-                    description:
-                      'Total harmony of facial expression matching with environment, body status’ and core emotion.',
-                  },
-                  {
-                    images: [
-                      '/assets/img/types/3-all-eyes-on-you/0254.png',
-                      '/assets/img/types/3-all-eyes-on-you/0260.png',
-                      '/assets/img/types/3-all-eyes-on-you/0281.png',
-                      '/assets/img/types/3-all-eyes-on-you/0283.png',
-                      '/assets/img/types/3-all-eyes-on-you/0286.png',
-                      '/assets/img/types/3-all-eyes-on-you/0293.png',
-                      '/assets/img/types/3-all-eyes-on-you/0302.png',
-                      '/assets/img/types/3-all-eyes-on-you/0303.png',
-                      '/assets/img/types/3-all-eyes-on-you/0309.png',
-                      '/assets/img/types/3-all-eyes-on-you/0314.png',
-                      '/assets/img/types/3-all-eyes-on-you/0325.png',
-                      '/assets/img/types/3-all-eyes-on-you/0336.png',
-                      '/assets/img/types/3-all-eyes-on-you/0342.png',
-                      '/assets/img/types/3-all-eyes-on-you/0346.png',
-                      '/assets/img/types/3-all-eyes-on-you/0353.png',
-                      '/assets/img/types/3-all-eyes-on-you/0357.png',
-                      '/assets/img/types/3-all-eyes-on-you/0365.png',
-                      '/assets/img/types/3-all-eyes-on-you/0390.png',
-                      '/assets/img/types/3-all-eyes-on-you/0394.png',
-                      '/assets/img/types/3-all-eyes-on-you/0413.png',
-                      '/assets/img/types/3-all-eyes-on-you/0423.png',
-                      '/assets/img/types/3-all-eyes-on-you/0424.png',
-                      '/assets/img/types/3-all-eyes-on-you/0446.png',
-                      '/assets/img/types/3-all-eyes-on-you/0463.png',
-                      '/assets/img/types/3-all-eyes-on-you/0468.png',
-                      '/assets/img/types/3-all-eyes-on-you/0476.png',
-                      '/assets/img/types/3-all-eyes-on-you/0485.png',
-                      '/assets/img/types/3-all-eyes-on-you/0494.png',
-                      '/assets/img/types/3-all-eyes-on-you/0515.png',
-                      '/assets/img/types/3-all-eyes-on-you/0526.png',
-                      '/assets/img/types/3-all-eyes-on-you/0560.png',
-                      '/assets/img/types/3-all-eyes-on-you/0575.png',
-                      '/assets/img/types/3-all-eyes-on-you/0589.png',
-                    ],
-                    title: 'All Eyes On You',
-                    subtitle: '360 pieces',
-                    description:
-                      'Every move you make, every vow you break, every smile you fake, every claim you stake, this Emodus will be watching you.',
-                  },
-                  {
-                    images: [
-                      '/assets/img/types/4-420/24.png',
-                      '/assets/img/types/4-420/42.png',
-                      '/assets/img/types/4-420/420.png',
-                      '/assets/img/types/4-420/1420.png',
-                      '/assets/img/types/4-420/2420.png',
-                      '/assets/img/types/4-420/3420.png',
-                    ],
-                    title: '420',
-                    subtitle: '6 pieces',
-                    description: `You can't spell healthcare without “THC”.`,
-                  },
-                  {
-                    images: [
-                      '/assets/img/types/5-rollin/0111.png',
-                      '/assets/img/types/5-rollin/0132.png',
-                      '/assets/img/types/5-rollin/0134.png',
-                      '/assets/img/types/5-rollin/0139.png',
-                      '/assets/img/types/5-rollin/0141.png',
-                      '/assets/img/types/5-rollin/0153.png',
-                      '/assets/img/types/5-rollin/0161.png',
-                      '/assets/img/types/5-rollin/0163.png',
-                      '/assets/img/types/5-rollin/0176.png',
-                      '/assets/img/types/5-rollin/0178.png',
-                      '/assets/img/types/5-rollin/0186.png',
-                      '/assets/img/types/5-rollin/0196.png',
-                      '/assets/img/types/5-rollin/0200.png',
-                      '/assets/img/types/5-rollin/0205.png',
-                      '/assets/img/types/5-rollin/0225.png',
-                      '/assets/img/types/5-rollin/0229.png',
-                      '/assets/img/types/5-rollin/0233.png',
-                      '/assets/img/types/5-rollin/0238.png',
-                      '/assets/img/types/5-rollin/0243.png',
-                      '/assets/img/types/5-rollin/0253.png',
-                    ],
-                    title: `Rollin'`,
-                    subtitle: '144 pieces',
-                    description: `"No, I don't believe short-term memory loss is real. Anyway, have we prepared the stoner types?"`,
-                  },
-                  {
-                    images: [
-                      '/assets/img/types/6-pride/0014.png',
-                      '/assets/img/types/6-pride/0015.png',
-                      '/assets/img/types/6-pride/0016.png',
-                      '/assets/img/types/6-pride/0017.png',
-                      '/assets/img/types/6-pride/0018.png',
-                      '/assets/img/types/6-pride/0019.png',
-                    ],
-                    title: 'Pride',
-                    subtitle: '6 pieces',
-                    description:
-                      'No matter who they are or whom they love, we are proud of every emodus.',
-                  },
-                  {
-                    images: [
-                      '/assets/img/types/7-genuine/0617.png',
-                      '/assets/img/types/7-genuine/0624.png',
-                      '/assets/img/types/7-genuine/0637.png',
-                      '/assets/img/types/7-genuine/0645.png',
-                      '/assets/img/types/7-genuine/0650.png',
-                      '/assets/img/types/7-genuine/0663.png',
-                      '/assets/img/types/7-genuine/0668.png',
-                      '/assets/img/types/7-genuine/0681.png',
-                      '/assets/img/types/7-genuine/0711.png',
-                      '/assets/img/types/7-genuine/0720.png',
-                      '/assets/img/types/7-genuine/0740.png',
-                      '/assets/img/types/7-genuine/0755.png',
-                      '/assets/img/types/7-genuine/0769.png',
-                      '/assets/img/types/7-genuine/1031.png',
-                      '/assets/img/types/7-genuine/1053.png',
-                      '/assets/img/types/7-genuine/1184.png',
-                      '/assets/img/types/7-genuine/1208.png',
-                      '/assets/img/types/7-genuine/1221.png',
-                      '/assets/img/types/7-genuine/1305.png',
-                      '/assets/img/types/7-genuine/1315.png',
-                      '/assets/img/types/7-genuine/1318.png',
-                      '/assets/img/types/7-genuine/1331.png',
-                      '/assets/img/types/7-genuine/1394.png',
-                      '/assets/img/types/7-genuine/1398.png',
-                      '/assets/img/types/7-genuine/1412.png',
-                      '/assets/img/types/7-genuine/1426.png',
-                      '/assets/img/types/7-genuine/1447.png',
-                      '/assets/img/types/7-genuine/1459.png',
-                      '/assets/img/types/7-genuine/1512.png',
-                      '/assets/img/types/7-genuine/1530.png',
-                      '/assets/img/types/7-genuine/1545.png',
-                      '/assets/img/types/7-genuine/1573.png',
-                      '/assets/img/types/7-genuine/1595.png',
-                      '/assets/img/types/7-genuine/1599.png',
-                      '/assets/img/types/7-genuine/1626.png',
-                      '/assets/img/types/7-genuine/1680.png',
-                      '/assets/img/types/7-genuine/1696.png',
-                      '/assets/img/types/7-genuine/1710.png',
-                      '/assets/img/types/7-genuine/1739.png',
-                      '/assets/img/types/7-genuine/1770.png',
-                      '/assets/img/types/7-genuine/1793.png',
-                      '/assets/img/types/7-genuine/1818.png',
-                      '/assets/img/types/7-genuine/1868.png',
-                      '/assets/img/types/7-genuine/1917.png',
-                      '/assets/img/types/7-genuine/1930.png',
-                      '/assets/img/types/7-genuine/2001.png',
-                      '/assets/img/types/7-genuine/2034.png',
-                      '/assets/img/types/7-genuine/2047.png',
-                      '/assets/img/types/7-genuine/2060.png',
-                      '/assets/img/types/7-genuine/2091.png',
-                      '/assets/img/types/7-genuine/2212.png',
-                      '/assets/img/types/7-genuine/2299.png',
-                      '/assets/img/types/7-genuine/2304.png',
-                      '/assets/img/types/7-genuine/2332.png',
-                      '/assets/img/types/7-genuine/2365.png',
-                      '/assets/img/types/7-genuine/2412.png',
-                      '/assets/img/types/7-genuine/2629.png',
-                      '/assets/img/types/7-genuine/2633.png',
-                      '/assets/img/types/7-genuine/2654.png',
-                      '/assets/img/types/7-genuine/2668.png',
-                      '/assets/img/types/7-genuine/2733.png',
-                      '/assets/img/types/7-genuine/2743.png',
-                      '/assets/img/types/7-genuine/2747.png',
-                      '/assets/img/types/7-genuine/2808.png',
-                      '/assets/img/types/7-genuine/2874.png',
-                      '/assets/img/types/7-genuine/2931.png',
-                      '/assets/img/types/7-genuine/2933.png',
-                      '/assets/img/types/7-genuine/3028.png',
-                      '/assets/img/types/7-genuine/3029.png',
-                      '/assets/img/types/7-genuine/3078.png',
-                      '/assets/img/types/7-genuine/3081.png',
-                      '/assets/img/types/7-genuine/3112.png',
-                      '/assets/img/types/7-genuine/3137.png',
-                      '/assets/img/types/7-genuine/3255.png',
-                      '/assets/img/types/7-genuine/3330.png',
-                      '/assets/img/types/7-genuine/3353.png',
-                      '/assets/img/types/7-genuine/3432.png',
-                      '/assets/img/types/7-genuine/3531.png',
-                      '/assets/img/types/7-genuine/3544.png',
-                      '/assets/img/types/7-genuine/3587.png',
-                      '/assets/img/types/7-genuine/3719.png',
-                      '/assets/img/types/7-genuine/3726.png',
-                      '/assets/img/types/7-genuine/3740.png',
-                      '/assets/img/types/7-genuine/3755.png',
-                    ],
-                    title: 'Genuine',
-                    subtitle: '3150 pieces',
-                    description:
-                      'Every genuine emodus is unique by the combinations of its traits.',
-                  },
-                ]}
-              />
+              <HorizontalSection />
             </MobilePage>
 
             {/* ======================================================================== */}
@@ -1008,7 +747,7 @@ class HomePage extends React.Component {
               className="pl-24"
               src="/assets/img/yellow-emodus_desktop.png"
             />
-            <SimpleDesktopSection className="pr-16">
+            <SimpleDesktopSection className="pr-16 text-5xl">
               <p className="mb-6">
                 Renaissance of meme art and a new "culture" phenomenon.
               </p>
@@ -1026,7 +765,7 @@ class HomePage extends React.Component {
               className="pr-24"
               src="/assets/img/orange-emodus_desktop.png"
             />
-            <SimpleDesktopSection className="pl-16">
+            <SimpleDesktopSection className="pl-16 text-5xl">
               emodus is the first PFP NFT to use only facial expressions of
               emotion as it's distinguishing feature.
             </SimpleDesktopSection>
@@ -1040,7 +779,7 @@ class HomePage extends React.Component {
               className="pl-24"
               src="/assets/img/green-emodus_desktop.png"
             />
-            <SimpleDesktopSection className="px-16">
+            <SimpleDesktopSection className="px-16 text-5xl">
               Forget laser eyes and mushroom hats, express yourself with
               emotions which are the accessories of the soul!
             </SimpleDesktopSection>
@@ -1054,7 +793,7 @@ class HomePage extends React.Component {
               className="pr-24"
               src="/assets/img/blue-emodus_desktop.png"
             />
-            <SimpleDesktopSection className="pl-16 pr-4">
+            <SimpleDesktopSection className="pl-16 pr-4 text-4xl">
               A total of 3763 modus on Ethereum Blockchain, each one is unique
               due to the combinations of different environments, body status',
               core emotions and facial expressions which gives them their
@@ -1070,7 +809,7 @@ class HomePage extends React.Component {
               className="pl-24"
               src="/assets/img/red-emodus_desktop.png"
             />
-            <SimpleDesktopSection className="pl-16 pr-4">
+            <SimpleDesktopSection className="pl-16 pr-4 text-4xl">
               <p className="mb-10">
                 One emodus may appear in a fearful environment with an angry
                 body status, but could have a disgusted expression. meanwhile, a
@@ -1078,6 +817,63 @@ class HomePage extends React.Component {
                 joy entirely.
               </p>
               <p>Sounds like a regular Monday isn't it ?</p>
+            </SimpleDesktopSection>
+          </DesktopPage>
+
+          {/* ======================================================================== */}
+          {/* Lisa & the story */}
+          {/* ======================================================================== */}
+          <DesktopPage className="bg-emodus-white border-b-[1px] border-gray-400">
+            <DesktopLisaPhotoSection />
+            <SimpleDesktopSection className="pl-16 pr-4 text-4xl">
+              <p className="mb-20">
+                "The collection emerged through different interdisciplinary
+                research such as sociology, psychology, neuroscience, and
+                chromatics or simply color science."
+              </p>
+              <a
+                className="block w-fit mx-auto border-8 px-10 pt-3 pb-4 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  this.setState({ showStory: true }, () => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll('[data-section="story"]'),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  });
+                }}
+              >
+                discover the story
+              </a>
+            </SimpleDesktopSection>
+          </DesktopPage>
+
+          {/* ======================================================================== */}
+          {/* Types */}
+          {/* ======================================================================== */}
+          <DesktopPage className="bg-emodus-white">
+            <DesktopTypesSection
+              onChange={({ title, subtitle, description }) => {
+                this.setState({
+                  selectedDesktopModusTitle: title,
+                  selectedDesktopModusSubtitle: subtitle,
+                  selectedDesktopModusDescription: description,
+                });
+              }}
+            />
+            <SimpleDesktopSection className="self-start mt-28 pr-16">
+              <p className="text-5xl mb-8">types:</p>
+              <p className="text-6xl mb-8">
+                {this.state.selectedDesktopModusTitle}
+              </p>
+              <p className="text-3xl mb-4">
+                {this.state.selectedDesktopModusSubtitle}
+              </p>
+              <p className="font-fredoka text-2xl">
+                {this.state.selectedDesktopModusDescription}
+              </p>
             </SimpleDesktopSection>
           </DesktopPage>
           {/* END OF DESKTOP PAGES */}
@@ -1111,11 +907,26 @@ class DesktopPassportPhotoSection extends React.Component {
   }
 }
 
+class DesktopLisaPhotoSection extends React.Component {
+  render() {
+    return (
+      <div
+        className={`${this.props.className} min-w-[600px] max-w-[600px] pl-20`}
+      >
+        <img
+          className="object-contain h-[160%] -mt-48"
+          src="/assets/img/modus-lisa.svg"
+        />
+      </div>
+    );
+  }
+}
+
 class SimpleDesktopSection extends React.Component {
   render() {
     return (
       <div
-        className={`${this.props.className} flex flex-col justify-center font-fredokaOne text-5xl`}
+        className={`${this.props.className} flex flex-col justify-center font-fredokaOne`}
       >
         {this.props.children}
       </div>
@@ -1223,13 +1034,13 @@ class HorizontalSection extends React.Component {
     super(props);
 
     this.state = {
-      images: this.props.types.map(({ images }) => _pickRandomFrom(images)),
+      images: EMODUS_TYPES.map(({ images }) => _pickRandomFrom(images)),
     };
   }
 
   componentDidMount() {
-    for (let index = 0; index < this.props.types.length; index++) {
-      const typeImages = this.props.types[index].images;
+    for (let index = 0; index < EMODUS_TYPES.length; index++) {
+      const typeImages = EMODUS_TYPES[index].images;
 
       this._intervals.push(
         setInterval(
@@ -1256,7 +1067,7 @@ class HorizontalSection extends React.Component {
   render() {
     return (
       <div className="snap-mandatory snap-x flex overflow-x-auto h-full">
-        {this.props.types.map(({ title, subtitle, description }, index) => (
+        {EMODUS_TYPES.map(({ title, subtitle, description }, index) => (
           <div className="snap-center shrink-0 w-2/3 first:ml-16 ml-10">
             <img
               src={this.state.images[index]}
@@ -1271,6 +1082,106 @@ class HorizontalSection extends React.Component {
         ))}
         {/* For the right-most margin, which otherwise would collapse: */}
         <div className="shrink-0 w-16" />
+      </div>
+    );
+  }
+}
+
+class DesktopTypesSection extends React.Component {
+  _intervals = [];
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      images: EMODUS_TYPES.map(({ images }) => _pickRandomFrom(images)),
+      selectedType: 0,
+    };
+  }
+
+  componentDidMount() {
+    this.props.onChange(EMODUS_TYPES[this.state.selectedType]);
+
+    for (let index = 0; index < EMODUS_TYPES.length; index++) {
+      const typeImages = EMODUS_TYPES[index].images;
+
+      this._intervals.push(
+        setInterval(
+          () => {
+            const images = [...this.state.images];
+            images[index] = _pickRandomFrom(typeImages);
+
+            this.setState({
+              images,
+            });
+          },
+          typeImages.length > 50 ? 1000 : _randomIntInRange(2000, 3000),
+        ),
+      );
+    }
+  }
+
+  componentWillUnmount() {
+    for (const id of _intervals) {
+      clearInterval(id);
+    }
+  }
+
+  render() {
+    return (
+      <div className="flex items-center">
+        <button
+          onClick={() => {
+            const selectedType =
+              (this.state.selectedType - 1) % EMODUS_TYPES.length;
+            this.setState({ selectedType });
+            this.props.onChange(EMODUS_TYPES[selectedType]);
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-24 w-24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.4}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <div className="w-[540px]">
+          <img
+            className="object-contain shadow-2xl shadow-emodus-black/60"
+            src={this.state.images[this.state.selectedType]}
+          />
+        </div>
+        <button
+          onClick={() => {
+            const selectedType =
+              (this.state.selectedType + 1) % EMODUS_TYPES.length;
+            this.setState({ selectedType });
+            this.props.onChange(EMODUS_TYPES[selectedType]);
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-24 w-24"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.4}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
       </div>
     );
   }
@@ -1832,3 +1743,264 @@ function _contract() {
     '0x2003279E298D2860e84cCdDAAEaf0778113BA5fb',
   );
 }
+
+const EMODUS_TYPES = [
+  {
+    images: [
+      '/assets/img/types/1-extremus/100.png',
+      '/assets/img/types/1-extremus/200.png',
+      '/assets/img/types/1-extremus/300.png',
+      '/assets/img/types/1-extremus/400.png',
+      '/assets/img/types/1-extremus/500.png',
+      '/assets/img/types/1-extremus/600.png',
+    ],
+    title: 'Modus Extremus',
+    subtitle: '6 pieces',
+    description: 'Hyper-expressionists of six core emotions.',
+  },
+  {
+    images: [
+      '/assets/img/types/2-snap/0020.png',
+      '/assets/img/types/2-snap/0022.png',
+      '/assets/img/types/2-snap/0023.png',
+      '/assets/img/types/2-snap/0024.png',
+      '/assets/img/types/2-snap/0028.png',
+      '/assets/img/types/2-snap/0030.png',
+      '/assets/img/types/2-snap/0031.png',
+      '/assets/img/types/2-snap/0033.png',
+      '/assets/img/types/2-snap/0036.png',
+      '/assets/img/types/2-snap/0040.png',
+      '/assets/img/types/2-snap/0041.png',
+      '/assets/img/types/2-snap/0042.png',
+      '/assets/img/types/2-snap/0043.png',
+      '/assets/img/types/2-snap/0044.png',
+      '/assets/img/types/2-snap/0046.png',
+      '/assets/img/types/2-snap/0050.png',
+      '/assets/img/types/2-snap/0051.png',
+      '/assets/img/types/2-snap/0052.png',
+      '/assets/img/types/2-snap/0061.png',
+      '/assets/img/types/2-snap/0062.png',
+      '/assets/img/types/2-snap/0063.png',
+      '/assets/img/types/2-snap/0064.png',
+      '/assets/img/types/2-snap/0065.png',
+      '/assets/img/types/2-snap/0066.png',
+      '/assets/img/types/2-snap/0067.png',
+      '/assets/img/types/2-snap/0068.png',
+      '/assets/img/types/2-snap/0071.png',
+      '/assets/img/types/2-snap/0072.png',
+      '/assets/img/types/2-snap/0073.png',
+      '/assets/img/types/2-snap/0074.png',
+      '/assets/img/types/2-snap/0077.png',
+      '/assets/img/types/2-snap/0078.png',
+      '/assets/img/types/2-snap/0081.png',
+      '/assets/img/types/2-snap/0084.png',
+      '/assets/img/types/2-snap/0085.png',
+      '/assets/img/types/2-snap/0086.png',
+      '/assets/img/types/2-snap/0087.png',
+      '/assets/img/types/2-snap/0088.png',
+      '/assets/img/types/2-snap/0089.png',
+      '/assets/img/types/2-snap/0090.png',
+      '/assets/img/types/2-snap/0092.png',
+      '/assets/img/types/2-snap/0094.png',
+      '/assets/img/types/2-snap/0096.png',
+      '/assets/img/types/2-snap/0098.png',
+      '/assets/img/types/2-snap/0099.png',
+      '/assets/img/types/2-snap/0101.png',
+      '/assets/img/types/2-snap/0102.png',
+      '/assets/img/types/2-snap/0105.png',
+      '/assets/img/types/2-snap/0108.png',
+      '/assets/img/types/2-snap/0109.png',
+    ],
+    title: 'Modus Snap',
+    subtitle: '90 pieces',
+    description:
+      'Total harmony of facial expression matching with environment, body status’ and core emotion.',
+  },
+  {
+    images: [
+      '/assets/img/types/3-all-eyes-on-you/0254.png',
+      '/assets/img/types/3-all-eyes-on-you/0260.png',
+      '/assets/img/types/3-all-eyes-on-you/0281.png',
+      '/assets/img/types/3-all-eyes-on-you/0283.png',
+      '/assets/img/types/3-all-eyes-on-you/0286.png',
+      '/assets/img/types/3-all-eyes-on-you/0293.png',
+      '/assets/img/types/3-all-eyes-on-you/0302.png',
+      '/assets/img/types/3-all-eyes-on-you/0303.png',
+      '/assets/img/types/3-all-eyes-on-you/0309.png',
+      '/assets/img/types/3-all-eyes-on-you/0314.png',
+      '/assets/img/types/3-all-eyes-on-you/0325.png',
+      '/assets/img/types/3-all-eyes-on-you/0336.png',
+      '/assets/img/types/3-all-eyes-on-you/0342.png',
+      '/assets/img/types/3-all-eyes-on-you/0346.png',
+      '/assets/img/types/3-all-eyes-on-you/0353.png',
+      '/assets/img/types/3-all-eyes-on-you/0357.png',
+      '/assets/img/types/3-all-eyes-on-you/0365.png',
+      '/assets/img/types/3-all-eyes-on-you/0390.png',
+      '/assets/img/types/3-all-eyes-on-you/0394.png',
+      '/assets/img/types/3-all-eyes-on-you/0413.png',
+      '/assets/img/types/3-all-eyes-on-you/0423.png',
+      '/assets/img/types/3-all-eyes-on-you/0424.png',
+      '/assets/img/types/3-all-eyes-on-you/0446.png',
+      '/assets/img/types/3-all-eyes-on-you/0463.png',
+      '/assets/img/types/3-all-eyes-on-you/0468.png',
+      '/assets/img/types/3-all-eyes-on-you/0476.png',
+      '/assets/img/types/3-all-eyes-on-you/0485.png',
+      '/assets/img/types/3-all-eyes-on-you/0494.png',
+      '/assets/img/types/3-all-eyes-on-you/0515.png',
+      '/assets/img/types/3-all-eyes-on-you/0526.png',
+      '/assets/img/types/3-all-eyes-on-you/0560.png',
+      '/assets/img/types/3-all-eyes-on-you/0575.png',
+      '/assets/img/types/3-all-eyes-on-you/0589.png',
+    ],
+    title: 'All Eyes On You',
+    subtitle: '360 pieces',
+    description:
+      'Every move you make, every vow you break, every smile you fake, every claim you stake, this Emodus will be watching you.',
+  },
+  {
+    images: [
+      '/assets/img/types/4-420/24.png',
+      '/assets/img/types/4-420/42.png',
+      '/assets/img/types/4-420/420.png',
+      '/assets/img/types/4-420/1420.png',
+      '/assets/img/types/4-420/2420.png',
+      '/assets/img/types/4-420/3420.png',
+    ],
+    title: '420',
+    subtitle: '6 pieces',
+    description: `You can't spell healthcare without “THC”.`,
+  },
+  {
+    images: [
+      '/assets/img/types/5-rollin/0111.png',
+      '/assets/img/types/5-rollin/0132.png',
+      '/assets/img/types/5-rollin/0134.png',
+      '/assets/img/types/5-rollin/0139.png',
+      '/assets/img/types/5-rollin/0141.png',
+      '/assets/img/types/5-rollin/0153.png',
+      '/assets/img/types/5-rollin/0161.png',
+      '/assets/img/types/5-rollin/0163.png',
+      '/assets/img/types/5-rollin/0176.png',
+      '/assets/img/types/5-rollin/0178.png',
+      '/assets/img/types/5-rollin/0186.png',
+      '/assets/img/types/5-rollin/0196.png',
+      '/assets/img/types/5-rollin/0200.png',
+      '/assets/img/types/5-rollin/0205.png',
+      '/assets/img/types/5-rollin/0225.png',
+      '/assets/img/types/5-rollin/0229.png',
+      '/assets/img/types/5-rollin/0233.png',
+      '/assets/img/types/5-rollin/0238.png',
+      '/assets/img/types/5-rollin/0243.png',
+      '/assets/img/types/5-rollin/0253.png',
+    ],
+    title: `Rollin'`,
+    subtitle: '144 pieces',
+    description: `"No, I don't believe short-term memory loss is real. Anyway, have we prepared the stoner types?"`,
+  },
+  {
+    images: [
+      '/assets/img/types/6-pride/0014.png',
+      '/assets/img/types/6-pride/0015.png',
+      '/assets/img/types/6-pride/0016.png',
+      '/assets/img/types/6-pride/0017.png',
+      '/assets/img/types/6-pride/0018.png',
+      '/assets/img/types/6-pride/0019.png',
+    ],
+    title: 'Pride',
+    subtitle: '6 pieces',
+    description:
+      'No matter who they are or whom they love, we are proud of every emodus.',
+  },
+  {
+    images: [
+      '/assets/img/types/7-genuine/0617.png',
+      '/assets/img/types/7-genuine/0624.png',
+      '/assets/img/types/7-genuine/0637.png',
+      '/assets/img/types/7-genuine/0645.png',
+      '/assets/img/types/7-genuine/0650.png',
+      '/assets/img/types/7-genuine/0663.png',
+      '/assets/img/types/7-genuine/0668.png',
+      '/assets/img/types/7-genuine/0681.png',
+      '/assets/img/types/7-genuine/0711.png',
+      '/assets/img/types/7-genuine/0720.png',
+      '/assets/img/types/7-genuine/0740.png',
+      '/assets/img/types/7-genuine/0755.png',
+      '/assets/img/types/7-genuine/0769.png',
+      '/assets/img/types/7-genuine/1031.png',
+      '/assets/img/types/7-genuine/1053.png',
+      '/assets/img/types/7-genuine/1184.png',
+      '/assets/img/types/7-genuine/1208.png',
+      '/assets/img/types/7-genuine/1221.png',
+      '/assets/img/types/7-genuine/1305.png',
+      '/assets/img/types/7-genuine/1315.png',
+      '/assets/img/types/7-genuine/1318.png',
+      '/assets/img/types/7-genuine/1331.png',
+      '/assets/img/types/7-genuine/1394.png',
+      '/assets/img/types/7-genuine/1398.png',
+      '/assets/img/types/7-genuine/1412.png',
+      '/assets/img/types/7-genuine/1426.png',
+      '/assets/img/types/7-genuine/1447.png',
+      '/assets/img/types/7-genuine/1459.png',
+      '/assets/img/types/7-genuine/1512.png',
+      '/assets/img/types/7-genuine/1530.png',
+      '/assets/img/types/7-genuine/1545.png',
+      '/assets/img/types/7-genuine/1573.png',
+      '/assets/img/types/7-genuine/1595.png',
+      '/assets/img/types/7-genuine/1599.png',
+      '/assets/img/types/7-genuine/1626.png',
+      '/assets/img/types/7-genuine/1680.png',
+      '/assets/img/types/7-genuine/1696.png',
+      '/assets/img/types/7-genuine/1710.png',
+      '/assets/img/types/7-genuine/1739.png',
+      '/assets/img/types/7-genuine/1770.png',
+      '/assets/img/types/7-genuine/1793.png',
+      '/assets/img/types/7-genuine/1818.png',
+      '/assets/img/types/7-genuine/1868.png',
+      '/assets/img/types/7-genuine/1917.png',
+      '/assets/img/types/7-genuine/1930.png',
+      '/assets/img/types/7-genuine/2001.png',
+      '/assets/img/types/7-genuine/2034.png',
+      '/assets/img/types/7-genuine/2047.png',
+      '/assets/img/types/7-genuine/2060.png',
+      '/assets/img/types/7-genuine/2091.png',
+      '/assets/img/types/7-genuine/2212.png',
+      '/assets/img/types/7-genuine/2299.png',
+      '/assets/img/types/7-genuine/2304.png',
+      '/assets/img/types/7-genuine/2332.png',
+      '/assets/img/types/7-genuine/2365.png',
+      '/assets/img/types/7-genuine/2412.png',
+      '/assets/img/types/7-genuine/2629.png',
+      '/assets/img/types/7-genuine/2633.png',
+      '/assets/img/types/7-genuine/2654.png',
+      '/assets/img/types/7-genuine/2668.png',
+      '/assets/img/types/7-genuine/2733.png',
+      '/assets/img/types/7-genuine/2743.png',
+      '/assets/img/types/7-genuine/2747.png',
+      '/assets/img/types/7-genuine/2808.png',
+      '/assets/img/types/7-genuine/2874.png',
+      '/assets/img/types/7-genuine/2931.png',
+      '/assets/img/types/7-genuine/2933.png',
+      '/assets/img/types/7-genuine/3028.png',
+      '/assets/img/types/7-genuine/3029.png',
+      '/assets/img/types/7-genuine/3078.png',
+      '/assets/img/types/7-genuine/3081.png',
+      '/assets/img/types/7-genuine/3112.png',
+      '/assets/img/types/7-genuine/3137.png',
+      '/assets/img/types/7-genuine/3255.png',
+      '/assets/img/types/7-genuine/3330.png',
+      '/assets/img/types/7-genuine/3353.png',
+      '/assets/img/types/7-genuine/3432.png',
+      '/assets/img/types/7-genuine/3531.png',
+      '/assets/img/types/7-genuine/3544.png',
+      '/assets/img/types/7-genuine/3587.png',
+      '/assets/img/types/7-genuine/3719.png',
+      '/assets/img/types/7-genuine/3726.png',
+      '/assets/img/types/7-genuine/3740.png',
+      '/assets/img/types/7-genuine/3755.png',
+    ],
+    title: 'Genuine',
+    subtitle: '3150 pieces',
+    description:
+      'Every genuine emodus is unique by the combinations of its traits.',
+  },
+];
