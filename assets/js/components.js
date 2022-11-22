@@ -876,6 +876,55 @@ class HomePage extends React.Component {
               </p>
             </SimpleDesktopSection>
           </DesktopPage>
+
+          {/* ======================================================================== */}
+          {/* The roadmap */}
+          {/* ======================================================================== */}
+          <DesktopPage id="here" className="bg-discover-background">
+            <SimpleDesktopSection className="text-5xl px-20">
+              <p className="mb-20">
+                We believe that some NFT art collections should pass "we're
+                building a community so strong we will overthrow the government"
+                or "we'll be in the metaverse, matrix, and also on mars" or
+                "this is the best return of investment ponzi-nomics" cliché.
+              </p>
+              <a
+                className="block w-fit mx-auto border-8 px-10 pt-3 pb-4 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  this.setState({ showStory: true }, () => {
+                    setTimeout(() => {
+                      [
+                        ...document.querySelectorAll('[data-section="story"]'),
+                      ][0].scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  });
+                }}
+              >
+                discover the roadmap
+              </a>
+            </SimpleDesktopSection>
+          </DesktopPage>
+
+          {/* ======================================================================== */}
+          {/* Footer */}
+          {/* ======================================================================== */}
+          <div className="flex p-16 font-fredokaOne">
+            <a href="https://venividinft.io">
+              <img
+                className="h-40"
+                src="/assets/img/team-logo.svg"
+                alt="Team logo"
+              />
+            </a>
+            <a className="self-end" href="https://venividinft.io">
+              venividinft.io
+            </a>
+            <div className="flex-grow text-right flex flex-col justify-end">
+              <p>Copyright © 2022 VENI VIDI NFT | All Rights Reserved.</p>
+            </div>
+          </div>
           {/* END OF DESKTOP PAGES */}
         </div>
         {/* END OF DESKTOP LAYOUT */}
