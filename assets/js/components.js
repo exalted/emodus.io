@@ -1070,7 +1070,7 @@ class HomePage extends React.Component {
               className="pl-24"
               src="/assets/img/red-emodus_desktop.png"
             />
-            <SimpleDesktopSection className="pl-16">
+            <SimpleDesktopSection className="pl-16 pr-4">
               <p className="mb-10">
                 One emodus may appear in a fearful environment with an angry
                 body status, but could have a disgusted expression. meanwhile, a
