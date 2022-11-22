@@ -420,31 +420,29 @@ class HomePage extends React.Component {
                   this.state.showStory ? 'hidden' : 'block'
                 }`}
               >
-                <Fragment>
-                  <p className="mb-6">
-                    "The collection emerged through different interdisciplinary
-                    research such as sociology, psychology, neuroscience, and
-                    chromatics or simply color science."
-                  </p>
-                  <a
-                    className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      this.setState({ showStory: true }, () => {
-                        setTimeout(() => {
-                          [
-                            ...document.querySelectorAll(
-                              '[data-section="story"]',
-                            ),
-                          ][0].scrollIntoView({ behavior: 'smooth' });
-                        }, 100);
-                      });
-                    }}
-                  >
-                    discover the story
-                  </a>
-                </Fragment>
+                <p className="mb-6">
+                  "The collection emerged through different interdisciplinary
+                  research such as sociology, psychology, neuroscience, and
+                  chromatics or simply color science."
+                </p>
+                <a
+                  className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.setState({ showStory: true }, () => {
+                      setTimeout(() => {
+                        [
+                          ...document.querySelectorAll(
+                            '[data-section="story"]',
+                          ),
+                        ][0].scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    });
+                  }}
+                >
+                  discover the story
+                </a>
               </SimpleMobileSection>
               <SimpleMobileSection
                 className={`snap-start ${
@@ -801,33 +799,31 @@ class HomePage extends React.Component {
                   this.state.showRoadmap ? 'hidden' : 'flex'
                 } flex-col justify-center`}
               >
-                <Fragment>
-                  <p className="mb-6">
-                    We believe that some NFT art collections should pass "we're
-                    building a community so strong we will overthrow the
-                    government" or "we'll be in the metaverse, matrix, and also
-                    on mars" or "this is the best return of investment
-                    ponzi-nomics" cliché.
-                  </p>
-                  <a
-                    className="block w-fit mx-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      this.setState({ showRoadmap: true }, () => {
-                        setTimeout(() => {
-                          [
-                            ...document.querySelectorAll(
-                              '[data-section="roadmap"]',
-                            ),
-                          ][0].scrollIntoView({ behavior: 'smooth' });
-                        }, 100);
-                      });
-                    }}
-                  >
-                    discover the roadmap
-                  </a>
-                </Fragment>
+                <p className="mb-6">
+                  We believe that some NFT art collections should pass "we're
+                  building a community so strong we will overthrow the
+                  government" or "we'll be in the metaverse, matrix, and also on
+                  mars" or "this is the best return of investment ponzi-nomics"
+                  cliché.
+                </p>
+                <a
+                  className="block w-fit mx-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.setState({ showRoadmap: true }, () => {
+                      setTimeout(() => {
+                        [
+                          ...document.querySelectorAll(
+                            '[data-section="roadmap"]',
+                          ),
+                        ][0].scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    });
+                  }}
+                >
+                  discover the roadmap
+                </a>
               </SimpleMobileSection>
               <SimpleMobileSection
                 className={`snap-start ${
@@ -1008,16 +1004,17 @@ class HomePage extends React.Component {
           {/* Yellow */}
           {/* ======================================================================== */}
           <DesktopPage className="bg-emodus-yellow" data-section="mint">
-            <DesktopPassportPhotoSection src="/assets/img/yellow-emodus.svg" />
-            <SimpleDesktopSection>
-              <Fragment>
-                <p className="mb-6">
-                  Renaissance of meme art and a new "culture" phenomenon.
-                </p>
-                <button className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold">
-                  connect wallet
-                </button>
-              </Fragment>
+            <DesktopPassportPhotoSection
+              className="pl-24"
+              src="/assets/img/yellow-emodus_desktop.png"
+            />
+            <SimpleDesktopSection className="pr-16">
+              <p className="mb-6">
+                Renaissance of meme art and a new "culture" phenomenon.
+              </p>
+              <button className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold">
+                connect wallet
+              </button>
             </SimpleDesktopSection>
           </DesktopPage>
 
@@ -1025,8 +1022,11 @@ class HomePage extends React.Component {
           {/* Blue */}
           {/* ======================================================================== */}
           <DesktopPage className="bg-emodus-blue flex-row-reverse">
-            <DesktopPassportPhotoSection src="/assets/img/orange-emodus.svg" />
-            <SimpleDesktopSection>
+            <DesktopPassportPhotoSection
+              className="pr-24"
+              src="/assets/img/orange-emodus_desktop.png"
+            />
+            <SimpleDesktopSection className="pl-16">
               emodus is the first PFP NFT to use only facial expressions of
               emotion as it's distinguishing feature.
             </SimpleDesktopSection>
@@ -1036,8 +1036,11 @@ class HomePage extends React.Component {
           {/* Red */}
           {/* ======================================================================== */}
           <DesktopPage className="bg-emodus-red">
-            <DesktopPassportPhotoSection src="/assets/img/green-emodus.svg" />
-            <SimpleDesktopSection>
+            <DesktopPassportPhotoSection
+              className="pl-24"
+              src="/assets/img/green-emodus_desktop.png"
+            />
+            <SimpleDesktopSection className="px-16">
               Forget laser eyes and mushroom hats, express yourself with
               emotions which are the accessories of the soul!
             </SimpleDesktopSection>
@@ -1047,8 +1050,11 @@ class HomePage extends React.Component {
           {/* Orange */}
           {/* ======================================================================== */}
           <DesktopPage className="bg-emodus-orange flex-row-reverse">
-            <DesktopPassportPhotoSection src="/assets/img/blue-emodus.svg" />
-            <SimpleDesktopSection>
+            <DesktopPassportPhotoSection
+              className="pr-24"
+              src="/assets/img/blue-emodus_desktop.png"
+            />
+            <SimpleDesktopSection className="pl-16 pr-4">
               A total of 3763 modus on Ethereum Blockchain, each one is unique
               due to the combinations of different environments, body status',
               core emotions and facial expressions which gives them their
@@ -1059,10 +1065,13 @@ class HomePage extends React.Component {
           {/* ======================================================================== */}
           {/* Purple */}
           {/* ======================================================================== */}
-          <DesktopPage className="bg-emodus-purple">
-            <DesktopPassportPhotoSection src="/assets/img/red-emodus.svg" />
-            <SimpleDesktopSection>
-              <p className="mb-2">
+          <DesktopPage id="here" className="bg-emodus-purple">
+            <DesktopPassportPhotoSection
+              className="pl-24"
+              src="/assets/img/red-emodus_desktop.png"
+            />
+            <SimpleDesktopSection className="pl-16">
+              <p className="mb-10">
                 One emodus may appear in a fearful environment with an angry
                 body status, but could have a disgusted expression. meanwhile, a
                 very rare type which we call the "modus extremus" may burst with
@@ -1082,7 +1091,10 @@ class HomePage extends React.Component {
 class DesktopPage extends React.Component {
   render() {
     return (
-      <div className={`${this.props.className} flex`}>
+      <div
+        id={this.props.id}
+        className={`${this.props.className} flex h-[46rem] overflow-hidden`}
+      >
         {this.props.children}
       </div>
     );
@@ -1091,14 +1103,20 @@ class DesktopPage extends React.Component {
 
 class DesktopPassportPhotoSection extends React.Component {
   render() {
-    return <img src={this.props.src} />;
+    return (
+      <div className={`${this.props.className} min-w-[500px] max-w-[500px]`}>
+        <img className="object-contain h-[160%] -mt-20" src={this.props.src} />
+      </div>
+    );
   }
 }
 
 class SimpleDesktopSection extends React.Component {
   render() {
     return (
-      <div className="flex flex-col justify-center font-fredokaOne text-5xl px-16">
+      <div
+        className={`${this.props.className} flex flex-col justify-center font-fredokaOne text-5xl`}
+      >
         {this.props.children}
       </div>
     );
