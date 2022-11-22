@@ -56,9 +56,7 @@ class HomePage extends React.Component {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                [
-                  ...document.querySelectorAll('[data-type="page"]'),
-                ][0].scrollIntoView({ behavior: 'smooth' });
+                mobileScroll('[data-type="page"]');
               }}
             >
               <img
@@ -96,11 +94,7 @@ class HomePage extends React.Component {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll('[data-section="story"]'),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    mobileScroll('[data-section="story"]');
                     this.setState({ showMenu: false });
                   }}
                 >
@@ -113,11 +107,7 @@ class HomePage extends React.Component {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll('[data-section="types"]'),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    mobileScroll('[data-section="types"]');
                     this.setState({ showMenu: false });
                   }}
                 >
@@ -130,13 +120,7 @@ class HomePage extends React.Component {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll(
-                          '[data-section="roadmap"]',
-                        ),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    mobileScroll('[data-section="roadmap"]');
                     this.setState({ showMenu: false });
                   }}
                 >
@@ -431,13 +415,7 @@ class HomePage extends React.Component {
                   onClick={(e) => {
                     e.preventDefault();
                     this.setState({ showStory: true }, () => {
-                      setTimeout(() => {
-                        [
-                          ...document.querySelectorAll(
-                            '[data-section="story"]',
-                          ),
-                        ][0].scrollIntoView({ behavior: 'smooth' });
-                      }, 100);
+                      mobileScroll('[data-section="story"]');
                     });
                   }}
                 >
@@ -505,9 +483,7 @@ class HomePage extends React.Component {
                   onClick={(e) => {
                     e.preventDefault();
                     this.setState({ showStory: false }, () => {
-                      [
-                        ...document.querySelectorAll('[data-section="types"]'),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
+                      mobileScroll('[data-section="types"]');
                     });
                   }}
                 >
@@ -551,13 +527,7 @@ class HomePage extends React.Component {
                   onClick={(e) => {
                     e.preventDefault();
                     this.setState({ showRoadmap: true }, () => {
-                      setTimeout(() => {
-                        [
-                          ...document.querySelectorAll(
-                            '[data-section="roadmap"]',
-                          ),
-                        ][0].scrollIntoView({ behavior: 'smooth' });
-                      }, 100);
+                      mobileScroll('[data-section="roadmap"]');
                     });
                   }}
                 >
@@ -618,9 +588,7 @@ class HomePage extends React.Component {
                   onClick={(e) => {
                     e.preventDefault();
                     this.setState({ showRoadmap: false }, () => {
-                      [
-                        ...document.querySelectorAll('[data-section="mint"]'),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
+                      mobileScroll('[data-section="mint"]');
                     });
                   }}
                 >
@@ -668,9 +636,7 @@ class HomePage extends React.Component {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                [
-                  ...document.querySelectorAll('[data-type="page"]'),
-                ][0].scrollIntoView({ behavior: 'smooth' });
+                desktopScroll('[data-type="page"]');
               }}
               className="-mt-3"
             >
@@ -686,11 +652,7 @@ class HomePage extends React.Component {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll('[data-section="story"]'),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    desktopScroll('[data-section="desktop-story"]');
                     this.setState({ showMenu: false });
                   }}
                 >
@@ -702,11 +664,7 @@ class HomePage extends React.Component {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll('[data-section="types"]'),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    desktopScroll('[data-section="desktop-types"]');
                     this.setState({ showMenu: false });
                   }}
                 >
@@ -718,13 +676,7 @@ class HomePage extends React.Component {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll(
-                          '[data-section="roadmap"]',
-                        ),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    desktopScroll('[data-section="desktop-roadmap"]');
                     this.setState({ showMenu: false });
                   }}
                 >
@@ -825,7 +777,10 @@ class HomePage extends React.Component {
           {/* ======================================================================== */}
           <DesktopPage className="bg-emodus-white border-b-[1px] border-gray-400">
             <DesktopLisaPhotoSection />
-            <SimpleDesktopSection className="pl-16 pr-4 text-4xl">
+            <SimpleDesktopSection
+              data-section="desktop-story"
+              className="pl-16 pr-4 text-4xl"
+            >
               <p className="mb-20">
                 "The collection emerged through different interdisciplinary
                 research such as sociology, psychology, neuroscience, and
@@ -837,11 +792,7 @@ class HomePage extends React.Component {
                 onClick={(e) => {
                   e.preventDefault();
                   this.setState({ showStory: true }, () => {
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll('[data-section="story"]'),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    desktopScroll('[data-section="desktop-discover-story"]');
                   });
                 }}
               >
@@ -849,6 +800,65 @@ class HomePage extends React.Component {
               </a>
             </SimpleDesktopSection>
           </DesktopPage>
+          <SimpleDesktopSection
+            className={`${
+              this.state.showStory ? '!block' : 'hidden'
+            } px-28 pt-20`}
+            data-section="desktop-discover-story"
+          >
+            <p className="text-center text-5xl mb-12">the story</p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              "The collection emerged through different interdisciplinary
+              research such as sociology, psychology, neuroscience and
+              chromatics or simply color science.
+            </p>
+            <img
+              className="float-right w-1/2 -mt-14"
+              src="/assets/img/story-emotions.jpg"
+            />
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              Early stages of the Emodus got a spark from the work of Dr. Paul
+              Ekman and Dr. Eve Ekman's "The Atlas of Emotions" which was
+              commissioned by the Dalai Lama?? and from the work of Plutchik's
+              "Wheel of Emotions"
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              Most psychological research has classified six facial expressions
+              which correspond to distinct universal emotions: joy, surprise,
+              anger, disgust, sadness and fear. It is interesting to note that
+              four out of the six are negative emotions.
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              After analyzing hundreds of facial expressions randomly from
+              commercials, Hollywood productions and news from mainstream media
+              we have generalized the cues for facial expressions to 90 types
+              and each is defined as a "modus" trait which becomes sub-state of
+              six core emotions.
+            </p>
+            <img className="my-6" src="/assets/img/story-colors.svg" />
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              Picking up the right colors was another side of the research.
+              Colors can make us feel happy or sad, and they can make us feel
+              hungry or relaxed. These reactions are rooted in psychological
+              effects, biological conditioning and cultural imprinting. Did you
+              know that a painting hanging in your bedroom with bad color
+              combinations can make you sick? Since we don't want to be sued for
+              our color taste, color tones and colors to be used were selected
+              by the opinion of a colorist.
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              In order to narrate optimum facial expressions, we utilized only
+              the most expressive organs: eyes with a supporting mouth; this
+              proves that to express one's modus it doesn't need a nose, ear,
+              facial hair or even accessories! Even though not all expressions
+              are inter-culturally comprehensible, we believe everyone will find
+              one part of self in the modus collection, since facial expressions
+              of emotions are part of our evolutionary history and are a
+              biologically innate ability."
+            </p>
+            <img className="mb-6" src="/assets/img/story-scheme.svg" />
+            <div className="bg-emodus-background bg-repeat-x bg-bottom h-32 w-screen -mx-28"></div>
+          </SimpleDesktopSection>
 
           {/* ======================================================================== */}
           {/* Types */}
@@ -863,7 +873,10 @@ class HomePage extends React.Component {
                 });
               }}
             />
-            <SimpleDesktopSection className="self-start mt-28 pr-16">
+            <SimpleDesktopSection
+              data-section="desktop-types"
+              className="self-start mt-28 pr-16"
+            >
               <p className="text-5xl mb-8">types:</p>
               <p className="text-6xl mb-8">
                 {this.state.selectedDesktopModusTitle}
@@ -880,8 +893,11 @@ class HomePage extends React.Component {
           {/* ======================================================================== */}
           {/* The roadmap */}
           {/* ======================================================================== */}
-          <DesktopPage id="here" className="bg-discover-background">
-            <SimpleDesktopSection className="text-5xl px-20">
+          <DesktopPage className="bg-discover-background">
+            <SimpleDesktopSection
+              data-section="desktop-roadmap"
+              className="text-5xl px-20"
+            >
               <p className="mb-20">
                 We believe that some NFT art collections should pass "we're
                 building a community so strong we will overthrow the government"
@@ -894,11 +910,7 @@ class HomePage extends React.Component {
                 onClick={(e) => {
                   e.preventDefault();
                   this.setState({ showStory: true }, () => {
-                    setTimeout(() => {
-                      [
-                        ...document.querySelectorAll('[data-section="story"]'),
-                      ][0].scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    desktopScroll('[data-section="story"]');
                   });
                 }}
               >
@@ -939,6 +951,7 @@ class DesktopPage extends React.Component {
       <div
         id={this.props.id}
         className={`${this.props.className} flex h-[46rem] overflow-hidden`}
+        data-type="page"
       >
         {this.props.children}
       </div>
@@ -975,7 +988,9 @@ class SimpleDesktopSection extends React.Component {
   render() {
     return (
       <div
+        id={this.props.id}
         className={`${this.props.className} flex flex-col justify-center font-fredokaOne`}
+        data-section={this.props['data-section']}
       >
         {this.props.children}
       </div>
@@ -1063,6 +1078,27 @@ class SimpleMobileSection extends React.Component {
       </div>
     );
   }
+}
+
+function mobileScroll(selector) {
+  setTimeout(() => {
+    [...document.querySelectorAll(selector)][0].scrollIntoView({
+      behavior: 'smooth',
+    });
+  }, 100);
+}
+
+function desktopScroll(selector) {
+  setTimeout(() => {
+    window.scrollTo({
+      top:
+        [...document.querySelectorAll(selector)][0].getBoundingClientRect()
+          .top +
+        window.pageYOffset -
+        128,
+      behavior: 'smooth',
+    });
+  }, 100);
 }
 
 // Returns a random number between min (inclusive) and max (exclusive)
