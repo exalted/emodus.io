@@ -965,9 +965,7 @@ class HomePage extends React.Component {
             </SimpleDesktopSection>
           </DesktopPage>
           <SimpleDesktopSection
-            className={`${
-              this.state.showStory ? '!block' : 'hidden'
-            } px-28 pt-20`}
+            className={`${this.state.showStory ? '' : 'hidden'} px-28 pt-20`}
             data-section="desktop-discover-story"
           >
             <p className="text-center text-5xl mb-12">the story</p>
@@ -1083,9 +1081,7 @@ class HomePage extends React.Component {
             </SimpleDesktopSection>
           </DesktopPage>
           <SimpleDesktopSection
-            className={`${
-              this.state.showRoadmap ? '!block' : 'hidden'
-            } px-28 pt-20`}
+            className={`${this.state.showRoadmap ? '' : 'hidden'} px-28 pt-20`}
             data-section="desktop-discover-roadmap"
           >
             <p className="text-center text-5xl mb-12">the roadmap</p>
