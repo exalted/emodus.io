@@ -699,13 +699,177 @@ class HomePage extends React.Component {
               className="pl-24"
               src="/assets/img/yellow-emodus_desktop.png"
             />
-            <SimpleDesktopSection className="pr-16 text-5xl">
-              <p className="mb-6">
+            <SimpleDesktopSection className="pl-16 pr-4 text-5xl">
+              <p className="mb-20">
                 Renaissance of meme art and a new "culture" phenomenon.
               </p>
-              <button className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold">
+              <div
+                className={
+                  this.state.connectWalletButtonVisible ? '' : 'hidden'
+                }
+              >
+                <button
+                  className="block w-fit mx-auto mb-4 border-8 px-10 pt-3 pb-4 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                  onClick={() => {
+                    const component = this;
+
+                    if (!window.ethereum || !window.ethereum.isMetaMask) {
+                      alert(
+                        "You don't have Metamask installed. Go to https://metamask.io now to install.",
+                      );
+                      return;
+                    }
+
+                    window.ethereum
+                      .enable()
+                      .then((_accounts) => {
+                        // Metamask is ready to go!
+                        component.setState({
+                          connectWalletButtonVisible: false,
+                          mintFormVisible: true,
+                        });
+                      })
+                      .catch((error) => {
+                        if (error.code === 4001) {
+                          component.setState({
+                            connectWalletButtonVisible: true,
+                            mintFormVisible: false,
+                          });
+                          alert(
+                            'You should be connected to a Metamask account. Try again.',
+                          );
+                          return;
+                        }
+
+                        if (error.code === -32002) {
+                          alert(
+                            'Try again after opening your Metamask and unlocking it.',
+                          );
+                          return;
+                        }
+
+                        alert(error.message);
+                      });
+                  }}
+                >
                 connect wallet
               </button>
+                <p className="text-center text-lg">
+                  {this.state.totalSupply || '_'} minted so far. Grab yours!
+                </p>
+              </div>
+              <div className={this.state.mintFormVisible ? '' : 'hidden'}>
+                <div className="flex justify-center mb-12">
+                  <button
+                    className="mr-4 border-8 px-10 pt-3 pb-4 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
+                    disabled={this.state.mintButtonDisabled}
+                    onClick={() => {
+                      const component = this;
+
+                      component.setState({ mintButtonDisabled: true });
+
+                      const web3 = AlchemyWeb3.createAlchemyWeb3(
+                        'https://eth-mainnet.g.alchemy.com/v2/dQNiFZ9PFlWUP-VeSXvGEnuSffP9SniD',
+                      );
+
+                      try {
+                        _contract()
+                          .methods.mint(component.state.numberOfTokens)
+                          .send({
+                            from: window.ethereum.selectedAddress,
+                            value: web3.utils.toWei(
+                              (
+                                0.02 * component.state.numberOfTokens
+                              ).toString(),
+                              'ether',
+                            ),
+                          })
+                          .then((_receipt) => {
+                            component.setState({
+                              mintButtonDisabled: false,
+                            });
+                          })
+                          .catch((error) => {
+                            component.setState({
+                              mintButtonDisabled: false,
+                            });
+
+                            if (
+                              !error.code &&
+                              error.message ===
+                                'No "from" address specified in neither the given options, nor the default options.'
+                            ) {
+                              component.setState({
+                                connectWalletButtonVisible: true,
+                                mintFormVisible: false,
+                              });
+                              alert(
+                                'You should be connected to a Metamask account. Try again.',
+                              );
+                              return;
+                            }
+
+                            if (!error.code) {
+                              alert(error.message);
+                              return;
+                            }
+
+                            if (error.code === 4001) {
+                              alert('You rejected the transaction. Try again.');
+                              return;
+                            }
+
+                            alert(error.message);
+                          });
+                      } catch (error) {
+                        console.error(error);
+                      }
+                    }}
+                  >
+                    mint
+                  </button>
+                  <div className="flex">
+                    <button
+                      className="border-8 h-fit px-[19px] pb-[10px] place-self-center rounded-full border-solid border-emodus-black mr-1"
+                      disabled={this.state.numberOfTokens === 1}
+                      onClick={() => {
+                        if (this.state.numberOfTokens === 1) {
+                          return;
+                        }
+
+                        this.setState({
+                          numberOfTokens: this.state.numberOfTokens - 1,
+                        });
+                      }}
+                    >
+                      -
+                    </button>
+                    <input
+                      className="border-8 place-self-center text-center w-[5.6rem] pl-[11px] border-solid rounded-none border-emodus-black mr-1"
+                      type="number"
+                      min="1"
+                      max="10"
+                      value={this.state.numberOfTokens}
+                    ></input>
+                    <button
+                      className="border-8 h-fit px-[16.4px] pb-[10px] place-self-center rounded-full border-solid border-emodus-black"
+                      disabled={this.state.numberOfTokens === 10}
+                      onClick={() => {
+                        if (this.state.numberOfTokens === 10) {
+                          return;
+                        }
+
+                        this.setState({
+                          numberOfTokens: this.state.numberOfTokens + 1,
+                        });
+                      }}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <p className="text-center text-2xl">10 mints per wallet.</p>
+              </div>
             </SimpleDesktopSection>
           </DesktopPage>
 
