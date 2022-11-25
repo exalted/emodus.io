@@ -909,8 +909,8 @@ class HomePage extends React.Component {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  this.setState({ showStory: true }, () => {
-                    desktopScroll('[data-section="story"]');
+                  this.setState({ showRoadmap: true }, () => {
+                    desktopScroll('[data-section="desktop-discover-roadmap"]');
                   });
                 }}
               >
@@ -918,6 +918,56 @@ class HomePage extends React.Component {
               </a>
             </SimpleDesktopSection>
           </DesktopPage>
+          <SimpleDesktopSection
+            className={`${
+              this.state.showRoadmap ? '!block' : 'hidden'
+            } px-28 pt-20`}
+            data-section="desktop-discover-roadmap"
+          >
+            <p className="text-center text-5xl mb-12">the roadmap</p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              We believe that some NFT art collections should pass "we're
+              building a community so strong we will overthrow the government"
+              or "we'll be in the metaverse, matrix, and also on mars" or "this
+              is the best return of investment ponzi-nomics" cliché.
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              Emodus collection consists of wiselv created tiny pieces of
+              artwork with a little bit of science, philosophy and humor sauce
+              on it. Obviously not a project that copying blue chip strategies
+              with clip art. It's unfortunate that the crowd that has gravitated
+              to it, is not interested in digital art, and has treated it like a
+              casino.
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              Why we don't prefer to start this with whitelist because whitelist
+              grinding is an absolutely horrifying experience that creates an
+              artificial community and promotes in-genuine conversations and
+              connections. These artificial communities are fragile and easily
+              destructible.
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              We hope to create a culture that inherently reflects the core
+              values of a true community. A community where people truly feel
+              connected with each other through these memes.
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              As VENI VIDI NFT, we are not going to over promise or underdeliver
+              with our first project because we are intended to be in WEB3 in
+              the long run with our holders' trust.
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              Therefore 6% of all sales will be kept in the wallet and after the
+              collection has been sold, we will be quided by the holders of
+              Emodus who saw the potential and liked the concept.
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              Holders will vote and decide whether the fund should be used for
+              charity work or giving back to holders or to be used for other
+              ideas that will be designated with the community.
+            </p>
+            <div className="bg-emodus-background bg-repeat-x bg-bottom h-32 w-screen -mx-28"></div>
+          </SimpleDesktopSection>
 
           {/* ======================================================================== */}
           {/* Footer */}
