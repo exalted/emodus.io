@@ -752,8 +752,8 @@ class HomePage extends React.Component {
                       });
                   }}
                 >
-                connect wallet
-              </button>
+                  connect wallet
+                </button>
                 <p className="text-center text-lg">
                   {this.state.totalSupply || '_'} minted so far. Grab yours!
                 </p>
@@ -1315,16 +1315,19 @@ function desktopScroll(selector) {
 function _randomIntInRange(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function _pickRandomFrom(items) {
-  return items[_randomIntInRange(0, items.length)];
+function _pickRandomFrom(items, except) {
+  let selected;
+  do {
+    selected = items[_randomIntInRange(0, items.length)];
+  } while (selected === except);
+
+  return selected;
 }
 
 class HorizontalSection extends React.Component {
-  _intervals = [];
-
   constructor(props) {
     super(props);
 
@@ -1334,29 +1337,19 @@ class HorizontalSection extends React.Component {
   }
 
   componentDidMount() {
-    for (let index = 0; index < EMODUS_TYPES.length; index++) {
-      const typeImages = EMODUS_TYPES[index].images;
-
-      this._intervals.push(
-        setInterval(
-          () => {
-            const images = [...this.state.images];
-            images[index] = _pickRandomFrom(typeImages);
-
-            this.setState({
-              images,
-            });
-          },
-          typeImages.length > 50 ? 1000 : _randomIntInRange(2000, 3000),
-        ),
+    this._interval = setInterval(() => {
+      const images = EMODUS_TYPES.map(({ images }, index) =>
+        _pickRandomFrom(images, this.state.images[index]),
       );
-    }
+
+      this.setState({
+        images,
+      });
+    }, 1000);
   }
 
   componentWillUnmount() {
-    for (const id of _intervals) {
-      clearInterval(id);
-    }
+    clearInterval(this._interval);
   }
 
   render() {
@@ -1383,8 +1376,6 @@ class HorizontalSection extends React.Component {
 }
 
 class DesktopTypesSection extends React.Component {
-  _intervals = [];
-
   constructor(props) {
     super(props);
 
@@ -1397,29 +1388,19 @@ class DesktopTypesSection extends React.Component {
   componentDidMount() {
     this.props.onChange(EMODUS_TYPES[this.state.selectedType]);
 
-    for (let index = 0; index < EMODUS_TYPES.length; index++) {
-      const typeImages = EMODUS_TYPES[index].images;
-
-      this._intervals.push(
-        setInterval(
-          () => {
-            const images = [...this.state.images];
-            images[index] = _pickRandomFrom(typeImages);
-
-            this.setState({
-              images,
-            });
-          },
-          typeImages.length > 50 ? 1000 : _randomIntInRange(2000, 3000),
-        ),
+    this._interval = setInterval(() => {
+      const images = EMODUS_TYPES.map(({ images }, index) =>
+        _pickRandomFrom(images, this.state.images[index]),
       );
-    }
+
+      this.setState({
+        images,
+      });
+    }, 1000);
   }
 
   componentWillUnmount() {
-    for (const id of _intervals) {
-      clearInterval(id);
-    }
+    clearInterval(this._interval);
   }
 
   render() {
