@@ -517,8 +517,8 @@ class HomePage extends React.Component {
                 <p className="mb-6">
                   We believe that some NFT art collections should pass "we're
                   building a community so strong we will overthrow the
-                  government" or "we'll be in the metaverse, matrix, and also on
-                  mars" or "this is the best return of investment ponzi-nomics"
+                  government" or "we'll be in the metaverse, matrix and also on
+                  mars" or “this is the best return of investment ponzi-nomics”
                   cliché.
                 </p>
                 <a
@@ -544,19 +544,19 @@ class HomePage extends React.Component {
                   We believe that some NFT art collections should pass "we're
                   building a community so strong we will overthrow the
                   government" or "we'll be in the metaverse, matrix and also on
-                  mars" or "this is the best return of investment ponzi-nomics"
+                  mars" or “this is the best return of investment ponzi-nomics”
                   cliché.
                 </p>
                 <p className="text-base mb-5">
-                  Emodus collection consists of wiselv created tiny pieces of
+                  Emodus collection consists of wisely created tiny pieces of
                   artwork with a little bit of science, philosophy and humor
                   sauce on it. Obviously not a project that copying blue chip
                   strategies with clip art. It's unfortunate that the crowd that
                   has gravitated to it, is not interested in digital art, and
-                  has treated it like a casino.
+                  has treated NFT space like a casino.
                 </p>
                 <p className="text-base mb-5">
-                  Why we don't prefer to start this with whitelist because
+                  Why we don’t prefer to start this with whitelist because
                   whitelist grinding is an absolutely horrifying experience that
                   creates an artificial community and promotes in-genuine
                   conversations and connections. These artificial communities
@@ -573,14 +573,22 @@ class HomePage extends React.Component {
                   be in WEB3 in the long run with our holders' trust.
                 </p>
                 <p className="text-base mb-5">
-                  Therefore 6% of all sales will be kept in the wallet and after
-                  the collection has been sold, we will be quided by the holders
-                  of Emodus who saw the potential and liked the concept.
+                  Therefore 5% of all sales will be kept in the wallet and after
+                  80% of the collection has been sold, one of our holders will
+                  be selected by a lottery discord bot to be awarded with it.
                 </p>
                 <p className="text-base mb-5">
-                  Holders will vote and decide whether the fund should be used
-                  for charity work or giving back to holders or to be used for
-                  other ideas that will be designated with the community.
+                  That’s not all! We want to make an impact and we want Emodus
+                  holders to be a part of it.
+                </p>
+                <p className="text-base mb-5">
+                  The pearl of the collection, Modus Lisa, will be auctioned and
+                  Emodus holders will decide which crypto accepting charity
+                  should be donated with it.
+                </p>
+                <p className="text-base mb-5">
+                  Because if we're not reaching back to help anyone then we're
+                  not building a legacy.
                 </p>
                 <a
                   className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
@@ -1063,8 +1071,8 @@ class HomePage extends React.Component {
               <p className="mb-20">
                 We believe that some NFT art collections should pass "we're
                 building a community so strong we will overthrow the government"
-                or "we'll be in the metaverse, matrix, and also on mars" or
-                "this is the best return of investment ponzi-nomics" cliché.
+                or "we'll be in the metaverse, matrix and also on mars" or “this
+                is the best return of investment ponzi-nomics” cliché.
               </p>
               <a
                 className="block w-fit mx-auto border-8 px-10 pt-3 pb-4 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
@@ -1088,23 +1096,23 @@ class HomePage extends React.Component {
             <p className="text-3xl font-fredoka font-semibold mb-12">
               We believe that some NFT art collections should pass "we're
               building a community so strong we will overthrow the government"
-              or "we'll be in the metaverse, matrix, and also on mars" or "this
-              is the best return of investment ponzi-nomics" cliché.
+              or "we'll be in the metaverse, matrix and also on mars" or “this
+              is the best return of investment ponzi-nomics” cliché.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
-              Emodus collection consists of wiselv created tiny pieces of
+              Emodus collection consists of wisely created tiny pieces of
               artwork with a little bit of science, philosophy and humor sauce
               on it. Obviously not a project that copying blue chip strategies
               with clip art. It's unfortunate that the crowd that has gravitated
-              to it, is not interested in digital art, and has treated it like a
-              casino.
+              to it, is not interested in digital art, and has treated NFT space
+              like a casino.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
-              Why we don't prefer to start this with whitelist because whitelist
-              grinding is an absolutely horrifying experience that creates an
-              artificial community and promotes in-genuine conversations and
-              connections. These artificial communities are fragile and easily
-              destructible.
+              Why we don't prefer tWhy we don’t prefer to start this with
+              whitelist because whitelist grinding is an absolutely horrifying
+              experience that creates an artificial community and promotes
+              in-genuine conversations and connections. These artificial
+              communities are fragile and easily destructible.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
               We hope to create a culture that inherently reflects the core
@@ -1117,14 +1125,22 @@ class HomePage extends React.Component {
               the long run with our holders' trust.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
-              Therefore 6% of all sales will be kept in the wallet and after the
-              collection has been sold, we will be quided by the holders of
-              Emodus who saw the potential and liked the concept.
+              Therefore 5% of all sales will be kept in the wallet and after 80%
+              of the collection has been sold, one of our holders will be
+              selected by a lottery discord bot to be awarded with it.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
-              Holders will vote and decide whether the fund should be used for
-              charity work or giving back to holders or to be used for other
-              ideas that will be designated with the community.
+              That’s not all! We want to make an impact and we want Emodus
+              holders to be a part of it.
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              The pearl of the collection, Modus Lisa, will be auctioned and
+              Emodus holders will decide which crypto accepting charity should
+              be donated with it.
+            </p>
+            <p className="text-3xl font-fredoka font-semibold mb-12">
+              Because if we're not reaching back to help anyone then we're not
+              building a legacy.
             </p>
             <div className="bg-emodus-background bg-repeat-x bg-bottom h-32 w-screen -mx-28"></div>
           </SimpleDesktopSection>
