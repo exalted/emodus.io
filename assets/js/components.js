@@ -127,6 +127,36 @@ class HomePage extends React.Component {
                   roadmap
                 </a>
               </li>
+              <li>
+                <a href="https://opensea.io/collection/emodus" target="_blank">
+                  <div className="h-8">
+                    <img
+                      className="h-full mx-auto mt-3"
+                      src="/assets/img/opensea.png"
+                    />
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/EmodusNFT" target="_blank">
+                  <div className="h-7">
+                    <img
+                      className="h-full mx-auto mt-3"
+                      src="/assets/img/twitter.png"
+                    />
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://discord.gg/8ZRqTetTts" target="_blank">
+                  <div className="h-7">
+                    <img
+                      className="h-full mx-auto mt-3"
+                      src="/assets/img/discord.png"
+                    />
+                  </div>
+                </a>
+              </li>
             </ol>
           </div>
           {/* END OF MOBILE MENU */}
@@ -200,10 +230,13 @@ class HomePage extends React.Component {
                         });
                     }}
                   >
-                    connect wallet
+                    connect metamask
                   </button>
                   <p className="text-center text-lg -mb-2">
-                    {this.state.totalSupply || '_'} minted so far. Grab yours!
+                    MINT PRICE 0.02 ETH
+                  </p>
+                  <p className="text-center text-lg -mb-2">
+                    10 Mint per Wallet
                   </p>
                 </div>
                 <div className={this.state.mintFormVisible ? '' : 'hidden'}>
@@ -318,7 +351,10 @@ class HomePage extends React.Component {
                       </button>
                     </div>
                   </div>
-                  <p className="text-center text-lg">10 mints per wallet.</p>
+                  <p className="text-center text-lg">
+                    {this.state.totalSupply || '_'} minted so far
+                  </p>
+                  <p className="text-center text-lg">Gas Efficient Contract</p>
                 </div>
               </SimpleMobileSection>
             </MobilePage>
@@ -435,9 +471,8 @@ class HomePage extends React.Component {
                 </p>
                 <p className="text-base mb-5">
                   Early stages of the Emodus got a spark from the work of Dr.
-                  Paul Ekman and Dr. Eve Ekman's "The Atlas of Emotions" which
-                  was commissioned by the Dalai Lama?? and from the work of
-                  Plutchik's "Wheel of Emotions"
+                  Paul Ekman and Dr. Eve Ekman’s The Atlas of Emotions and from
+                  the work of Plutchik’s Wheel of Emotions.
                 </p>
                 <img src="/assets/img/story-emotions.jpg" />
                 <p className="text-base mb-5">
@@ -691,6 +726,36 @@ class HomePage extends React.Component {
                   roadmap
                 </a>
               </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a href="https://opensea.io/collection/emodus" target="_blank">
+                  <div className="h-8">
+                    <img
+                      className="h-full mx-auto mt-1"
+                      src="/assets/img/opensea.png"
+                    />
+                  </div>
+                </a>
+              </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a href="https://twitter.com/EmodusNFT" target="_blank">
+                  <div className="h-7">
+                    <img
+                      className="h-full mx-auto mt-[6px]"
+                      src="/assets/img/twitter.png"
+                    />
+                  </div>
+                </a>
+              </li>
+              <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
+                <a href="https://discord.gg/8ZRqTetTts" target="_blank">
+                  <div className="h-7">
+                    <img
+                      className="h-full mx-auto mt-[6px]"
+                      src="/assets/img/discord.png"
+                    />
+                  </div>
+                </a>
+              </li>
             </ol>
           </div>
           {/* END OF DESKTOP MENU */}
@@ -760,11 +825,10 @@ class HomePage extends React.Component {
                       });
                   }}
                 >
-                  connect wallet
+                  connect metamask
                 </button>
-                <p className="text-center text-lg">
-                  {this.state.totalSupply || '_'} minted so far. Grab yours!
-                </p>
+                <p className="text-center text-lg">MINT PRICE 0.02 ETH</p>
+                <p className="text-center text-lg">10 Mint per Wallet</p>
               </div>
               <div className={this.state.mintFormVisible ? '' : 'hidden'}>
                 <div className="flex justify-center mb-12">
@@ -876,7 +940,10 @@ class HomePage extends React.Component {
                     </button>
                   </div>
                 </div>
-                <p className="text-center text-2xl">10 mints per wallet.</p>
+                <p className="text-center text-2xl">
+                  {this.state.totalSupply || '_'} minted so far
+                </p>
+                <p className="text-center text-2xl">Gas Efficient Contract</p>
               </div>
             </SimpleDesktopSection>
           </DesktopPage>
@@ -988,9 +1055,8 @@ class HomePage extends React.Component {
             />
             <p className="text-3xl font-fredoka font-semibold mb-12">
               Early stages of the Emodus got a spark from the work of Dr. Paul
-              Ekman and Dr. Eve Ekman's "The Atlas of Emotions" which was
-              commissioned by the Dalai Lama?? and from the work of Plutchik's
-              "Wheel of Emotions"
+              Ekman and Dr. Eve Ekman’s The Atlas of Emotions and from the work
+              of Plutchik’s Wheel of Emotions.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
               Most psychological research has classified six facial expressions
@@ -1108,11 +1174,11 @@ class HomePage extends React.Component {
               like a casino.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
-              Why we don't prefer tWhy we don’t prefer to start this with
-              whitelist because whitelist grinding is an absolutely horrifying
-              experience that creates an artificial community and promotes
-              in-genuine conversations and connections. These artificial
-              communities are fragile and easily destructible.
+              Why we don’t prefer to start this with whitelist because whitelist
+              grinding is an absolutely horrifying experience that creates an
+              artificial community and promotes in-genuine conversations and
+              connections. These artificial communities are fragile and easily
+              destructible.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
               We hope to create a culture that inherently reflects the core
