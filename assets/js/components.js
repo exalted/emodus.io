@@ -608,9 +608,17 @@ class HomePage extends React.Component {
                   be in WEB3 in the long run with our holders' trust.
                 </p>
                 <p className="text-base mb-5">
-                  Therefore 5% of all sales will be kept in the wallet and after
-                  80% of the collection has been sold, one of our holders will
-                  be selected by a lottery discord bot to be awarded with it.
+                  Therefore 5% of all sales will be kept in the{' '}
+                  <a
+                    href="https://etherscan.io/address/0xdb412d9789fea1999442ae774d81bb9b8b544a0e"
+                    target="_blank"
+                    className="text-blue-600"
+                  >
+                    wallet
+                  </a>{' '}
+                  and after 80% of the collection has been sold, one of our
+                  holders will be selected by a lottery discord bot to be
+                  awarded with it.
                 </p>
                 <p className="text-base mb-5">
                   That’s not all! We want to make an impact and we want Emodus
@@ -1191,9 +1199,16 @@ class HomePage extends React.Component {
               the long run with our holders' trust.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
-              Therefore 5% of all sales will be kept in the wallet and after 80%
-              of the collection has been sold, one of our holders will be
-              selected by a lottery discord bot to be awarded with it.
+              Therefore 5% of all sales will be kept in the{' '}
+              <a
+                href="https://etherscan.io/address/0xdb412d9789fea1999442ae774d81bb9b8b544a0e"
+                target="_blank"
+                className="text-blue-600"
+              >
+                wallet
+              </a>{' '}
+              and after 80% of the collection has been sold, one of our holders
+              will be selected by a lottery discord bot to be awarded with it.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
               That’s not all! We want to make an impact and we want Emodus
