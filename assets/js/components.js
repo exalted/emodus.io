@@ -1129,7 +1129,7 @@ class HomePage extends React.Component {
           {/* ======================================================================== */}
           {/* The roadmap */}
           {/* ======================================================================== */}
-          <DesktopPage className="bg-discover-background">
+          <DesktopPage className="bg-discover-background bg-cover bg-center">
             <SimpleDesktopSection
               data-section="desktop-roadmap"
               className="text-5xl px-20"
