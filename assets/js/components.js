@@ -679,7 +679,7 @@ class HomePage extends React.Component {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                desktopScroll('[data-type="page"]');
+                desktopScroll('[data-type="desktop-page"]');
               }}
               className="-mt-3"
             >
@@ -1243,7 +1243,7 @@ class DesktopPage extends React.Component {
       <div
         id={this.props.id}
         className={`${this.props.className} flex h-[46rem] overflow-hidden`}
-        data-type="page"
+        data-type="desktop-page"
       >
         {this.props.children}
       </div>
