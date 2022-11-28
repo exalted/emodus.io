@@ -62,7 +62,7 @@ class HomePage extends React.Component {
               <img
                 className="h-8"
                 src="/assets/img/logo.svg"
-                alt="Emodus logo"
+                alt="emodus logo"
               />
             </a>
             <button
@@ -686,7 +686,7 @@ class HomePage extends React.Component {
               <img
                 className="h-14"
                 src="/assets/img/logo.svg"
-                alt="Emodus logo"
+                alt="emodus logo"
               />
             </a>
             <ol className="flex font-fredoka font-semibold text-3xl">
