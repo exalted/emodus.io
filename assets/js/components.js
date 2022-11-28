@@ -1048,7 +1048,9 @@ class HomePage extends React.Component {
             </SimpleDesktopSection>
           </DesktopPage>
           <SimpleDesktopSection
-            className={`${this.state.showStory ? '' : 'hidden'} px-28 pt-20`}
+            className={`${
+              this.state.showStory ? '!block' : 'hidden'
+            } px-28 pt-20`}
             data-section="desktop-discover-story"
           >
             <p className="text-center text-5xl mb-12">the story</p>
@@ -1079,7 +1081,6 @@ class HomePage extends React.Component {
               and each is defined as a "modus" trait which becomes sub-state of
               six core emotions.
             </p>
-            <img className="my-6" src="/assets/img/story-colors.svg" />
             <p className="text-3xl font-fredoka font-semibold mb-12">
               Picking up the right colors was another side of the research.
               Colors can make us feel happy or sad, and they can make us feel
@@ -1090,6 +1091,7 @@ class HomePage extends React.Component {
               our color taste, color tones and colors to be used were selected
               by the opinion of a colorist.
             </p>
+            <img className="my-6 mx-auto" src="/assets/img/story-colors.svg" />
             <p className="text-3xl font-fredoka font-semibold mb-12">
               In order to narrate optimum facial expressions, we utilized only
               the most expressive organs: eyes with a supporting mouth; this
