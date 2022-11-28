@@ -470,7 +470,7 @@ class HomePage extends React.Component {
                   chromatics or simply color science.
                 </p>
                 <p className="text-base mb-5">
-                  Early stages of the Emodus got a spark from the work of Dr.
+                  Early stages of the emodus got a spark from the work of Dr.
                   Paul Ekman and Dr. Eve Ekman’s The Atlas of Emotions and from
                   the work of Plutchik’s Wheel of Emotions.
                 </p>
@@ -583,7 +583,7 @@ class HomePage extends React.Component {
                   cliché.
                 </p>
                 <p className="text-base mb-5">
-                  Emodus collection consists of wisely created tiny pieces of
+                  emodus collection consists of wisely created tiny pieces of
                   artwork with a little bit of science, philosophy and humor
                   sauce on it. Obviously not a project that copying blue chip
                   strategies with clip art. It's unfortunate that the crowd that
@@ -621,12 +621,12 @@ class HomePage extends React.Component {
                   awarded with it.
                 </p>
                 <p className="text-base mb-5">
-                  That’s not all! We want to make an impact and we want Emodus
+                  That’s not all! We want to make an impact and we want emodus
                   holders to be a part of it.
                 </p>
                 <p className="text-base mb-5">
                   The pearl of the collection, Modus Lisa, will be auctioned and
-                  Emodus holders will decide which crypto accepting charity
+                  emodus holders will decide which crypto accepting charity
                   should be donated with it.
                 </p>
                 <p className="text-base mb-5">
@@ -1062,7 +1062,7 @@ class HomePage extends React.Component {
               src="/assets/img/story-emotions.jpg"
             />
             <p className="text-3xl font-fredoka font-semibold mb-12">
-              Early stages of the Emodus got a spark from the work of Dr. Paul
+              Early stages of the emodus got a spark from the work of Dr. Paul
               Ekman and Dr. Eve Ekman’s The Atlas of Emotions and from the work
               of Plutchik’s Wheel of Emotions.
             </p>
@@ -1174,7 +1174,7 @@ class HomePage extends React.Component {
               is the best return of investment ponzi-nomics” cliché.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
-              Emodus collection consists of wisely created tiny pieces of
+              emodus collection consists of wisely created tiny pieces of
               artwork with a little bit of science, philosophy and humor sauce
               on it. Obviously not a project that copying blue chip strategies
               with clip art. It's unfortunate that the crowd that has gravitated
@@ -1211,12 +1211,12 @@ class HomePage extends React.Component {
               will be selected by a lottery discord bot to be awarded with it.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
-              That’s not all! We want to make an impact and we want Emodus
+              That’s not all! We want to make an impact and we want emodus
               holders to be a part of it.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
               The pearl of the collection, Modus Lisa, will be auctioned and
-              Emodus holders will decide which crypto accepting charity should
+              emodus holders will decide which crypto accepting charity should
               be donated with it.
             </p>
             <p className="text-3xl font-fredoka font-semibold mb-12">
@@ -2237,7 +2237,7 @@ const EMODUS_TYPES = [
     title: 'All Eyes On You',
     subtitle: '360 pieces',
     description:
-      'Every move you make, every vow you break, every smile you fake, every claim you stake, this Emodus will be watching you.',
+      'Every move you make, every vow you break, every smile you fake, every claim you stake, this emodus will be watching you.',
   },
   {
     images: [
