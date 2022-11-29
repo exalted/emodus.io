@@ -482,7 +482,6 @@ class HomePage extends React.Component {
                   interesting to note that four out of the six are negative
                   emotions.
                 </p>
-                <img className="my-6" src="/assets/img/story-colors.svg" />
                 <p className="text-base mb-5">
                   After analyzing hundreds of facial expressions randomly from
                   commercials, Hollywood productions and news from mainstream
@@ -500,6 +499,7 @@ class HomePage extends React.Component {
                   we don't want to be sued for our color taste, color tones and
                   colors to be used were selected by the opinion of a colorist.
                 </p>
+                <img className="my-6" src="/assets/img/story-colors.svg" />
                 <p className="text-base mb-5">
                   In order to narrate optimum facial expressions, we utilized
                   only the most expressive organs: eyes with a supporting mouth;
