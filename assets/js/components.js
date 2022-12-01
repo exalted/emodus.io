@@ -148,7 +148,7 @@ class HomePage extends React.Component {
                 </a>
               </li>
               <li>
-                <a href="https://discord.gg/8ZRqTetTts" target="_blank">
+                <a href="https://discord.gg/JrhwhuJ9SU" target="_blank">
                   <div className="h-7">
                     <img
                       className="h-full mx-auto mt-3"
@@ -756,7 +756,7 @@ class HomePage extends React.Component {
                 </a>
               </li>
               <li className="border-r-[1.5px] border-l-[1.5px] -ml-[2.6px] first:border-l-0 last:border-r-0 rounded-[1px] px-5 border-emodus-black py-[2px]">
-                <a href="https://discord.gg/8ZRqTetTts" target="_blank">
+                <a href="https://discord.gg/JrhwhuJ9SU" target="_blank">
                   <div className="h-7">
                     <img
                       className="h-full mx-auto mt-[6px]"
