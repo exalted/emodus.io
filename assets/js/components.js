@@ -507,7 +507,7 @@ class HomePage extends React.Component {
                   this proves that to express one's modus it doesn't need a
                   nose, ear, facial hair or even accessories! Even though not
                   all expressions are inter-culturally comprehensible, we
-                  believe everyone will find one part of self in the modus
+                  believe everyone will find one part of self in the emodus
                   collection, since facial expressions of emotions are part of
                   our evolutionary history and are a biologically innate
                   ability."
@@ -1100,9 +1100,9 @@ class HomePage extends React.Component {
               proves that to express one's modus it doesn't need a nose, ear,
               facial hair or even accessories! Even though not all expressions
               are inter-culturally comprehensible, we believe everyone will find
-              one part of self in the modus collection, since facial expressions
-              of emotions are part of our evolutionary history and are a
-              biologically innate ability."
+              one part of self in the emodus collection, since facial
+              expressions of emotions are part of our evolutionary history and
+              are a biologically innate ability."
             </p>
             <img className="mb-6" src="/assets/img/story-scheme.svg" />
             <div className="bg-emodus-background bg-repeat-x bg-bottom h-32 w-screen -mx-28"></div>
