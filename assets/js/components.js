@@ -397,10 +397,10 @@ class HomePage extends React.Component {
                 src="/assets/img/blue-emodus.svg"
               />
               <SimpleMobileSection className="bg-emodus-orange !text-base">
-                A total of 3763 modus on Ethereum Blockchain, each one is unique
-                due to the combinations of different environments, body status',
-                core emotions and facial expressions which gives them their
-                "modus".
+                A total of 3763 emodus on Ethereum Blockchain, each one is
+                unique due to the combinations of different environments, body
+                status', core emotions and facial expressions which gives them
+                their "modus".
               </SimpleMobileSection>
             </MobilePage>
 
@@ -995,7 +995,7 @@ class HomePage extends React.Component {
               src="/assets/img/blue-emodus_desktop.png"
             />
             <SimpleDesktopSection className="pl-16 pr-4 text-4xl">
-              A total of 3763 modus on Ethereum Blockchain, each one is unique
+              A total of 3763 emodus on Ethereum Blockchain, each one is unique
               due to the combinations of different environments, body status',
               core emotions and facial expressions which gives them their
               "modus".
