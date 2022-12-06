@@ -69,6 +69,7 @@ class HomePage extends React.Component {
               onClick={() => {
                 this.setState({ showMenu: !this.state.showMenu });
               }}
+              aria-label="Menu"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -328,6 +329,7 @@ class HomePage extends React.Component {
                             numberOfTokens: this.state.numberOfTokens - 1,
                           });
                         }}
+                        aria-label="Decrement"
                       >
                         -
                       </button>
@@ -350,6 +352,7 @@ class HomePage extends React.Component {
                             numberOfTokens: this.state.numberOfTokens + 1,
                           });
                         }}
+                        aria-label="Increment"
                       >
                         +
                       </button>
@@ -941,6 +944,7 @@ class HomePage extends React.Component {
                           numberOfTokens: this.state.numberOfTokens - 1,
                         });
                       }}
+                      aria-label="Decrement"
                     >
                       -
                     </button>
@@ -963,6 +967,7 @@ class HomePage extends React.Component {
                           numberOfTokens: this.state.numberOfTokens + 1,
                         });
                       }}
+                      aria-label="Increment"
                     >
                       +
                     </button>
@@ -1548,6 +1553,7 @@ class DesktopTypesSection extends React.Component {
             this.setState({ selectedType });
             this.props.onChange(EMODUS_TYPES[selectedType]);
           }}
+          aria-label="Previous type"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1578,6 +1584,7 @@ class DesktopTypesSection extends React.Component {
             this.setState({ selectedType });
             this.props.onChange(EMODUS_TYPES[selectedType]);
           }}
+          aria-label="Next type"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
