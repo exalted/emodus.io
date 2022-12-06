@@ -133,6 +133,7 @@ class HomePage extends React.Component {
                     <img
                       className="h-full mx-auto mt-3"
                       src="/assets/img/opensea.png"
+                      alt="OpenSea logo"
                     />
                   </div>
                 </a>
@@ -143,6 +144,7 @@ class HomePage extends React.Component {
                     <img
                       className="h-full mx-auto mt-3"
                       src="/assets/img/twitter.png"
+                      alt="Twitter logo"
                     />
                   </div>
                 </a>
@@ -153,6 +155,7 @@ class HomePage extends React.Component {
                     <img
                       className="h-full mx-auto mt-3"
                       src="/assets/img/discord.png"
+                      alt="Discord logo"
                     />
                   </div>
                 </a>
@@ -435,6 +438,7 @@ class HomePage extends React.Component {
                   this.state.showStory ? '!hidden' : ''
                 }`}
                 src="/assets/img/modus-lisa.svg"
+                alt="Modus Lisa"
               />
               <SimpleMobileSection
                 className={`bg-emodus-white !text-base text-center ${
@@ -475,7 +479,10 @@ class HomePage extends React.Component {
                   Paul Ekman and Dr. Eve Ekman’s The Atlas of Emotions and from
                   the work of Plutchik’s Wheel of Emotions.
                 </p>
-                <img src="/assets/img/story-emotions.jpg" />
+                <img
+                  src="/assets/img/story-emotions.jpg"
+                  alt="The Atlas of Emotions"
+                />
                 <p className="text-base mb-5">
                   Most psychological research has classified six facial
                   expressions which correspond to distinct universal emotions:
@@ -500,7 +507,11 @@ class HomePage extends React.Component {
                   we don't want to be sued for our color taste, color tones and
                   colors to be used were selected by the opinion of a colorist.
                 </p>
-                <img className="my-6" src="/assets/img/story-colors.svg" />
+                <img
+                  className="my-6"
+                  src="/assets/img/story-colors.svg"
+                  alt="emodus colors"
+                />
                 <p className="text-base mb-5">
                   In order to narrate optimum facial expressions, we utilized
                   only the most expressive organs: eyes with a supporting mouth;
@@ -512,7 +523,11 @@ class HomePage extends React.Component {
                   our evolutionary history and are a biologically innate
                   ability."
                 </p>
-                <img className="my-8" src="/assets/img/story-scheme.svg" />
+                <img
+                  className="my-8"
+                  src="/assets/img/story-scheme.svg"
+                  alt="emodus scheme"
+                />
                 <a
                   className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
                   href="#"
@@ -741,6 +756,7 @@ class HomePage extends React.Component {
                     <img
                       className="h-full mx-auto mt-1"
                       src="/assets/img/opensea.png"
+                      alt="OpenSea logo"
                     />
                   </div>
                 </a>
@@ -751,6 +767,7 @@ class HomePage extends React.Component {
                     <img
                       className="h-full mx-auto mt-[6px]"
                       src="/assets/img/twitter.png"
+                      alt="Twitter logo"
                     />
                   </div>
                 </a>
@@ -761,6 +778,7 @@ class HomePage extends React.Component {
                     <img
                       className="h-full mx-auto mt-[6px]"
                       src="/assets/img/discord.png"
+                      alt="Discord logo"
                     />
                   </div>
                 </a>
@@ -1064,6 +1082,7 @@ class HomePage extends React.Component {
             <img
               className="float-right w-1/2 -mt-14"
               src="/assets/img/story-emotions.jpg"
+              alt="The Atlas of Emotions"
             />
             <p className="text-3xl font-fredoka font-semibold mb-12">
               Early stages of the emodus got a spark from the work of Dr. Paul
@@ -1093,7 +1112,11 @@ class HomePage extends React.Component {
               our color taste, color tones and colors to be used were selected
               by the opinion of a colorist.
             </p>
-            <img className="my-6 mx-auto" src="/assets/img/story-colors.svg" />
+            <img
+              className="my-6 mx-auto"
+              src="/assets/img/story-colors.svg"
+              alt="emodus colors"
+            />
             <p className="text-3xl font-fredoka font-semibold mb-12">
               In order to narrate optimum facial expressions, we utilized only
               the most expressive organs: eyes with a supporting mouth; this
@@ -1104,7 +1127,11 @@ class HomePage extends React.Component {
               expressions of emotions are part of our evolutionary history and
               are a biologically innate ability."
             </p>
-            <img className="mb-6" src="/assets/img/story-scheme.svg" />
+            <img
+              className="mb-6"
+              src="/assets/img/story-scheme.svg"
+              alt="emodus scheme"
+            />
             <div className="bg-emodus-background bg-repeat-x bg-bottom h-32 w-screen -mx-28"></div>
           </SimpleDesktopSection>
 
@@ -1274,7 +1301,11 @@ class DesktopPassportPhotoSection extends React.Component {
   render() {
     return (
       <div className={`${this.props.className} min-w-[500px] max-w-[500px]`}>
-        <img className="object-contain h-[160%] -mt-20" src={this.props.src} />
+        <img
+          className="object-contain h-[160%] -mt-20"
+          src={this.props.src}
+          alt="Modus photo"
+        />
       </div>
     );
   }
@@ -1289,6 +1320,7 @@ class DesktopLisaPhotoSection extends React.Component {
         <img
           className="object-contain h-[160%] -mt-48"
           src="/assets/img/modus-lisa.svg"
+          alt="Modus Lisa"
         />
       </div>
     );
@@ -1351,7 +1383,7 @@ class ImageSection extends React.Component {
       <div
         className={`flex flex-col justify-end items-center min-h-0 ${this.props.containerClassName}`}
       >
-        <img className="min-h-full" src={this.props.src} />
+        <img className="min-h-full" src={this.props.src} alt={this.props.alt} />
       </div>
     );
   }
@@ -1368,6 +1400,7 @@ class MobilePassportPhotoSection extends React.Component {
           <img
             className="absolute max-w-none -top-[9999px] -bottom-[9999px] -right-[9999px] -left-[9999px] m-auto pl-14 h-[70vh]"
             src={this.props.src}
+            alt="Modus photo"
           />
           <div className="absolute -top-[9999px] -bottom-[9999px] -right-[9999px] -left-[9999px] m-auto bg-emodus-background bg-no-repeat bg-bottom h-full"></div>
         </div>
@@ -1461,6 +1494,7 @@ class HorizontalSection extends React.Component {
             <img
               src={this.state.images[index]}
               className="shadow-xl shadow-emodus-black/30 mb-6"
+              alt="Modus type"
             />
             <p className="font-fredokaOne text-center text-3xl mb-1">{title}</p>
             <p className="font-fredokaOne text-center text-sm mb-1">
@@ -1534,6 +1568,7 @@ class DesktopTypesSection extends React.Component {
           <img
             className="object-contain shadow-2xl shadow-emodus-black/60"
             src={this.state.images[this.state.selectedType]}
+            alt="Modus type"
           />
         </div>
         <button
