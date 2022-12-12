@@ -191,7 +191,6 @@ class HomePage extends React.Component {
                     Renaissance of meme art and a new "culture" phenomenon.
                   </p>
                   <button
-                    disabled
                     className="block w-fit m-auto border-4 px-6 py-2 rounded-full border-solid border-emodus-black font-fredoka font-semibold mb-2"
                     onClick={() => {
                       const component = this;
@@ -235,7 +234,7 @@ class HomePage extends React.Component {
                         });
                     }}
                   >
-                    live mint on 12.12.2022
+                    connect metamask
                   </button>
                   <p className="text-center text-lg -mb-2">
                     MINT PRICE 0.02 ETH
@@ -812,7 +811,6 @@ class HomePage extends React.Component {
                 }
               >
                 <button
-                  disabled
                   className="block w-fit mx-auto mb-4 border-8 px-10 pt-3 pb-4 rounded-full border-solid border-emodus-black font-fredoka font-semibold"
                   onClick={() => {
                     const component = this;
@@ -856,7 +854,7 @@ class HomePage extends React.Component {
                       });
                   }}
                 >
-                  live mint on 12.12.2022
+                  connect metamask
                 </button>
                 <p className="text-center text-lg">MINT PRICE 0.02 ETH</p>
                 <p className="text-center text-lg">10 Mint per Wallet</p>
