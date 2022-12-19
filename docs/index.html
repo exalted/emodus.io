@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>emodus</title>
+
+    <meta name="description" content="emodus · emodus is the first PFP NFT to use only facial expressions of emotion as its distinguishing feature." />
+
+    <link href="/styles.css?checksum=faf9465bfe8943a048294feafef0b060" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?checksum=bb9b11e66f80676b72b9e2859abd3ed8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?checksum=413ed7c850bad0265efe6c57ab030d4e" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?checksum=f692d4ec9658b4732405cf01342dbe67" />
+    <link rel="manifest" href="/site.webmanifest?checksum=2185c45390936e0855db44b5412358ae" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?checksum=ac4f1a830ed187a4cd4fb9fc6db9fe95" color="TODO" />
+    <link rel="shortcut icon" href="/favicon.ico?checksum=4c4fdc6df487a84ffbf7c09d9e4e0666" />
+    
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Load React. -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <!-- This will allow us to use JSX in React components. -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@alch/alchemy-web3@1.4.6/dist/alchemyWeb3.min.js"></script>
+
+    <!-- Placeholder div for the React component. -->
+<div id="component"></div>
+
+<!-- Load our React component. -->
+<script type="text/babel" src="/assets/js/components.js"></script>
+<script type="text/babel">
+  const domContainer = document.querySelector('#component');
+  const root = ReactDOM.createRoot(domContainer);
+  root.render(
+    <React.StrictMode>
+      <HomePage />
+    </React.StrictMode>,
+  );
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(() => {
+      const hereEl = document.getElementById('here');
+      if (hereEl) {
+        hereEl.scrollIntoView();
+      }
+    }, 500);
+  });
+</script>
+
+
+    <!-- prettier-ignore -->
+    
+  </body>
+</html>

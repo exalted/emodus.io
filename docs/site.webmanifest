@@ -1,0 +1,20 @@
+{
+    "name": "emodus",
+    "short_name": "emodus",
+    "description": "emodus is the first PFP NFT to use only facial expressions of emotion as its distinguishing feature.",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png?checksum=dbcee31d93df8f8000caecfdef9c1d2f",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png?checksum=ad5d5f3f32bf85d46b86674978a27ad1",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
