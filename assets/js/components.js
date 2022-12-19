@@ -1547,7 +1547,9 @@ class DesktopTypesSection extends React.Component {
         <button
           onClick={() => {
             const selectedType =
-              (this.state.selectedType - 1) % EMODUS_TYPES.length;
+              this.state.selectedType - 1 < 0
+                ? EMODUS_TYPES.length - 1
+                : this.state.selectedType - 1;
             this.setState({ selectedType });
             this.props.onChange(EMODUS_TYPES[selectedType]);
           }}
